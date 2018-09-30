@@ -1,111 +1,171 @@
 import 'package:flutter/material.dart';
-import 'package:flazy/flazy.dart';
+import 'package:common_utils/common_utils.dart';
+import 'package:flutter/src/scheduler/ticker.dart';
 
 void main() => runApp(new MyApp());
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+  static const MaterialColor appMainColor = MaterialColor(
+    _appMainColor,
+    <int, Color>{
+      500: Color(_appMainColor),
+    },
+  );
+  static const int _appMainColor = 0xFF333333;
+
   @override
   Widget build(BuildContext context) {
+    // MaterialColor.
     return new MaterialApp(
-      title: 'Flutter Demo',
-      theme: new ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or press Run > Flutter Hot Reload in IntelliJ). Notice that the
-        // counter didn't reset back to zero; the application is not restarted.
-        primarySwatch: Colors.blue,
+      theme: ThemeData.light().copyWith(
+        primaryColor: Color(0xFF333333),
+        indicatorColor: Colors.white,
+        splashFactory: InkRipple.splashFactory,
+        platform: TargetPlatform.android,
       ),
-      home: new MyHomePage(title: 'Flutter Demo Home Page'),
+      home: new MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
+  MyHomePage({Key key}) : super(key: key);
 
   @override
   _MyHomePageState createState() => new _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+class _Page {
+  final String label;
 
-  void _incrementCounter() {
+  _Page(this.label);
+}
+
+final List<_Page> _allPages = <_Page>[
+  new _Page('主页'),
+  new _Page('项目'),
+  new _Page('动态'),
+  new _Page('体系'),
+//  new _Page('导航'),
+];
+
+class _MyHomePageState extends State<MyHomePage> implements TickerProvider {
+  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+
+  Ticker _ticker;
+
+  TabController _controller;
+
+  _Page _selectedPage;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = new TabController(vsync: this, length: _allPages.length);
+    _controller.addListener(_handleTabSelection);
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    assert(() {
+      if (_ticker == null || !_ticker.isActive) return true;
+      throw new FlutterError('$this was disposed with an active Ticker.\n'
+          '$runtimeType created a Ticker via its SingleTickerProviderStateMixin, but at the time '
+          'dispose() was called on the mixin, that Ticker was still active. The Ticker must '
+          'be disposed before calling super.dispose(). Tickers used by AnimationControllers '
+          'should be disposed by calling dispose() on the AnimationController itself. '
+          'Otherwise, the ticker will leak.\n'
+          'The offending ticker was: ${_ticker.toString(debugIncludeStack: true)}');
+    }());
+    super.dispose();
+  }
+
+  void _handleTabSelection() {
     setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      //    _counter++;
-      _counter = new Calculator().addOne(_counter);
+      _selectedPage = _allPages[_controller.index];
+    });
+  }
+
+  Widget buildTabView(_Page page) {
+    return new Builder(builder: (BuildContext context) {
+      return new Container(
+          key: new ValueKey<String>(page.label),
+          child: new Center(
+              child: new Text(page.label,
+                  style: new TextStyle(fontSize: 32.0),
+                  textAlign: TextAlign.center)));
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
     return new Scaffold(
+      key: _scaffoldKey,
       appBar: new AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: new Text(widget.title),
+        leading: new InkWell(
+          onTap: () {
+            _scaffoldKey.currentState.openDrawer();
+          },
+          child: new Container(
+            width: kToolbarHeight,
+            height: kToolbarHeight,
+            margin: const EdgeInsets.all(10.0),
+            decoration: const BoxDecoration(
+              shape: BoxShape.circle,
+              image: const DecorationImage(
+                image: const AssetImage(
+                  "assets/images/ali_connors.png",
+                ),
+              ),
+            ),
+          ),
+        ),
+        centerTitle: true,
+        title: new TabBar(
+          controller: _controller,
+          isScrollable: true,
+          indicatorSize: TabBarIndicatorSize.label,
+          tabs:
+              _allPages.map((_Page page) => new Tab(text: page.label)).toList(),
+        ),
+        actions: <Widget>[
+          new IconButton(
+              icon: new Icon(Icons.search),
+              onPressed: () {
+                LogUtil.e("");
+              })
+        ],
       ),
-      body: new Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: new Column(
-          // Column is also layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug paint" (press "p" in the console where you ran
-          // "flutter run", or select "Toggle Debug Paint" from the Flutter tool
-          // window in IntelliJ) to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            new Text(
-              'You have pushed the button this many times:',
-            ),
-            new Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.display1,
-            ),
-          ],
+      body: new TabBarView(
+          controller: _controller,
+          children: _allPages.map(buildTabView).toList()),
+      drawer: new Drawer(
+        child: new Material(
+          child: new Container(
+            width: 200.0,
+          ),
         ),
       ),
-      floatingActionButton: new FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: new Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
+  }
+
+  @override
+  Ticker createTicker(TickerCallback onTick) {
+    assert(() {
+      if (_ticker == null) return true;
+      throw new FlutterError(
+          '$runtimeType is a SingleTickerProviderStateMixin but multiple tickers were created.\n'
+          'A SingleTickerProviderStateMixin can only be used as a TickerProvider once. If a '
+          'State is used for multiple AnimationController objects, or if it is passed to other '
+          'objects and those objects might use it more than one time in total, then instead of '
+          'mixing in a SingleTickerProviderStateMixin, use a regular TickerProviderStateMixin.');
+    }());
+    _ticker = new Ticker(onTick, debugLabel: 'created by $this');
+    // We assume that this is called from initState, build, or some sort of
+    // event handler, and that thus TickerMode.of(context) would return true. We
+    // can't actually check that here because if we're in initState then we're
+    // not allowed to do inheritance checks yet.
+    return _ticker;
   }
 }

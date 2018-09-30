@@ -7,7 +7,7 @@ description: A new Flutter application.
 # Both the version and the builder number may be overridden in flutter
 # build by specifying --build-name and --build-number, respectively.
 # Read more about versioning at semver.org.
-version: 1.0.0+1
+version: 0.0.1+1
 
 environment:
   sdk: ">=1.19.0 <3.0.0"
@@ -19,9 +19,10 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
+  lpinyin: ^1.0.6
 
-  flazy:
-    path: ../flazy/
+  flustars:
+    path: ../flustars/
 
 dev_dependencies:
   flutter_test:
@@ -38,6 +39,9 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+  assets:
+    - assets/images/ali_connors.png
+    - assets/images/ali_connors_sml.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:
