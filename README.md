@@ -2,7 +2,7 @@
 
 一款精致的Flutter版 wanandroid App.目前只完成了首页、侧边栏、应用国际化。
 
-### APK:[点击下载 v0.0.2](https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppStore/flutter_wanandroid.apk)
+### APK:[点击下载 v0.0.3](https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppStore/flutter_wanandroid.apk)
 
 ### APK QR:
   ![flutter_wanandroid](https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/flutter_wanandroid/qrcode.png)
