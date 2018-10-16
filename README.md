@@ -10,7 +10,7 @@
 
 · Flutter 常用工具类库    [flustars](https://github.com/Sky24n/flustars) 
 
-·  rxdart                 [rxdart](https://github.com/ReactiveX/rxdart) 
+· rxdart                 [rxdart](https://github.com/ReactiveX/rxdart) 
 
 ### APK:[点击下载 v0.0.3](https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppStore/flutter_wanandroid.apk)
 
