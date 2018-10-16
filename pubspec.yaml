@@ -7,7 +7,7 @@ description: Flutter Wanandroid App.
 # Both the version and the builder number may be overridden in flutter
 # build by specifying --build-name and --build-number, respectively.
 # Read more about versioning at semver.org.
-version: 0.0.2+1
+version: 0.0.3+1
 
 environment:
   sdk: ">=1.19.0 <3.0.0"
@@ -21,10 +21,15 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
+  # 汉字转拼音库 https://github.com/flutterchina/lpinyin
   lpinyin: ^1.0.6
+  # Dart 常用工具类库 https://github.com/Sky24n/common_utils
   common_utils: ^1.0.8
-  fluintl: ^0.1.0
+  # Flutter 常用工具类库 https://github.com/Sky24n/flustars
   flustars: ^0.1.0
+  # Flutter 国际化/多语言库 https://github.com/Sky24n/fluintl
+  fluintl: ^0.1.1
+  # rxdart https://github.com/ReactiveX/rxdart
   rxdart: ^0.18.1
 
 
