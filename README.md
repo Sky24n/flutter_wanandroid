@@ -2,7 +2,7 @@
 
 一款精致的Flutter版 wanandroid App.目前只完成了首页、侧边栏、应用国际化。
 
-## Packages传送门
+## 传送门
 
 • Flutter 国际化/多语言库 [fluintl](https://github.com/Sky24n/fluintl) 
 
