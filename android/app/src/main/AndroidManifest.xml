@@ -16,7 +16,7 @@
     <application
         android:name="io.flutter.app.FlutterApplication"
         android:label="flutter_wanandroid"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/ic_launcher_new">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
