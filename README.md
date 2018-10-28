@@ -18,9 +18,9 @@
   ![flutter_wanandroid](https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/flutter_wanandroid/qrcode.png)
 
 ## Screenshot
-![image](https://github.com/Sky24n/LDocuments/blob/master/AppImgs/flutter_wanandroid/2018-10-12_00_57_58.gif)  
+<img src="https://github.com/Sky24n/LDocuments/blob/master/AppImgs/flutter_wanandroid/2018-10-28_19_55_22.gif" width="200">  <img src="https://github.com/Sky24n/LDocuments/blob/master/AppImgs/flutter_wanandroid/2018-10-28_19_56_02.gif" width="200">  <img src="https://github.com/Sky24n/LDocuments/blob/master/AppImgs/flutter_wanandroid/2018-10-28_19_56_18.gif" width="200">  
 
-![image](https://github.com/Sky24n/LDocuments/blob/master/AppImgs/flutter_wanandroid/2018-10-12_00_58_49.gif)
+<img src="https://github.com/Sky24n/LDocuments/blob/master/AppImgs/flutter_wanandroid/2018-10-28_19_56_49.gif" width="200">  <img src="https://github.com/Sky24n/LDocuments/blob/master/AppImgs/flutter_wanandroid/2018-10-12_00_57_58.gif" width="200">  <img src="https://github.com/Sky24n/LDocuments/blob/master/AppImgs/flutter_wanandroid/2018-10-12_00_58_49.gif" width="200">  
 
 
 
