@@ -2,6 +2,11 @@
 ## 旨在打造一款完整的Flutter应用项目。  
 包含启动页，引导页，主题色切换，应用国际化多语言，版本更新等功能，项目主框架采用响应式编程RxDart和BLoC，目前仅开源了国际化，后续项目重构整理好后，会全部开源出来，敬请期待！欢迎下载体验。
 
+## 更新说明 v0.1.1   (2018.11.19)
+① 新增启动页  
+② 新增引导页  
+③ 修复banner无法点击bug，一些优化  
+
 ## 更新说明 v0.1.0   (2018.11.16)
 ① 堪称完美的UI界面<sup>almost</sup>  
 ② 支持国际化  
@@ -19,7 +24,7 @@
 
 • rxdart                 [rxdart](https://github.com/ReactiveX/rxdart) 
 
-### APK:[点击下载 v0.1.0](https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppStore/flutter_wanandroid.apk)
+### APK:[点击下载 v0.1.1](https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppStore/flutter_wanandroid.apk)
 
 ### APK QR:
   ![flutter_wanandroid](https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/flutter_wanandroid/qrcode.png)
