@@ -24,9 +24,9 @@ dependencies:
   # 汉字转拼音库 https://github.com/flutterchina/lpinyin
   lpinyin: ^1.0.6
   # Dart 常用工具类库 https://github.com/Sky24n/common_utils
-  common_utils: ^1.0.8
+  common_utils: ^1.0.9
   # Flutter 常用工具类库 https://github.com/Sky24n/flustars
-  flustars: ^0.1.0
+  flustars: ^0.1.3
   # Flutter 国际化/多语言库 https://github.com/Sky24n/fluintl
   fluintl: ^0.1.1
   # rxdart https://github.com/ReactiveX/rxdart
