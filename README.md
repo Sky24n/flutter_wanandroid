@@ -2,12 +2,14 @@
 ## 旨在打造一款完整的Flutter应用项目。  
 包含启动页，引导页，主题色切换，应用国际化多语言，版本更新等功能，项目主框架采用响应式编程RxDart和BLoC，目前仅开源了国际化，后续项目重构整理好后，会全部开源出来，敬请期待！欢迎下载体验。
 
-## 更新说明 v0.1.1   (2018.11.19)
+## 更新说明 
+
+### v0.1.1   (2018.11.19)
 ① 新增启动页  
 ② 新增引导页  
 ③ 修复banner无法点击bug，一些优化  
 
-## 更新说明 v0.1.0   (2018.11.16)
+### v0.1.0   (2018.11.16)
 ① 堪称完美的UI界面<sup>almost</sup>  
 ② 支持国际化  
 ③ 支持更换主题色  
@@ -30,9 +32,23 @@
   ![flutter_wanandroid](https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/flutter_wanandroid/qrcode.png)
 
 ## Screenshot
-<img src="https://github.com/Sky24n/LDocuments/blob/master/AppImgs/flutter_wanandroid/2018-10-28_19_55_22.gif" width="240">  <img src="https://github.com/Sky24n/LDocuments/blob/master/AppImgs/flutter_wanandroid/2018-10-28_19_56_02.gif" width="240">  <img src="https://github.com/Sky24n/LDocuments/blob/master/AppImgs/flutter_wanandroid/2018-10-28_19_56_18.gif" width="240">  
+### 主界面
+<img src="https://github.com/Sky24n/LDocuments/blob/master/AppImgs/flutter_wanandroid/2018-11-19_12_41_17.gif" width="240">  
+ 
+### 引导页 
+<img src="https://github.com/Sky24n/LDocuments/blob/master/AppImgs/flutter_wanandroid/2018-11-19_12_35_32.gif" width="240">  
 
-<img src="https://github.com/Sky24n/LDocuments/blob/master/AppImgs/flutter_wanandroid/2018-10-28_19_56_49.gif" width="240">  <img src="https://github.com/Sky24n/LDocuments/blob/master/AppImgs/flutter_wanandroid/2018-10-12_00_57_58.gif" width="240">  <img src="https://github.com/Sky24n/LDocuments/blob/master/AppImgs/flutter_wanandroid/2018-10-12_00_58_49.gif" width="240">  
+### 启动页
+<img src="https://github.com/Sky24n/LDocuments/blob/master/AppImgs/flutter_wanandroid/2018-11-19_12_36_38.gif" width="240">  
+
+### 分类页面
+<img src="https://github.com/Sky24n/LDocuments/blob/master/AppImgs/flutter_wanandroid/2018-11-19_22_11_29.gif" width="240"> 
+
+### Web页双击Title滚动到顶部
+<img src="https://github.com/Sky24n/LDocuments/blob/master/AppImgs/flutter_wanandroid/2018-11-19_22_12_13.gif" width="240">
+
+### 多语言 
+<img src="https://github.com/Sky24n/LDocuments/blob/master/AppImgs/flutter_wanandroid/2018-10-12_00_57_58.gif" width="240">  
 
 
 
