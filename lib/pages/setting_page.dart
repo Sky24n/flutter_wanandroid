@@ -1,41 +1,68 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
+import 'package:flutter_wanandroid/blocs/bloc_index.dart';
 import 'package:flutter_wanandroid/common/component_index.dart';
 import 'package:flutter_wanandroid/pages/page_index.dart';
 
-class SettingPage extends StatefulWidget {
-  @override
-  State<StatefulWidget> createState() {
-    return _SettingPageState();
-  }
-}
-
-class _SettingPageState extends LBaseState<SettingPage> {
+class SettingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    LanguageModel languageModel = SpHelper.getLanguageModel();
-    return Scaffold(
+    LogUtil.e("SettingPage build......");
+    final ApplicationBloc bloc = BlocProvider.of<ApplicationBloc>(context);
+    return new Scaffold(
       appBar: AppBar(
         title: Text(
-          cl.getString(StringIds.titleSetting),
-          style: TextStyle(fontSize: 16.0),
+          IntlUtil.getString(context, StringIds.titleSetting),
         ),
+        centerTitle: true,
       ),
       body: ListView(
         children: <Widget>[
-          ListTile(
-            title: Row(
+          new ExpansionTile(
+            title: new Row(
               children: <Widget>[
                 Icon(
-                  Icons.language,
-                  size: 18.0,
+                  Icons.color_lens,
+                  color: ColorT.gray_66,
                 ),
                 Padding(
                   padding: EdgeInsets.only(left: 10.0),
                   child: Text(
-                    cl.getString(StringIds.titleLanguage),
-                    style: TextStyle(fontSize: 13.0),
+                    IntlUtil.getString(context, StringIds.titleTheme),
+                  ),
+                )
+              ],
+            ),
+            children: <Widget>[
+              new Wrap(
+                children: themeColorMap.keys.map((String key) {
+                  Color value = themeColorMap[key];
+                  return new InkWell(
+                    onTap: () {
+                      SpUtil.putString(Constant.KEY_THEME_COLOR, key);
+                      bloc.sendAppEvent(Constant.TYPE_SYS_UPDATE);
+                    },
+                    child: new Container(
+                      margin: EdgeInsets.all(5.0),
+                      width: 36.0,
+                      height: 36.0,
+                      color: value,
+                    ),
+                  );
+                }).toList(),
+              )
+            ],
+          ),
+          new ListTile(
+            title: new Row(
+              children: <Widget>[
+                Icon(
+                  Icons.language,
+                  color: ColorT.gray_66,
+                ),
+                Padding(
+                  padding: EdgeInsets.only(left: 10.0),
+                  child: Text(
+                    IntlUtil.getString(context, StringIds.titleLanguage),
                   ),
                 )
               ],
@@ -44,24 +71,21 @@ class _SettingPageState extends LBaseState<SettingPage> {
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
                 Text(
-                    languageModel == null
-                        ? cl.getString(StringIds.languageAuto)
-                        : cl.getString(languageModel.titleId,
+                    SpHelper.getLanguageModel() == null
+                        ? IntlUtil.getString(context, StringIds.languageAuto)
+                        : IntlUtil.getString(
+                            context, SpHelper.getLanguageModel().titleId,
                             languageCode: 'zh', countryCode: 'CH'),
-                    style: TextStyle(fontSize: 12.0)),
+                    style: TextStyle(
+                      fontSize: 14.0,
+                      color: ColorT.gray_99,
+                    )),
                 Icon(Icons.keyboard_arrow_right)
               ],
             ),
             onTap: () {
               NavigatorUtil.push(context, (ctx) => LanguagePage(),
-                  whenComplete: (_) {
-                ///延迟200ms更新CustomLocalizations.
-                Future.delayed(Duration(milliseconds: 200), () {
-                  setState(() {
-                    cl = CustomLocalizations.instance;
-                  });
-                });
-              });
+                  pageName: StringIds.titleLanguage);
             },
           )
         ],

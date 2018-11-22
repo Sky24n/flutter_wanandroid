@@ -19,34 +19,33 @@ class PageInfo {
   bool withScaffold;
 }
 
-class _MainLeftPageState extends LBaseState<MainLeftPage> {
+class _MainLeftPageState extends State<MainLeftPage> {
   List<PageInfo> _pageInfo = new List();
 
   @override
   void initState() {
     super.initState();
-    _pageInfo.add(PageInfo(
-        StringIds.titleBookmarks, Icons.bookmark, (ctx) => SettingPage()));
+    _pageInfo.add(PageInfo(StringIds.titleCollection, Icons.collections,
+        (ctx) => CollectionPage()));
     _pageInfo.add(PageInfo(
         StringIds.titleSetting, Icons.settings, (ctx) => SettingPage()));
-    _pageInfo.add(
-        PageInfo(StringIds.titleAbout, Icons.info, (ctx) => SettingPage()));
-    _pageInfo.add(
-        PageInfo(StringIds.titleShare, Icons.share, (ctx) => SettingPage()));
-    _pageInfo.add(PageInfo(StringIds.titleSignOut, Icons.power_settings_new,
-        (ctx) => SettingPage()));
+    _pageInfo
+        .add(PageInfo(StringIds.titleAbout, Icons.info, (ctx) => AboutPage()));
+    _pageInfo
+        .add(PageInfo(StringIds.titleShare, Icons.share, (ctx) => SharePage()));
+    _pageInfo
+        .add(PageInfo(StringIds.titleSignOut, Icons.power_settings_new, null));
   }
 
   @override
   Widget build(BuildContext context) {
-    CustomLocalizations cl = CustomLocalizations.instance;
     return new Scaffold(
       body: new Column(
         children: <Widget>[
           new Container(
             color: Theme.of(context).primaryColor,
-            padding:
-                EdgeInsets.only(top: ScreenUtil.statusBarHeight, left: 10.0),
+            padding: EdgeInsets.only(
+                top: ScreenUtil.getInstance().statusBarHeight, left: 10.0),
             child: new SizedBox(
               height: 120.0,
               width: double.infinity,
@@ -59,11 +58,11 @@ class _MainLeftPageState extends LBaseState<MainLeftPage> {
                         width: 64.0,
                         height: 64.0,
                         margin: EdgeInsets.only(top: 10.0, bottom: 10.0),
-                        decoration: const BoxDecoration(
+                        decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          image: const DecorationImage(
-                            image: const AssetImage(
-                              "assets/images/ali_connors.png",
+                          image: DecorationImage(
+                            image: AssetImage(
+                              Utils.getImgPath('ali_connors'),
                             ),
                           ),
                         ),
@@ -101,9 +100,13 @@ class _MainLeftPageState extends LBaseState<MainLeftPage> {
                   PageInfo pageInfo = _pageInfo[index];
                   return new ListTile(
                     leading: new Icon(pageInfo.iconData),
-                    title: new Text(cl.getString(pageInfo.titleId)),
+                    title:
+                        new Text(IntlUtil.getString(context, pageInfo.titleId)),
                     onTap: () {
-                      NavigatorUtil.push(context, pageInfo.builder);
+                      if (pageInfo.titleId != StringIds.titleSignOut) {
+                        NavigatorUtil.push(context, pageInfo.builder,
+                            pageName: pageInfo.titleId);
+                      } else {}
                     },
                   );
                 }),

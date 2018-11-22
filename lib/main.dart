@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_wanandroid/blocs/bloc_index.dart';
 import 'package:flutter_wanandroid/common/component_index.dart';
 import 'package:flutter_wanandroid/pages/page_index.dart';
 
-void main() => runApp(new MyApp());
+Future<void> main() async {
+  return runApp(BlocProvider<ApplicationBloc>(
+    bloc: ApplicationBloc(),
+    child: BlocProvider(child: MyApp(), bloc: MainBloc()),
+  ));
+}
 
 class MyApp extends StatefulWidget {
   @override
@@ -13,28 +19,27 @@ class MyApp extends StatefulWidget {
 
 class MyAppState extends State<MyApp> {
   Locale _locale;
+  Color _themeColor = ColorT.gray_33;
 
   @override
   void initState() {
     super.initState();
-
-//    setLocalizedSimpleValues(localizedSimpleValues);
     setLocalizedValues(localizedValues);
-
     _initAsync();
     _initListener();
+  }
+
+  void _initListener() {
+    final ApplicationBloc bloc = BlocProvider.of<ApplicationBloc>(context);
+    bloc.appEventStream.listen((value) {
+      _loadLocale();
+    });
   }
 
   void _initAsync() async {
     await SpUtil.getInstance();
     if (!mounted) return;
     _loadLocale();
-  }
-
-  void _initListener() {
-    NoticeTest.getInstance().ctrl.stream.listen((_) {
-      _loadLocale();
-    });
   }
 
   void _loadLocale() {
@@ -46,21 +51,30 @@ class MyAppState extends State<MyApp> {
       } else {
         _locale = null;
       }
+
+      String _colorKey = SpUtil.getString(Constant.KEY_THEME_COLOR);
+      if (ObjectUtil.isEmpty(_colorKey)) {
+        _colorKey = 'gray';
+      }
+      _themeColor = themeColorMap[_colorKey];
     });
   }
 
   @override
   void dispose() {
     super.dispose();
-    NoticeTest.getInstance().dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
-      home: new MainPage(),
+      routes: {
+        '/MainPage': (ctx) => MainPage(),
+      },
+      home: new SplashPage(),
       theme: ThemeData.light().copyWith(
-        primaryColor: Color(0xFF333333),
+        primaryColor: _themeColor,
+        accentColor: _themeColor,
         indicatorColor: Colors.white,
       ),
       locale: _locale,

@@ -16,7 +16,7 @@ class _MainLeftPageState extends State<MainLeftPage> {
         children: <Widget>[
           new Container(
             color: Theme.of(context).primaryColor,
-            padding: EdgeInsets.only(top: ScreenUtil.statusBarHeight),
+            padding: EdgeInsets.only(top: ScreenUtil.getInstance().statusBarHeight),
             child: new SizedBox(
               height: 120.0,
               width: double.infinity,

@@ -7,7 +7,7 @@ description: Flutter Wanandroid App.
 # Both the version and the builder number may be overridden in flutter
 # build by specifying --build-name and --build-number, respectively.
 # Read more about versioning at semver.org.
-version: 0.0.3+1
+version: 0.0.5
 
 environment:
   sdk: ">=1.19.0 <3.0.0"
@@ -26,12 +26,21 @@ dependencies:
   # Dart 常用工具类库 https://github.com/Sky24n/common_utils
   common_utils: ^1.0.9
   # Flutter 常用工具类库 https://github.com/Sky24n/flustars
-  flustars: ^0.1.3
+  flustars: ^0.1.4
   # Flutter 国际化/多语言库 https://github.com/Sky24n/fluintl
-  fluintl: ^0.1.1
+  fluintl: ^0.1.2
+
+
+  # https://github.com/flutter/plugins/tree/master/packages/url_launcher
+  url_launcher: ^4.0.1
   # rxdart https://github.com/ReactiveX/rxdart
   rxdart: ^0.18.1
 
+  # https://github.com/flutterchina/flukit.
+  flukit:
+    git:
+      url: git://github.com/flutterchina/flukit.git
+      path: package_src/
 
 #  flustars:
 #    path: ../flustars/
@@ -54,6 +63,14 @@ flutter:
   assets:
     - assets/images/ali_connors.png
     - assets/images/ali_connors_sml.png
+    - assets/images/qrcode.png
+    - assets/images/icon_wan_android.png
+    - assets/images/ic_launcher_news.png
+    - assets/images/guide1.png
+    - assets/images/guide2.png
+    - assets/images/guide3.png
+    - assets/images/guide4.png
+    - assets/images/splash_bg.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:

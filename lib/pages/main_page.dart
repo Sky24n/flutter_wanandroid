@@ -15,48 +15,65 @@ final List<_Page> _allPages = <_Page>[
   new _Page(StringIds.titleSystem),
 ];
 
-class MainPage extends StatefulWidget {
+class MainPage extends StatelessWidget {
   MainPage({Key key}) : super(key: key);
 
   @override
-  _MainPageState createState() => new _MainPageState();
+  Widget build(BuildContext context) {
+    return new DefaultTabController(
+        length: _allPages.length,
+        child: new Scaffold(
+          appBar: new MyAppBar(
+            leading: new Container(
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                image: DecorationImage(
+                  image: AssetImage(
+                    Utils.getImgPath('ali_connors'),
+                  ),
+                ),
+              ),
+            ),
+            centerTitle: true,
+            title: new TabLayout(),
+            actions: <Widget>[
+              new IconButton(
+                  icon: new Icon(Icons.search),
+                  onPressed: () {
+                    NavigatorUtil.push(context, (ctx) => SearchPage());
+                  })
+            ],
+          ),
+          body: new TabBarViewLayout(),
+          drawer: new Drawer(
+            child: new MainLeftPage(),
+          ),
+        ));
+  }
 }
 
-class _MainPageState extends State<MainPage>
-    with SingleTickerProviderStateMixin {
-  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
-
-  TabController _controller;
-
-  _Page _selectedPage;
-
+class TabLayout extends StatelessWidget {
   @override
-  void initState() {
-    super.initState();
-    _controller = new TabController(vsync: this, length: _allPages.length);
-    _controller.addListener(_handleTabSelection);
+  Widget build(BuildContext context) {
+    return new TabBar(
+      isScrollable: true,
+      labelPadding: EdgeInsets.all(12.0),
+      indicatorSize: TabBarIndicatorSize.label,
+      tabs: _allPages
+          .map((_Page page) =>
+              new Tab(text: IntlUtil.getString(context, page.labelId)))
+          .toList(),
+    );
   }
+}
 
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
-
-  void _handleTabSelection() {
-    setState(() {
-      _selectedPage = _allPages[_controller.index];
-    });
-  }
-
-  Widget buildTabView(_Page page) {
+class TabBarViewLayout extends StatelessWidget {
+  Widget _buildTabView(_Page page) {
     return new Builder(builder: (BuildContext context) {
       return new Container(
-          key: new ValueKey<String>(
-              CustomLocalizations.instance.getString(page.labelId)),
+          key: new ValueKey<String>(IntlUtil.getString(context, page.labelId)),
           child: new Center(
-              child: new Text(
-                  CustomLocalizations.instance.getString(page.labelId),
+              child: new Text(IntlUtil.getString(context, page.labelId),
                   style: new TextStyle(fontSize: 32.0),
                   textAlign: TextAlign.center)));
     });
@@ -64,58 +81,6 @@ class _MainPageState extends State<MainPage>
 
   @override
   Widget build(BuildContext context) {
-    ScreenUtil.getInstance().init(context);
-    CustomLocalizations.init(context);
-
-    return new Scaffold(
-      key: _scaffoldKey,
-      appBar: new AppBar(
-        leading: new InkWell(
-          onTap: () {
-            _scaffoldKey.currentState.openDrawer();
-          },
-          child: new Container(
-            width: kToolbarHeight,
-            height: kToolbarHeight,
-            margin: const EdgeInsets.all(10.0),
-            decoration: const BoxDecoration(
-              shape: BoxShape.circle,
-              image: const DecorationImage(
-                image: const AssetImage(
-                  "assets/images/ali_connors.png",
-                ),
-              ),
-            ),
-          ),
-        ),
-        centerTitle: true,
-        title: new Container(
-          height: kToolbarHeight,
-          child: new TabBar(
-            controller: _controller,
-            isScrollable: true,
-            labelStyle: new TextStyle(fontSize: 12.0),
-            indicatorSize: TabBarIndicatorSize.label,
-            tabs: _allPages
-                .map((_Page page) => new Tab(
-                    text: CustomLocalizations.instance.getString(page.labelId)))
-                .toList(),
-          ),
-        ),
-        actions: <Widget>[
-          new IconButton(
-              icon: new Icon(Icons.search),
-              onPressed: () {
-                NavigatorUtil.push(context, (ctx) => SearchPage());
-              })
-        ],
-      ),
-      body: new TabBarView(
-          controller: _controller,
-          children: _allPages.map(buildTabView).toList()),
-      drawer: new Drawer(
-        child: new MainLeftPage(),
-      ),
-    );
+    return new TabBarView(children: _allPages.map(_buildTabView).toList());
   }
 }

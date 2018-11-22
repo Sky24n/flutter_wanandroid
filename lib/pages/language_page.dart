@@ -1,10 +1,8 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_wanandroid/blocs/notice_test.dart';
+import 'package:flutter_wanandroid/blocs/bloc_index.dart';
 import 'package:flutter_wanandroid/common/component_index.dart';
-import 'package:flutter_wanandroid/common/resources.dart';
-import 'package:flutter_wanandroid/models/models.dart';
 
 class LanguagePage extends StatefulWidget {
   @override
@@ -13,8 +11,7 @@ class LanguagePage extends StatefulWidget {
   }
 }
 
-class _LanguagePageState extends State<LanguagePage>
-    with LBaseState<LanguagePage> {
+class _LanguagePageState extends State<LanguagePage> {
   List<LanguageModel> _list = new List();
 
   LanguageModel _currentLanguage;
@@ -47,10 +44,11 @@ class _LanguagePageState extends State<LanguagePage>
 
   @override
   Widget build(BuildContext context) {
+    final ApplicationBloc bloc = BlocProvider.of<ApplicationBloc>(context);
     return new Scaffold(
       appBar: new AppBar(
         title: new Text(
-          cl.getString(StringIds.titleLanguage),
+          IntlUtil.getString(context, StringIds.titleLanguage),
           style: new TextStyle(fontSize: 16.0),
         ),
         actions: [
@@ -62,7 +60,7 @@ class _LanguagePageState extends State<LanguagePage>
                 textColor: Colors.white,
                 color: Colors.indigoAccent,
                 child: Text(
-                  cl.getString(StringIds.save),
+                  IntlUtil.getString(context, StringIds.save),
                   style: new TextStyle(fontSize: 12.0),
                 ),
                 onPressed: () {
@@ -71,7 +69,7 @@ class _LanguagePageState extends State<LanguagePage>
                       ObjectUtil.isEmpty(_currentLanguage.languageCode)
                           ? ''
                           : json.encode(_currentLanguage));
-                  NoticeTest.getInstance().ctrl.add(null);
+                  bloc.sendAppEvent(Constant.TYPE_SYS_UPDATE);
                   Navigator.pop(context);
                 },
               ),
@@ -86,8 +84,8 @@ class _LanguagePageState extends State<LanguagePage>
             return new ListTile(
               title: new Text(
                 (model.titleId == StringIds.languageAuto
-                    ? cl.getString(model.titleId)
-                    : cl.getString(model.titleId,
+                    ? IntlUtil.getString(context, model.titleId)
+                    : IntlUtil.getString(context, model.titleId,
                         languageCode: 'zh', countryCode: 'CH')),
                 style: new TextStyle(fontSize: 13.0),
               ),

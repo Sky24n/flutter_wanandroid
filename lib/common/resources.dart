@@ -37,6 +37,7 @@ Map<String, Map<String, Map<String, String>>> localizedValues = {
       StringIds.titleEvents: 'Events',
       StringIds.titleSystem: 'System',
       StringIds.titleBookmarks: 'Bookmarks',
+      StringIds.titleCollection: 'Collection',
       StringIds.titleSetting: 'Setting',
       StringIds.titleAbout: 'About',
       StringIds.titleShare: 'Share',
@@ -44,6 +45,7 @@ Map<String, Map<String, Map<String, String>>> localizedValues = {
       StringIds.titleLanguage: 'Language',
       StringIds.languageAuto: 'Auto',
       StringIds.save: 'Save',
+      StringIds.titleTheme: 'Theme',
     }
   },
   'zh': {
@@ -53,6 +55,7 @@ Map<String, Map<String, Map<String, String>>> localizedValues = {
       StringIds.titleEvents: '动态',
       StringIds.titleSystem: '体系',
       StringIds.titleBookmarks: '书签',
+      StringIds.titleCollection: '收藏',
       StringIds.titleSetting: '设置',
       StringIds.titleAbout: '关于',
       StringIds.titleShare: '分享',
@@ -64,6 +67,7 @@ Map<String, Map<String, Map<String, String>>> localizedValues = {
       StringIds.languageHK: '繁體中文（香港）',
       StringIds.languageEN: 'English',
       StringIds.save: '保存',
+      StringIds.titleTheme: '主题',
     },
     'HK': {
       StringIds.titleHome: '主頁',
@@ -71,6 +75,7 @@ Map<String, Map<String, Map<String, String>>> localizedValues = {
       StringIds.titleEvents: '動態',
       StringIds.titleSystem: '體系',
       StringIds.titleBookmarks: '書簽',
+      StringIds.titleCollection: '收藏',
       StringIds.titleSetting: '設置',
       StringIds.titleAbout: '關於',
       StringIds.titleShare: '分享',
@@ -78,6 +83,7 @@ Map<String, Map<String, Map<String, String>>> localizedValues = {
       StringIds.titleLanguage: '語言',
       StringIds.languageAuto: '與系統同步',
       StringIds.save: '儲存',
+      StringIds.titleTheme: '主題',
     },
     'TW': {
       StringIds.titleHome: '主頁',
@@ -85,6 +91,7 @@ Map<String, Map<String, Map<String, String>>> localizedValues = {
       StringIds.titleEvents: '動態',
       StringIds.titleSystem: '體系',
       StringIds.titleBookmarks: '書簽',
+      StringIds.titleCollection: '收藏',
       StringIds.titleSetting: '設置',
       StringIds.titleAbout: '關於',
       StringIds.titleShare: '分享',
@@ -92,6 +99,7 @@ Map<String, Map<String, Map<String, String>>> localizedValues = {
       StringIds.titleLanguage: '語言',
       StringIds.languageAuto: '與系統同步',
       StringIds.save: '儲存',
+      StringIds.titleTheme: '主題',
     }
   }
 };
@@ -103,11 +111,14 @@ class StringIds {
   static String titleSystem = 'title_system';
 
   static String titleBookmarks = 'title_bookmarks';
+  static String titleCollection = 'title_collection';
   static String titleSetting = 'title_setting';
   static String titleAbout = 'title_about';
   static String titleShare = 'title_share';
   static String titleSignOut = 'title_signout';
   static String titleLanguage = 'title_language';
+  static String titleTheme = 'title_theme';
+  static String titleAuthor = 'title_author';
 
   static String languageAuto = 'language_auto';
   static String languageZH = 'language_zh';
@@ -127,4 +138,46 @@ class IconRes {
   IconData powerSettingsNew = Icons.power_settings_new;
   IconData trendingUp = Icons.trending_up;
   IconData colorLens = Icons.color_lens;
+}
+
+class ColorT {
+  static const Color gray_33 = Color(0xFF333333); //51
+  static const Color gray_66 = Color(0xFF666666); //102
+  static const Color gray_99 = Color(0xFF999999); //153
+  static const Color common_orange = Color(0XFFFC9153); //252 145 83
+  static const Color gray_ef = Color(0XFFEFEFEF); //153
+
+  static const Color gray_f0 = Color(0xfff0f0f0); //<!--204-->
+  static const Color gray_f5 = Color(0xfff5f5f5); //<!--204-->
+  static const Color gray_cc = Color(0xffcccccc); //<!--204-->
+  static const Color gray_ce = Color(0xffcecece); //<!--206-->
+  static const Color green_1 = Color(0xff009688); //<!--204-->
+  static const Color green_62 = Color(0xff626262); //<!--204-->
+  static const Color green_e5 = Color(0xffe5e5e5); //<!--204-->
+  static const Color divider = Color(0xffe5e5e5);
+  static const Color transparent_80 = Color(0x80000000); //<!--204-->
+}
+
+Map<String, Color> themeColorMap = {
+  'gray': ColorT.gray_33,
+  'blue': Colors.blue,
+  'blueAccent': Colors.blueAccent,
+  'cyan': Colors.cyan,
+  'deepPurple': Colors.deepPurple,
+  'deepPurpleAccent': Colors.deepPurpleAccent,
+  'deepOrange': Colors.deepOrange,
+  'green': Colors.green,
+  'indigo': Colors.indigo,
+  'indigoAccent': Colors.indigoAccent,
+  'orange': Colors.orange,
+  'purple': Colors.purple,
+  'pink': Colors.pink,
+  'red': Colors.red,
+  'teal': Colors.teal,
+  'black': Colors.black,
+};
+
+class Decorations {
+  static Decoration bottom = BoxDecoration(
+      border: Border(bottom: BorderSide(width: 0.33, color: ColorT.divider)));
 }
