@@ -8,6 +8,6 @@ class Constant {
 
 class AppConfig {
   static const String appName = 'flutter_wanandroid';
-  static const String version = '0.1.1';
+  static const String version = '0.0.5';
   static const bool isDebug = true;
 }
