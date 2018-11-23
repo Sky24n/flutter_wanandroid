@@ -7,7 +7,7 @@ description: Flutter Wanandroid App.
 # Both the version and the builder number may be overridden in flutter
 # build by specifying --build-name and --build-number, respectively.
 # Read more about versioning at semver.org.
-version: 0.0.5
+version: 0.0.6
 
 environment:
   sdk: ">=1.19.0 <3.0.0"
@@ -31,6 +31,8 @@ dependencies:
   fluintl: ^0.1.2
 
 
+  # https://github.com/renefloor/flutter_cached_network_image
+  cached_network_image: ^0.5.0
   # https://github.com/flutter/plugins/tree/master/packages/url_launcher
   url_launcher: ^4.0.1
   # rxdart https://github.com/ReactiveX/rxdart
@@ -41,6 +43,9 @@ dependencies:
     git:
       url: git://github.com/flutterchina/flukit.git
       path: package_src/
+  flutter_webview_plugin:
+    git:
+      url: git://github.com/Sky24n/flutter_webview_plugin.git
 
 #  flustars:
 #    path: ../flustars/

@@ -14,4 +14,13 @@ class SpHelper {
     }
     return null;
   }
+
+  static SplashModel getSplashModel() {
+    String _splashModel = SpUtil.getString(Constant.KEY_SPLASH_MODEL);
+    if (ObjectUtil.isNotEmpty(_splashModel)) {
+      Map userMap = json.decode(_splashModel);
+      return SplashModel.fromJson(userMap);
+    }
+    return null;
+  }
 }

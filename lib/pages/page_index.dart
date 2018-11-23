@@ -12,3 +12,6 @@ export 'collection_page.dart';
 export 'share_page.dart';
 export 'author_page.dart';
 export 'other_page.dart';
+
+export 'package:flutter_wanandroid/widgets/web_scaffold.dart';
+

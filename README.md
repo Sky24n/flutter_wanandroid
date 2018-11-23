@@ -5,10 +5,11 @@
 有关项目最新动态，可以关注App内第一条Hot Item信息。
 
 ## 已开源  
-① 启动页  
-② 引导页  
-③ 主题色切换    
-④ 国际化  
+① 闪屏广告页  
+② 启动页  
+③ 引导页  
+④ 主题色切换    
+⑤ 国际化  
 
 ## 更新说明 
 
@@ -42,6 +43,9 @@
 ## Screenshot
 ### 主界面
 <img src="https://github.com/Sky24n/LDocuments/blob/master/AppImgs/flutter_wanandroid/2018-11-19_12_41_17.gif" width="240">  
+
+### 闪屏广告页 
+<img src="https://github.com/Sky24n/LDocuments/blob/master/AppImgs/flutter_wanandroid/2018-11-23_13_05_08.gif" width="240">  
  
 ### 引导页 
 <img src="https://github.com/Sky24n/LDocuments/blob/master/AppImgs/flutter_wanandroid/2018-11-19_12_35_32.gif" width="240">  

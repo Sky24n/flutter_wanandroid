@@ -24,10 +24,31 @@ class SplashPageState extends State<SplashPage> {
   int _status = 0;
   int _count = 3;
 
+  SplashModel _splashModel;
+
   @override
   void initState() {
     super.initState();
+    _loadSplashData();
     _initAsync();
+  }
+
+  void _loadSplashData() async {
+    HttpUtil httpUtil = new HttpUtil();
+    httpUtil.getSplash().then((model) async {
+      await SpUtil.getInstance();
+      _splashModel = SpHelper.getSplashModel();
+      if (!ObjectUtil.isEmpty(model.imgUrl)) {
+        if (_splashModel == null || (_splashModel.imgUrl != model.imgUrl)) {
+          SpUtil.putString(Constant.KEY_SPLASH_MODEL, json.encode(model));
+          setState(() {
+            _splashModel = model;
+          });
+        }
+      } else {
+        SpUtil.putString(Constant.KEY_SPLASH_MODEL, '');
+      }
+    });
   }
 
   void _initAsync() {
@@ -91,7 +112,12 @@ class SplashPageState extends State<SplashPage> {
   }
 
   void _initSplash() {
-    _doCountDown();
+    _splashModel = SpHelper.getSplashModel();
+    if (_splashModel == null) {
+      _goMain();
+    } else {
+      _doCountDown();
+    }
   }
 
   void _doCountDown() {
@@ -124,13 +150,43 @@ class SplashPageState extends State<SplashPage> {
     );
   }
 
+  Widget _buildAdWidget() {
+    if (_splashModel == null) {
+      return new Container(
+        height: 0.0,
+      );
+    }
+    return new Offstage(
+      offstage: !(_status == 1),
+      child: new InkWell(
+        onTap: () {
+          if (ObjectUtil.isEmpty(_splashModel.url)) return;
+          _goMain();
+          NavigatorUtil.pushWeb(context,
+              title: _splashModel.title, url: _splashModel.url);
+        },
+        child: new Container(
+          alignment: Alignment.center,
+          child: new CachedNetworkImage(
+            width: double.infinity,
+            height: double.infinity,
+            fit: BoxFit.fill,
+            imageUrl: _splashModel.imgUrl,
+            placeholder: _buildSplashBg(),
+            errorWidget: _buildSplashBg(),
+          ),
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return new Material(
       child: new Stack(
         children: <Widget>[
           new Offstage(
-            offstage: !(_status == 0 || _status == 1),
+            offstage: !(_status == 0),
             child: _buildSplashBg(),
           ),
           new Offstage(
@@ -147,6 +203,7 @@ class SplashPageState extends State<SplashPage> {
                     ),
                     children: _bannerList),
           ),
+          _buildAdWidget(),
           new Offstage(
             offstage: !(_status == 1),
             child: new Container(
