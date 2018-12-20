@@ -33,7 +33,7 @@ FormData formData = new FormData.from({
     });
 DioUtil().requestR(Method.post, "user/login",data: rformData);
 
-//解析 
+//解析示例 
 class WanRepository {
   Future<List<BannerModel>> getBanner() async {
     BaseResp<List> baseResp = await DioUtil().request<List>(
