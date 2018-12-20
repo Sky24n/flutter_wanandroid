@@ -4,7 +4,7 @@
 
 有关项目最新动态，可以关注App内第一条Hot Item信息。
 
-##最新开源： 网络框架DioUtil，屏幕适配ScreenUtil 
+## 最新开源： 网络框架DioUtil，屏幕适配ScreenUtil 
 ### [Flutter工具类库 flustars][flustars_github] 
 v0.1.6(2018.12.20)  
 新增网络请求工具DioUtil, 单例模式，可输出请求日志。
