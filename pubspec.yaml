@@ -26,7 +26,7 @@ dependencies:
   # Dart 常用工具类库 https://github.com/Sky24n/common_utils
   common_utils: ^1.0.9
   # Flutter 常用工具类库 https://github.com/Sky24n/flustars
-  flustars: ^0.1.4
+  flustars: ^0.1.7
   # Flutter 国际化/多语言库 https://github.com/Sky24n/fluintl
   fluintl: ^0.1.2
 
@@ -76,6 +76,8 @@ flutter:
     - assets/images/guide3.png
     - assets/images/guide4.png
     - assets/images/splash_bg.png
+
+    - assets/data/china.json
 
   # To add assets to your application, add an assets section, like this:
   # assets:

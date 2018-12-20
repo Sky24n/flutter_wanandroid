@@ -92,6 +92,25 @@ class _MainLeftPageState extends State<MainLeftPage> {
               ),
             ),
           ),
+          new Container(
+            height: 50.0,
+            child: new Material(
+              color: Colors.grey[200],
+              child: new InkWell(
+                onTap: () {
+                  NavigatorUtil.push(context, (ctx) => MainDemosPage(),
+                      pageName: "Flutter Demos");
+                },
+                child: new Center(
+                  child: new Text(
+                    "Flutter Demos",
+                    style: new TextStyle(
+                        color: Theme.of(context).primaryColor, fontSize: 16.0),
+                  ),
+                ),
+              ),
+            ),
+          ),
           new Expanded(
             child: new ListView.builder(
                 padding: const EdgeInsets.all(0.0),

@@ -13,5 +13,6 @@ export 'share_page.dart';
 export 'author_page.dart';
 export 'other_page.dart';
 
-export 'package:flutter_wanandroid/widgets/web_scaffold.dart';
+export 'demos/main_demos.dart';
 
+export 'package:flutter_wanandroid/widgets/web_scaffold.dart';

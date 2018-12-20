@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_wanandroid/blocs/bloc_index.dart';
 import 'package:flutter_wanandroid/common/component_index.dart';
@@ -25,8 +26,17 @@ class MyAppState extends State<MyApp> {
   void initState() {
     super.initState();
     setLocalizedValues(localizedValues);
+    _init();
     _initAsync();
     _initListener();
+  }
+
+  void _init() {
+    DioUtil.openDebug();//打开debug模式.
+    Options options = DioUtil.getDefOptions();
+    options.baseUrl = Constant.SERVER_ADDRESS;
+    HttpConfig config = new HttpConfig(options: options);
+    DioUtil().setConfig(config);
   }
 
   void _initListener() {
