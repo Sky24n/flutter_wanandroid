@@ -47,6 +47,9 @@ ScreenUtil.getInstance().getSp(fontSize); //返回根据屏幕宽适配后字体
 ```
 方案二、依赖context
 ```
+//如果设计稿尺寸默认配置一致，无需该设置。  配置设计稿尺寸 默认 360.0 / 640.0 / 3.0
+setDesignWHD(_designW,_designH,_designD);  
+
 ScreenUtil.getScreenW(context); //屏幕 宽
 ScreenUtil.getScreenH(context); //屏幕 高
 ScreenUtil.getScreenDensity(context); //屏幕 像素密度
