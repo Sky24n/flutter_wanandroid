@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_wanandroid/blocs/bloc_index.dart';
 import 'package:flutter_wanandroid/common/component_index.dart';
+import 'package:flutter_wanandroid/data/net/dio_util.dart';
 import 'package:flutter_wanandroid/pages/page_index.dart';
 
 Future<void> main() async {
