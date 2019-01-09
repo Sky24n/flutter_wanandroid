@@ -1,4 +1,120 @@
-# 一款精致的Flutter版 Wanandroid App.
+# Flutter版 WanAndroid App.
+
+## 即将全部开源，敬请期待！
+### 一个很攒劲的Flutter项目，拥有较好的项目结构，相对规范的代码···
+## 部分预览
+resources目录结构
+>- |--resources
+>    - |-- colors.dart
+>    - |-- dimens.dart
+>    - |-- strings.dart
+>    - |-- styles.dart
+
+colors.dart
+```
+class ColorT {
+  static const Color app_main = Color(0xFF666666);  
+  
+  static const Color text_dark = Color(0xFF333333);
+  static const Color text_normal = Color(0xFF666666);
+  static const Color text_gray = Color(0xFF999999);  
+  
+  static const Color transparent_80 = Color(0x80000000);   
+   
+  static const Color divider = Color(0xffe5e5e5);
+}
+```
+dimens.dart
+```
+class Dimens {
+  static const double font_sp10 = 10;
+  static const double font_sp12 = 12;
+  static const double font_sp14 = 14;
+  static const double font_sp16 = 16;
+  static const double font_sp18 = 18;
+  
+  static const double gap_dp5 = 5;
+  static const double gap_dp10 = 10;
+  static const double gap_dp12 = 12;
+  static const double gap_dp15 = 15;
+  static const double gap_dp16 = 16;
+}
+```
+strings.dart
+```
+class Ids {
+  static const String titleHome = 'title_home';
+  static const String titleRepos = 'title_repos';
+  static const String titleEvents = 'title_events';
+  static const String titleSystem = 'title_system';
+}  
+  
+Map<String, Map<String, Map<String, String>>> localizedValues = {
+  'en': {
+    'US': {
+      Ids.titleHome: 'Home',
+      Ids.titleRepos: 'Repos',
+      Ids.titleEvents: 'Events',
+      Ids.titleSystem: 'System',
+    }
+  },
+  'zh': {
+    'CN': {
+      Ids.titleHome: '主页',
+      Ids.titleRepos: '项目',
+      Ids.titleEvents: '动态',
+      Ids.titleSystem: '体系',
+    },
+    'HK': {
+      Ids.titleHome: '主頁',
+      Ids.titleRepos: '項目',
+      Ids.titleEvents: '動態',
+      Ids.titleSystem: '體系',
+    },
+    'TW': {
+      Ids.titleHome: '主頁',
+      Ids.titleRepos: '項目',
+      Ids.titleEvents: '動態',
+      Ids.titleSystem: '體系',
+    }
+  }
+};
+```
+styles.dart
+```
+class TextStyles {
+  static TextStyle listTitle = TextStyle(
+    fontSize: Dimens.font_sp16,
+    color: ColorT.text_dark,
+    fontWeight: FontWeight.bold,
+  );
+  static TextStyle listContent = TextStyle(
+    fontSize: Dimens.font_sp14,
+    color: ColorT.text_normal,
+  );
+  static TextStyle listExtra = TextStyle(
+    fontSize: Dimens.font_sp12,
+    color: ColorT.text_gray,
+  );
+}
+  
+class Decorations {
+  static Decoration bottom = BoxDecoration(
+      border: Border(bottom: BorderSide(width: 0.33, color: ColorT.divider)));
+}
+  
+class Gaps {
+  static Widget hGap5 = new SizedBox(width: Dimens.gap_dp5);
+  static Widget hGap10 = new SizedBox(width: Dimens.gap_dp10);
+  static Widget hGap15 = new SizedBox(width: Dimens.gap_dp15);
+
+  static Widget vGap5 = new SizedBox(height: Dimens.gap_dp5);
+  static Widget vGap10 = new SizedBox(height: Dimens.gap_dp10);
+  static Widget vGap15 = new SizedBox(height: Dimens.gap_dp15);
+}
+```
+
+
 ## 旨在打造一款完整的Flutter应用项目。  
 包含启动页，引导页，主题色切换，应用国际化多语言，版本更新等功能，项目主框架采用响应式编程RxDart和BLoC，由于目前项目功能尚未完善，代码还有待优化，后续项目重构整理好后，会全部开源出来，敬请期待！欢迎下载体验。  
 
@@ -111,22 +227,6 @@ I/flutter ( 5922): [statusCode]:   200
 I/flutter ( 5922): [request   ]:   method: GET  baseUrl: http://www.wanandroid.com/  path: lg/collect/list/0/json
 I/flutter ( 5922): [reqdata   ]:   null
 I/flutter ( 5922): [response  ]:   {data: {curPage: 1, datas: [], offset: 0, over: true, pageCount: 0, size: 20, total: 0}, errorCode: 0, errorMsg: }
-```
-
-#### v0.1.5(2018.12.14)  
-ScreenUtil 新增屏幕适配，不依赖context
-```
-//如果设计稿尺寸与默认配置一致，无需该设置。  配置设计稿尺寸 默认 360.0 / 640.0 / 3.0
-setDesignWHD(_designW,_designH,_designD);
-
-//返回根据屏幕宽适配后尺寸（单位 dp or pt）
-ScreenUtil.getInstance().getWidth(100.0);  
-
-//返回根据屏幕高适配后尺寸（单位 dp or pt）
-ScreenUtil.getInstance().getHeight(100.0); 
-
-//返回根据屏幕宽适配后字体尺寸
-ScreenUtil.getInstance().getSp(12.0); 
 ```
 
 ## 已开源  
