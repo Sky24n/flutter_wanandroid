@@ -1,30 +1,47 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_wanandroid/pages/page_index.dart';
+import 'package:flutter_wanandroid/common/component_index.dart';
+import 'package:flutter_wanandroid/ui/pages/tab_page.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class NavigatorUtil {
-  static void push(BuildContext context, WidgetBuilder builder,
-      {String pageName, ValueChanged<String> whenComplete}) {
-    if (context == null || builder == null) return;
-    Navigator.push(context, new CupertinoPageRoute<void>(builder: builder))
-        .whenComplete(() {
-      if (whenComplete != null) {
-        whenComplete(null);
-      }
-    });
+
+  static void pushPage(BuildContext context, Widget page, {String pageName}) {
+    if (context == null || page == null || ObjectUtil.isEmpty(pageName)) return;
+    Navigator.push(
+        context, new CupertinoPageRoute<void>(builder: (ctx) => page));
   }
 
   static void pushWeb(BuildContext context,
       {String title, String titleId, String url, bool isHome: false}) {
-    if (context == null || url == null) return;
+    if (context == null || ObjectUtil.isEmpty(url)) return;
+    if (url.endsWith(".apk")) {
+      launchInBrowser(url, title: title ?? titleId);
+    } else {
+      Navigator.push(
+          context,
+          new CupertinoPageRoute<void>(
+              builder: (ctx) => new WebScaffold(
+                    title: title,
+                    titleId: titleId,
+                    url: url,
+                  )));
+    }
+  }
+
+  static void pushTabPage(BuildContext context,
+      {String labelId, String title, String titleId, TreeModel treeModel}) {
+    if (context == null) return;
     Navigator.push(
         context,
         new CupertinoPageRoute<void>(
-            builder: (ctx) => new WebScaffold(
-                  title: title,
-                  titleId: titleId,
-                  url: url,
+            builder: (ctx) => new BlocProvider<TabBloc>(
+                  child: new TabPage(
+                    labelId: labelId,
+                    title: title,
+                    titleId: titleId,
+                    treeModel: treeModel,
+                  ),
+                  bloc: new TabBloc(),
                 )));
   }
 

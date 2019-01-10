@@ -17,8 +17,8 @@ class ComReq {
   ComReq.fromJson(Map<String, dynamic> json) : cid = json['cid'];
 
   Map<String, dynamic> toJson() => {
-    'cid': cid,
-  };
+        'cid': cid,
+      };
 }
 
 class ComListResp<T> {
@@ -53,17 +53,17 @@ class ReposModel {
         collect = json['collect'];
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'title': title,
-    'desc': desc,
-    'author': author,
-    'link': link,
-    'projectLink': projectLink,
-    'envelopePic': envelopePic,
-    'superChapterName': superChapterName,
-    'publishTime': publishTime,
-    'collect': collect,
-  };
+        'id': id,
+        'title': title,
+        'desc': desc,
+        'author': author,
+        'link': link,
+        'projectLink': projectLink,
+        'envelopePic': envelopePic,
+        'superChapterName': superChapterName,
+        'publishTime': publishTime,
+        'collect': collect,
+      };
 
   @override
   String toString() {
@@ -90,11 +90,11 @@ class BannerModel {
         imagePath = json['imagePath'];
 
   Map<String, dynamic> toJson() => {
-    'title': title,
-    'id': id,
-    'url': url,
-    'imagePath': imagePath,
-  };
+        'title': title,
+        'id': id,
+        'url': url,
+        'imagePath': imagePath,
+      };
 
   @override
   String toString() {
@@ -119,15 +119,15 @@ class TreeModel extends ISuspensionBean {
         id = json['id'],
         children = (json['children'] as List)
             ?.map((e) => e == null
-            ? null
-            : new TreeModel.fromJson(e as Map<String, dynamic>))
+                ? null
+                : new TreeModel.fromJson(e as Map<String, dynamic>))
             ?.toList();
 
   Map<String, dynamic> toJson() => {
-    'name': name,
-    'id': id,
-    'children': children,
-  };
+        'name': name,
+        'id': id,
+        'children': children,
+      };
 
   @override
   String toString() {
@@ -156,17 +156,20 @@ class LoginReq {
         password = json['password'];
 
   Map<String, dynamic> toJson() => {
-    'username': username,
-    'password': password,
-  };
+        'username': username,
+        'password': password,
+      };
 
   @override
   String toString() {
-    StringBuffer sb = new StringBuffer('{');
-    sb.write("\"username\":\"$username\"");
-    sb.write(",\"password\":$password");
-    sb.write('}');
-    return sb.toString();
+    return '{' +
+        " \"username\":\"" +
+        username +
+        "\"" +
+        ", \"password\":\"" +
+        password +
+        "\"" +
+        '}';
   }
 }
 
@@ -183,10 +186,10 @@ class RegisterReq {
         repassword = json['repassword'];
 
   Map<String, dynamic> toJson() => {
-    'username': username,
-    'password': password,
-    'repassword': repassword,
-  };
+        'username': username,
+        'password': password,
+        'repassword': repassword,
+      };
 
   @override
   String toString() {

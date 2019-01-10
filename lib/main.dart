@@ -1,9 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_wanandroid/blocs/bloc_index.dart';
 import 'package:flutter_wanandroid/common/component_index.dart';
 import 'package:flutter_wanandroid/data/net/dio_util.dart';
-import 'package:flutter_wanandroid/pages/page_index.dart';
 
 Future<void> main() async {
   return runApp(BlocProvider<ApplicationBloc>(
@@ -15,13 +13,13 @@ Future<void> main() async {
 class MyApp extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return new MyAppState();
+    return MyAppState();
   }
 }
 
 class MyAppState extends State<MyApp> {
   Locale _locale;
-  Color _themeColor = ColorT.gray_33;
+  Color _themeColor = ColorT.app_main;
 
   @override
   void initState() {
@@ -33,11 +31,17 @@ class MyAppState extends State<MyApp> {
   }
 
   void _init() {
-    DioUtil.openDebug();//打开debug模式.
+//    DioUtil.openDebug();
     Options options = DioUtil.getDefOptions();
     options.baseUrl = Constant.SERVER_ADDRESS;
     HttpConfig config = new HttpConfig(options: options);
     DioUtil().setConfig(config);
+  }
+
+  void _initAsync() async {
+    await SpUtil.getInstance();
+    if (!mounted) return;
+    _loadLocale();
   }
 
   void _initListener() {
@@ -47,27 +51,18 @@ class MyAppState extends State<MyApp> {
     });
   }
 
-  void _initAsync() async {
-    await SpUtil.getInstance();
-    if (!mounted) return;
-    _loadLocale();
-  }
-
   void _loadLocale() {
     setState(() {
       LanguageModel model = SpHelper.getLanguageModel();
       if (model != null) {
-        LogUtil.e('LanguageModel: ' + model.toString());
         _locale = new Locale(model.languageCode, model.countryCode);
       } else {
         _locale = null;
       }
 
-      String _colorKey = SpUtil.getString(Constant.KEY_THEME_COLOR);
-      if (ObjectUtil.isEmpty(_colorKey)) {
-        _colorKey = 'gray';
-      }
-      _themeColor = themeColorMap[_colorKey];
+      String _colorKey = SpHelper.getThemeColor();
+      if (themeColorMap[_colorKey] != null)
+        _themeColor = themeColorMap[_colorKey];
     });
   }
 
