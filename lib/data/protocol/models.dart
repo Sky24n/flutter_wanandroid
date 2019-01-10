@@ -162,14 +162,11 @@ class LoginReq {
 
   @override
   String toString() {
-    return '{' +
-        " \"username\":\"" +
-        username +
-        "\"" +
-        ", \"password\":\"" +
-        password +
-        "\"" +
-        '}';
+    StringBuffer sb = new StringBuffer('{');
+    sb.write("\"username\":\"$username\"");
+    sb.write(",\"password\":$password");
+    sb.write('}');
+    return sb.toString();
   }
 }
 
