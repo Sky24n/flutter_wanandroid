@@ -234,9 +234,11 @@ SpUtil : 单例"同步" SharedPreferences 工具类。
 ```
 // 存储SplashModel实体对象
 SplashModel model = new SplashModel();
-SpHelper.putObject(Constant.KEY_SPLASH_MODEL, model);
+SpHelper.putObject(Constant.KEY_SPLASH_MODEL, model);  
+  
 // 获取SplashModel实体对象
-SplashModel model = SpHelper.getSplashModel(); 
+SplashModel model = SpHelper.getSplashModel();  
+ 
 class SpHelper {
  // 存储Obj，T 用于区分存储类型
   static void putObject<T>(String key, Object value) {
