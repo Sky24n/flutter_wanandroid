@@ -9,6 +9,11 @@ App拥有漂亮的UI界面，统一的交互，侧滑退出，列表和Web界面
 
 [更新说明](./CHANGELOG.md)
 
+### APK:[点击下载 v0.1.3](https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppStore/flutter_wanandroid.apk)
+
+### APK QR:
+  ![flutter_wanandroid](https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/flutter_wanandroid/qrcode.png)
+
 ## App目录结构
 >- |--lib
 >    - |-- blocs (bloc相关)
@@ -275,11 +280,6 @@ class SpHelper {
 }
 ```
 
-### APK:[点击下载 v0.1.3](https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppStore/flutter_wanandroid.apk)
-
-### APK QR:
-  ![flutter_wanandroid](https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/flutter_wanandroid/qrcode.png)
-
 ## Screenshot
 ### 主界面
 <img src="https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/flutter_wanandroid/home.gif" width="240">  
@@ -317,7 +317,7 @@ class SpHelper {
  [![jianshu][jianshuSvg]][jianshu]
 
 ## Donations
- 如果您觉得该项目不错的话，并且希望作者持续升级维护，欢迎随意打赏，请作者喝杯咖啡～   
+ 如果您觉得该项目不错的话，并且希望您很有帮助的话，欢迎随意打赏，请作者喝杯咖啡～   
  <img src="https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/alipay.png" width="240">  <img src="https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/wechat.png" width="240">    
  <img src="https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/alipay_reward.png" width="240">
 
