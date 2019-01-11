@@ -1,7 +1,10 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_wanandroid/common/component_index.dart';
 import 'package:flutter_wanandroid/data/net/dio_util.dart';
+import 'package:flutter_wanandroid/ui/pages/main_page.dart';
+import 'package:flutter_wanandroid/ui/pages/page_index.dart';
 
 Future<void> main() async {
   return runApp(BlocProvider<ApplicationBloc>(

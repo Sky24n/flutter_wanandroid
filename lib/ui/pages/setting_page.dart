@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_wanandroid/common/component_index.dart';
+import 'package:flutter_wanandroid/ui/pages/language_page.dart';
 
 class SettingPage extends StatelessWidget {
   @override
