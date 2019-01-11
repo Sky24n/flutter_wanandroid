@@ -68,10 +68,6 @@ class TabLayout extends StatelessWidget {
   }
 }
 
-//int mCurrentPage = 0;
-//SwiperController swiperController;
-//TabController tabController;
-
 class TabBarViewLayout extends StatelessWidget {
   Widget buildTabView(BuildContext context, _Page page) {
     String labelId = page.labelId;
@@ -97,40 +93,6 @@ class TabBarViewLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     LogUtil.e("TabBarViewLayout build.......");
-
-//    if (swiperController == null) {
-//      swiperController = new SwiperController();
-//      swiperController.addListener(() {
-//        if (swiperController.index != mCurrentPage) {
-//          mCurrentPage = swiperController.index;
-//          tabController.animateTo(mCurrentPage);
-//        }
-//      });
-//    }
-//
-//    if (tabController == null) {
-//      tabController = DefaultTabController.of(context);
-//      tabController.addListener(() {
-//        if (!tabController.indexIsChanging &&
-//            tabController.index != mCurrentPage) {
-//          mCurrentPage = tabController.index;
-//          swiperController.animateToPage(tabController.index,
-//              duration: kTabScrollDuration, curve: Curves.ease);
-//        }
-//      });
-//    }
-
-//    return new Swiper(
-//      autoStart: false,
-//      controller: swiperController,
-//      children: <Widget>[
-//        HomePage(labelId: Ids.titleHome),
-//        ReposPage(labelId: Ids.titleRepos),
-//        EventsPage(labelId: Ids.titleEvents),
-//        SystemPage(labelId: Ids.titleSystem)
-//      ],
-//    );
-
     return new TabBarView(
         children: _allPages.map((_Page page) {
       return buildTabView(context, page);
