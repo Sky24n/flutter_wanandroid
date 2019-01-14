@@ -310,10 +310,27 @@ class SpHelper {
 ### Big Thanks
 ① 感谢鸿洋大佬提供的[开源api](http://www.wanandroid.com/blog/show/2)  
 ② 界面参考[gitme](https://flutterchina.club/app/gm.html)  
-③ 优秀[开源库](https://www.jianshu.com/p/6d3c648340b6)
 
-## 作者简书，欢迎关注～
- [![jianshu][jianshuSvg]][jianshu]
+### 开源库
+1. Dart常用工具类库[common_utils][common_utils_github]  
+   该库包含TimerUtil（倒计时，定时任务），TimelineUtil（时间轴），DateUtil（日期格式化），RegexUtil（正则验证手机号，身份证，邮箱等等），RegexUtil（正则验证手机号，身份证，邮箱等等），NumUtil（保留x位小数, 精确加、减、乘、除, 防止精度丢失），MoneyUtil（元转分，分转元），ObjectUtil（判空），LogUtil（简单封装打印日志）。  
+   如果你有不错的纯dart工具类或对已有对工具类有更好的优化建议，欢迎PR，大家一起维护～  
+2. Flutter常用工具类库[flustars][flustars_github]  
+   该库包含SpUtil（单例"同步" SharedPreferences 工具类），ScreenUtil（屏幕适配），WidgetUtil（Widget渲染监听，获取Widget宽高，在屏幕上的坐标）。  
+   如果你有不错的Flutter工具类或对已有对工具类有更好的优化建议，欢迎PR，大家一起维护～   
+3. 汉字转拼音库[lpinyin](https://github.com/flutterchina/lpinyin)  
+4. 国际化/多语言库[fluintl](https://github.com/Sky24n/fluintl)  
+5. UI组件库[flukit](https://github.com/flutterchina/flukit)  
+6. 网络请求[dio](https://github.com/flutterchina/dio)  
+7. 图片加载[cached_network_image](https://github.com/renefloor/flutter_cached_network_image)  
+8. 上拉加载和下拉刷新[pull_to_refresh](https://github.com/peng8350/flutter_pulltorefresh)  
+9. [url_launcher](https://github.com/flutter/plugins/tree/master/packages/url_launcher)  
+10. 点赞效果[LikeButton](https://github.com/yumi0629/LikeButton)  
+11. 安卓webview增加滚动监听[webview_flutter](https://github.com/Sky24n/plugins/tree/master/packages/webview_flutter)  
+
+
+## 关于作者，欢迎关注～
+ [![jianshu][jianshuSvg]][jianshu]   [![juejin][juejinSvg]][juejin]  
 
 ## Donations
  如果您觉得该项目不错的话，并且希望您很有帮助的话，欢迎随意打赏，请作者喝杯咖啡～   
@@ -336,5 +353,6 @@ class SpHelper {
 [jianshuSvg]: https://img.shields.io/badge/简书-@Sky24n-34a48e.svg
 [jianshu]: https://www.jianshu.com/u/cbf2ad25d33a
 
-
+[juejinSvg]: https://img.shields.io/badge/掘金-@Sky24n-34a48e.svg
+[juejin]: https://juejin.im/user/5b9e8a92e51d453df0440422
 
