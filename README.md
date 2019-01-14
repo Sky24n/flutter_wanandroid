@@ -350,9 +350,9 @@ class SpHelper {
 
 [flustars_github]: https://github.com/Sky24n/flustars
 
-[jianshuSvg]: https://img.shields.io/badge/简书-@Sky24n-34a48e.svg
+[jianshuSvg]: https://img.shields.io/badge/简书-@Sky24n-536dfe.svg
 [jianshu]: https://www.jianshu.com/u/cbf2ad25d33a
 
-[juejinSvg]: https://img.shields.io/badge/掘金-@Sky24n-34a48e.svg
+[juejinSvg]: https://img.shields.io/badge/掘金-@Sky24n-536dfe.svg
 [juejin]: https://juejin.im/user/5b9e8a92e51d453df0440422
 
