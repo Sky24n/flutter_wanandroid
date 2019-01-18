@@ -342,11 +342,6 @@ class SpHelper {
 ## 关于作者，欢迎关注～
  [![jianshu][jianshuSvg]][jianshu]   [![juejin][juejinSvg]][juejin]  
 
-## Donations
- 如果您觉得该项目不错的话，并且希望您很有帮助的话，欢迎随意打赏，请作者喝杯咖啡～   
- <img src="https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/alipay.png" width="240">  <img src="https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/wechat.png" width="240">    
- <img src="https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/alipay_reward.png" width="240">
-
 
 [flutter_wanandroid_github]: https://github.com/Sky24n/flutter_wanandroid
 [flutter_wanandroid_apk]: https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppStore/flutter_wanandroid.apk
