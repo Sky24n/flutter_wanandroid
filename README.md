@@ -21,6 +21,8 @@ flutter packages get
 ### APK QR:
   ![flutter_wanandroid](https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/flutter_wanandroid/qrcode.png)
 
+### iOS：请自行clone项目代码运行。另外，iOS始终无法打开wanandroid相关url，有知道原因大佬的希望告知下～ 
+
 ## App目录结构
 >- |--lib
 >    - |-- blocs (bloc相关)
