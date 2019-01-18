@@ -8,6 +8,14 @@
 
 [更新说明](./CHANGELOG.md)
 
+### 运行本项目注意！！！
+由于在国内访问Flutter有时可能会受到限制，clone项目后，请勿直接packages get，建议运行如下目录行：
+```
+export PUB_HOSTED_URL=https://pub.flutter-io.cn  
+export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn  
+flutter packages get
+```
+
 ### APK:[点击下载 v0.1.3](https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppStore/flutter_wanandroid.apk)
 
 ### APK QR:
