@@ -326,6 +326,7 @@ class SpHelper {
 ### Big Thanks
 ① 感谢鸿洋大佬提供的[开源api](http://www.wanandroid.com/blog/show/2)  
 ② 界面参考[gitme](https://flutterchina.club/app/gm.html)  
+③ [Github Trending Api](https://github.com/huchenme/github-trending-api)   
 
 ### 开源库
 1. Dart常用工具类库[common_utils][common_utils_github]  
