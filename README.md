@@ -16,7 +16,13 @@ export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
 flutter packages get
 ```
 
-### APK:[点击下载 v0.1.3](https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppStore/flutter_wanandroid.apk)
+### v0.1.6
+1、主页新增Github Trending，新版本如未显示，请下拉刷新。  
+2、新增热门Tab，掘金热门文章！  
+3、重构HomePage。  
+<img src="https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/flutter_wanandroid/github_trending.gif" width="240">  <img src="https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/flutter_wanandroid/juejin_hot.gif" width="240">
+
+### APK:[点击下载 v0.1.6](https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppStore/flutter_wanandroid.apk)
 
 ### APK QR:
   ![flutter_wanandroid](https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/flutter_wanandroid/qrcode.png)
