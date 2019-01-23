@@ -50,7 +50,7 @@ class _PinyinPage extends State<PinyinPage> {
     switch (_convertType) {
       case TYPE_PINYIN:
         try {
-          _pinyinResult = PinyinHelper.convertToPinyinString(text,
+          _pinyinResult = PinyinHelper.getPinyin(text,
               separator: " ", format: _pinyinFormat);
         } catch (ex) {
           _pinyinResult = ex.toString();

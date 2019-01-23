@@ -22,7 +22,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
   # 汉字转拼音库 https://github.com/flutterchina/lpinyin
-  lpinyin: ^1.0.6
+  lpinyin: ^1.0.7
   # Dart 常用工具类库 https://github.com/Sky24n/common_utils
   common_utils: ^1.0.9
   # Flutter 常用工具类库 https://github.com/Sky24n/flustars
