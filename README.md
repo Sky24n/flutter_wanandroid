@@ -351,7 +351,7 @@ class SpHelper {
 
 ### 项目问题汇总
 Q1：Flutter国际化系统切换iOS不生效？  
-A1：需要至Xcode项目下Localizations添加支持语言即可，[原文](https://stanzhai.site/blog/post/stanzhai/Flutter国际化设置在iOS设备上不生效的问题)。
+A1：在Xcode项目Localizations下添加支持语言即可，[原文](https://stanzhai.site/blog/post/stanzhai/Flutter国际化设置在iOS设备上不生效的问题)。
 
 
 [flutter_wanandroid_github]: https://github.com/Sky24n/flutter_wanandroid
