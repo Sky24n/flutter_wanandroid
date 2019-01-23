@@ -1,7 +1,7 @@
 import 'dart:convert';
 
+import 'package:azlistview/azlistview.dart';
 import 'package:common_utils/common_utils.dart';
-import 'package:flukit/flukit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
@@ -95,6 +95,7 @@ class _CitySelectPageState extends State<CitySelectPage> {
         list[i].tagIndex = "#";
       }
     }
+    SuspensionUtil.sortListBySuspensionTag(list);
   }
 
   void _onSusTagChanged(String tag) {
@@ -160,7 +161,7 @@ class _CitySelectPageState extends State<CitySelectPage> {
             ),
             Expanded(
                 flex: 1,
-                child: QuickSelectListView(
+                child: AzListView(
                   data: _cityList,
                   topData: _hotCityList,
                   itemBuilder: (context, model) => _buildListItem(model),

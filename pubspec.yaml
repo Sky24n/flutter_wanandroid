@@ -29,6 +29,8 @@ dependencies:
   flustars: ^0.1.9
   # Flutter 国际化/多语言库 https://github.com/Sky24n/fluintl
   fluintl: ^0.1.2
+  # Flutter 城市列表 https://github.com/flutterchina/azlistview
+  azlistview: ^0.1.0
 
 
   # https://github.com/flutterchina/dio
