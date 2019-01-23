@@ -350,7 +350,7 @@ class SpHelper {
  [![jianshu][jianshuSvg]][jianshu]   [![juejin][juejinSvg]][juejin]  
 
 ### 项目问题汇总
-Q1：Flutter国际化系统切换iOS不生效？  
+Q1：Flutter国际化系统切换iOS不生效问题？  
 A1：在Xcode项目Localizations下添加支持语言即可，[原文](https://stanzhai.site/blog/post/stanzhai/Flutter国际化设置在iOS设备上不生效的问题)。
 
 
