@@ -2,8 +2,7 @@
 
 
 ## 项目已全部开源。欢迎Star&Fork。
-本项目包含启动页，引导页，主题色，国际化，Bloc，RxDart。拥有较好的项目结构，比较规范的代码。 App拥有精致的UI界面，统一的交互，侧滑退出，列表和Web界面均提供快速滚动至顶部功能(界面参考[gitme](https://flutterchina.club/app/gm.html))。  
-作者初衷是为大家提供一个比较规范的Flutter项目示例。  
+本项目包含启动页，引导页，主题色，国际化，Bloc，RxDart。拥有较好的项目结构，比较规范的代码。 App拥有精致的UI界面，统一的交互，侧滑退出，列表和Web界面均提供快速滚动至顶部功能。  
 有关项目最新动态，可以关注App内第一条Hot Item信息。
 
 [更新说明](./CHANGELOG.md)
@@ -353,6 +352,8 @@ class SpHelper {
 Q1：Flutter国际化系统切换iOS不生效问题？  
 A1：在Xcode项目Localizations下添加支持语言即可，[原文](https://stanzhai.site/blog/post/stanzhai/Flutter国际化设置在iOS设备上不生效的问题)。
 
+### 最后，如果您觉得本项目不错的话，来个star支持下作者吧！
+PS：很多人仅fork代码。。。
 
 [flutter_wanandroid_github]: https://github.com/Sky24n/flutter_wanandroid
 [flutter_wanandroid_apk]: https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppStore/flutter_wanandroid.apk
