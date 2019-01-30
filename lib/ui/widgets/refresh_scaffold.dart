@@ -99,7 +99,7 @@ class RefreshScaffoldState extends State<RefreshScaffold>
               offstage: widget.isLoading != true,
               child: new Container(
                 alignment: Alignment.center,
-                color: ColorT.gray_f0,
+                color: Colours.gray_f0,
                 child: new ProgressView(),
               ),
             )

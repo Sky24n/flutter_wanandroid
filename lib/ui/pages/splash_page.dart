@@ -229,7 +229,7 @@ class SplashPageState extends State<SplashPage> {
                         color: Color(0x66000000),
                         borderRadius: BorderRadius.all(Radius.circular(4.0)),
                         border: new Border.all(
-                            width: 0.33, color: ColorT.divider))),
+                            width: 0.33, color: Colours.divider))),
               ),
             ),
           )

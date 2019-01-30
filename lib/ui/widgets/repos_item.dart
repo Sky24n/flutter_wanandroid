@@ -78,7 +78,7 @@ class ReposItem extends StatelessWidget {
           decoration: new BoxDecoration(
               color: Colors.white,
               border: new Border(
-                  bottom: new BorderSide(width: 0.33, color: ColorT.divider)))),
+                  bottom: new BorderSide(width: 0.33, color: Colours.divider)))),
     );
   }
 }

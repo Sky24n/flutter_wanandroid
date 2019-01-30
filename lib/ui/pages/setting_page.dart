@@ -21,7 +21,7 @@ class SettingPage extends StatelessWidget {
               children: <Widget>[
                 Icon(
                   Icons.color_lens,
-                  color: ColorT.gray_66,
+                  color: Colours.gray_66,
                 ),
                 Padding(
                   padding: EdgeInsets.only(left: 10.0),
@@ -56,7 +56,7 @@ class SettingPage extends StatelessWidget {
               children: <Widget>[
                 Icon(
                   Icons.language,
-                  color: ColorT.gray_66,
+                  color: Colours.gray_66,
                 ),
                 Padding(
                   padding: EdgeInsets.only(left: 10.0),
@@ -77,7 +77,7 @@ class SettingPage extends StatelessWidget {
                             languageCode: 'zh', countryCode: 'CH'),
                     style: TextStyle(
                       fontSize: 14.0,
-                      color: ColorT.gray_99,
+                      color: Colours.gray_99,
                     )),
                 Icon(Icons.keyboard_arrow_right)
               ],

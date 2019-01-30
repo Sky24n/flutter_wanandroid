@@ -118,7 +118,7 @@ class RecHotPage extends StatelessWidget {
                       decoration: new BoxDecoration(
                           color: Colors.white,
                           border: new Border.all(
-                              width: 0.33, color: ColorT.divider))),
+                              width: 0.33, color: Colours.divider))),
                 );
               },
             );

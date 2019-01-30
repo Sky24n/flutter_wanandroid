@@ -43,13 +43,13 @@ class AboutPage extends StatelessWidget {
                   Gaps.vGap5,
                   new Text(
                     '版本号 ' + AppConfig.version,
-                    style: new TextStyle(color: ColorT.gray_99, fontSize: 14.0),
+                    style: new TextStyle(color: Colours.gray_99, fontSize: 14.0),
                   )
                 ],
               ),
               decoration: new BoxDecoration(
                   color: Colors.white,
-                  border: new Border.all(width: 0.33, color: ColorT.divider))),
+                  border: new Border.all(width: 0.33, color: Colours.divider))),
           new ComArrowItem(github),
           new ComArrowItem(author),
           new StreamBuilder(

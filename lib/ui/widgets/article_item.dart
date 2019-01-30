@@ -72,7 +72,7 @@ class ArticleItem extends StatelessWidget {
           ),
           decoration: new BoxDecoration(
               color: Colors.white,
-              border: new Border.all(width: 0.33, color: ColorT.divider))),
+              border: new Border.all(width: 0.33, color: Colours.divider))),
     );
   }
 }

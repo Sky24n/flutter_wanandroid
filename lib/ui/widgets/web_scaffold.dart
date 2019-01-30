@@ -71,7 +71,7 @@ class WebScaffoldState extends State<WebScaffold> {
                                 children: <Widget>[
                                   Icon(
                                     Icons.language,
-                                    color: ColorT.gray_66,
+                                    color: Colours.gray_66,
                                     size: 22.0,
                                   ),
                                   Gaps.hGap10,
@@ -93,7 +93,7 @@ class WebScaffoldState extends State<WebScaffold> {
 //                                children: <Widget>[
 //                                  Icon(
 //                                    Icons.collections,
-//                                    color: ColorT.gray_66,
+//                                    color: Colours.gray_66,
 //                                    size: 22.0,
 //                                  ),
 //                                  Gaps.hGap10,
@@ -115,7 +115,7 @@ class WebScaffoldState extends State<WebScaffold> {
                                 children: <Widget>[
                                   Icon(
                                     Icons.share,
-                                    color: ColorT.gray_66,
+                                    color: Colours.gray_66,
                                     size: 22.0,
                                   ),
                                   Gaps.hGap10,

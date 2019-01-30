@@ -1,11 +1,14 @@
 # Flutter版 WanAndroid App.
 
-
 ## 项目已全部开源。欢迎Star&Fork。
 本项目包含启动页，引导页，主题色，国际化，Bloc，RxDart。拥有较好的项目结构，比较规范的代码。 App拥有精致的UI界面，统一的交互，侧滑退出，列表和Web界面均提供快速滚动至顶部功能。  
-有关项目最新动态，可以关注App内第一条Hot Item信息。
 
 [更新说明](./CHANGELOG.md)
+
+### 有关项目最新动态，可以关注App内第一条Hot Item信息。
+
+### 温馨提示，请保持App更新至最新版本～
+PS：未来可以第一时间下载体验作者其他NB项目的App。
 
 ### 运行本项目注意！！！
 由于在国内访问Flutter有时可能会受到限制，clone项目后，请勿直接packages get，建议运行如下目录行：
@@ -36,7 +39,7 @@ flutter packages get
 >    - |-- db (数据库)
 >    - |-- event (事件类)
 >    - |-- models (实体类)
->    - |-- resources (资源文件，string，colors，dimens，styles)
+>    - |-- res (资源文件，string，colors，dimens，styles)
 >    - |-- ui (界面相关page，dialog，widgets)
 >    - |-- utils (工具类)
 ## data网络数据层
@@ -114,8 +117,8 @@ class LoginReq {
 }
 ```
 
-## 资源文件 resources
->- |--resources
+## 资源文件 res
+>- |--res
 >    - |-- colors.dart
 >    - |-- dimens.dart
 >    - |-- strings.dart
@@ -123,7 +126,7 @@ class LoginReq {
 
 ### colors.dart
 ```
-class ColorT {
+class Colours {
   static const Color app_main = Color(0xFF666666);  
   
   static const Color text_dark = Color(0xFF333333);
@@ -171,17 +174,26 @@ Map<String, Map<String, Map<String, String>>> localizedValues = {
 class TextStyles {
   static TextStyle listTitle = TextStyle(
     fontSize: Dimens.font_sp16,
-    color: ColorT.text_dark,
+    color: Colours.text_dark,
     fontWeight: FontWeight.bold,
   );
   static TextStyle listContent = TextStyle(
     fontSize: Dimens.font_sp14,
-    color: ColorT.text_normal,
+    color: Colours.text_normal,
   );
   static TextStyle listExtra = TextStyle(
     fontSize: Dimens.font_sp12,
-    color: ColorT.text_gray,
+    color: Colours.text_gray,
   );
+}
+//  间隔
+class Gaps {
+  // 水平间隔
+  static Widget hGap5 = new SizedBox(width: Dimens.gap_dp5);
+  static Widget hGap10 = new SizedBox(width: Dimens.gap_dp10);
+  // 垂直间隔
+  static Widget vGap5 = new SizedBox(height: Dimens.gap_dp5);
+  static Widget vGap10 = new SizedBox(height: Dimens.gap_dp10);
 }
 ```
 ### Flutter 国际化相关
@@ -204,7 +216,7 @@ IntlUtil.getString(context, Ids.titleHome);
 CustomLocalizations.of(context).getString(StringIds.titleHome);
 ```
 
-### Flutter 屏幕适配 [ScreenUtil](https://github.com/Sky24n/flustars)
+### Flutter 屏幕适配 [ScreenUtil](https://github.com/Sky24n/flustars) 
  方案一、不依赖context
 ```
 步骤 1

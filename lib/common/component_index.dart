@@ -2,7 +2,7 @@ export 'dart:convert';
 
 export 'package:flutter_wanandroid/blocs/bloc_index.dart';
 export 'package:flutter_wanandroid/ui/widgets/widget_index.dart';
-export 'package:flutter_wanandroid/resources/res_index.dart';
+export 'package:flutter_wanandroid/res/res_index.dart';
 export 'package:flutter_wanandroid/utils/util_index.dart';
 
 export 'package:flutter_wanandroid/common/common.dart';

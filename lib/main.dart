@@ -22,7 +22,7 @@ class MyApp extends StatefulWidget {
 
 class MyAppState extends State<MyApp> {
   Locale _locale;
-  Color _themeColor = ColorT.app_main;
+  Color _themeColor = Colours.app_main;
 
   @override
   void initState() {

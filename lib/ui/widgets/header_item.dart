@@ -65,9 +65,9 @@ class HeaderItem extends StatelessWidget {
             ],
           )),
       decoration: new BoxDecoration(
-          //new Border.all(width: 0.33, color: ColorT.divider)
+          //new Border.all(width: 0.33, color: Colours.divider)
           border: new Border(
-              bottom: new BorderSide(width: 0.33, color: ColorT.divider))),
+              bottom: new BorderSide(width: 0.33, color: Colours.divider))),
     );
   }
 }
