@@ -27,13 +27,14 @@ class MainDemosPageState extends State<MainDemosPage> {
     mItemList.add(new ItemModel("城市列表", new CitySelectPage("City Select")));
     mItemList.add(new ItemModel("Date Util", new DatePage("Date Util")));
     mItemList.add(new ItemModel("Regex Util", new RegexUtilPage("Regex Util")));
-    mItemList.add(new ItemModel("Widget Util", new WidgetPage("Widget Util")));
+    mItemList.add(new ItemModel("Widget Util", new WidgetUtilPage("Widget Util")));
     mItemList.add(new ItemModel("Timer Util", new TimerPage("Timer Util")));
     mItemList.add(new ItemModel("Money Util", new MoneyPage("Money Util")));
     mItemList
         .add(new ItemModel("Timeline Util", new TimelinePage("Timeline Util")));
     mItemList
         .add(new ItemModel("圆形/圆角头像", new RoundPortraitPage(title: '圆形/圆角头像')));
+    mItemList.add(new ItemModel("SpUtil", new SpUtilPage('SpUtil')));
   }
 
   Widget buildItem(ItemModel model) {

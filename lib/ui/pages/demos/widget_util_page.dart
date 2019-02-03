@@ -1,18 +1,18 @@
 import 'package:flustars/flustars.dart';
 import 'package:flutter/material.dart';
 
-class WidgetPage extends StatefulWidget {
+class WidgetUtilPage extends StatefulWidget {
   final String title;
 
-  WidgetPage(this.title);
+  WidgetUtilPage(this.title);
 
   @override
   State<StatefulWidget> createState() {
-    return new _WidgetPageState();
+    return new _WidgetUtilPageState();
   }
 }
 
-class _WidgetPageState extends State<WidgetPage> {
+class _WidgetUtilPageState extends State<WidgetUtilPage> {
   double testHeight = 50.0;
   bool isOpen = false;
 
