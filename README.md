@@ -362,7 +362,6 @@ Q1：Flutter国际化系统切换iOS不生效问题？
 A1：在Xcode项目Localizations下添加支持语言即可，[原文](https://stanzhai.site/blog/post/stanzhai/Flutter国际化设置在iOS设备上不生效的问题)。
 
 ### 最后，如果您觉得本项目不错的话，来个star支持下作者吧！
-PS：很多人仅fork代码。。。
 
 [flutter_wanandroid_github]: https://github.com/Sky24n/flutter_wanandroid
 [flutter_wanandroid_apk]: https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppStore/flutter_wanandroid.apk
