@@ -45,19 +45,20 @@ dependencies:
   pull_to_refresh: ^1.1.6
   # device_info
   device_info: ^0.3.0
-  # flutter_swiper: ^1.1.4
-  # webview_flutter: ^0.2.0
-
+  # webview_flutter
+  webview_flutter: ^0.3.3+1
   # https://github.com/flutterchina/flukit.
-  flukit:
-    git:
-      url: git://github.com/flutterchina/flukit.git
-      path: package_src/
-  webview_flutter:
-    git:
-      url: git://github.com/Sky24n/plugins.git
-      ref: newDev
-      path: packages/webview_flutter/
+  flukit: ^1.0.0
+
+#  flukit:
+#    git:
+#      url: git://github.com/flutterchina/flukit.git
+#      path: package_src/
+#  webview_flutter:
+#    git:
+#      url: git://github.com/Sky24n/plugins.git
+#      ref: newDev
+#      path: packages/webview_flutter/
 
 #  flustars:
 #    path: ../flustars/

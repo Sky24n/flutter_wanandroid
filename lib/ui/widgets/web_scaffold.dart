@@ -21,8 +21,8 @@ class WebScaffold extends StatefulWidget {
 }
 
 class WebScaffoldState extends State<WebScaffold> {
-  WebViewController _webViewController;
-  bool _isShowFloatBtn = false;
+//  WebViewController _webViewController;
+//  bool _isShowFloatBtn = false;
 
   void _onPopSelected(String value) {
     switch (value) {
@@ -131,37 +131,37 @@ class WebScaffoldState extends State<WebScaffold> {
       ),
       body: new WebView(
         onWebViewCreated: (WebViewController webViewController) {
-          _webViewController = webViewController;
-          _webViewController.addListener(() {
-            int _scrollY = _webViewController.scrollY.toInt();
-            if (_scrollY < 480 && _isShowFloatBtn) {
-              _isShowFloatBtn = false;
-              setState(() {});
-            } else if (_scrollY > 480 && !_isShowFloatBtn) {
-              _isShowFloatBtn = true;
-              setState(() {});
-            }
-          });
+//          _webViewController = webViewController;
+//          _webViewController.addListener(() {
+//            int _scrollY = _webViewController.scrollY.toInt();
+//            if (_scrollY < 480 && _isShowFloatBtn) {
+//              _isShowFloatBtn = false;
+//              setState(() {});
+//            } else if (_scrollY > 480 && !_isShowFloatBtn) {
+//              _isShowFloatBtn = true;
+//              setState(() {});
+//            }
+//          });
         },
         initialUrl: widget.url,
         javascriptMode: JavascriptMode.unrestricted,
       ),
-      floatingActionButton: _buildFloatingActionButton(),
+//      floatingActionButton: _buildFloatingActionButton(),
     );
   }
 
-  Widget _buildFloatingActionButton() {
-    if (_webViewController == null || _webViewController.scrollY < 480) {
-      return null;
-    }
-    return new FloatingActionButton(
-        heroTag: widget.title ?? widget.titleId,
-        backgroundColor: Theme.of(context).primaryColor,
-        child: Icon(
-          Icons.keyboard_arrow_up,
-        ),
-        onPressed: () {
-          _webViewController.scrollTop();
-        });
-  }
+//  Widget _buildFloatingActionButton() {
+//    if (_webViewController == null || _webViewController.scrollY < 480) {
+//      return null;
+//    }
+//    return new FloatingActionButton(
+//        heroTag: widget.title ?? widget.titleId,
+//        backgroundColor: Theme.of(context).primaryColor,
+//        child: Icon(
+//          Icons.keyboard_arrow_up,
+//        ),
+//        onPressed: () {
+//          _webViewController.scrollTop();
+//        });
+//  }
 }
