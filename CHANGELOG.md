@@ -1,4 +1,33 @@
-## 最新开源： 网络框架DioUtil，屏幕适配ScreenUtil 
+## 更新说明 
+### v0.1.7   (2019.03.04)
+1、App新Logo。   
+2、闪屏页优化。  
+3、升级WebView，新增loading。  
+4、新增内置浏览器，修复oppo R15, R11st无法查看详情页，若其他手机无法查看详情页，请自行修改为内置浏览器。  
+
+### v0.1.6   (2019.01.18)
+1、主页新增Github Trending，新版本如未显示，请下拉刷新。  
+2、新增热门Tab，掘金热门文章！  
+3、重构HomePage。  
+
+### v0.1.3   (2019.01.09)
+① 新WebView 重构项目。
+
+### v0.1.2   (2018.12.20)
+① 网络框架DioUtil  
+② 合并[flutter_demos][flutter_demos_github]  
+
+### v0.1.1   (2018.11.19)
+① 新增启动页  
+② 新增引导页  
+③ 修复banner无法点击bug，一些优化  
+
+### v0.1.0   (2018.11.16)
+① 堪称完美的UI界面<sup>almost</sup>  
+② 支持国际化  
+③ 支持更换主题色 
+
+## 其他 
 ### [Flutter工具类库 flustars][flustars_github] 
 #### v0.1.8(2018.12.29)   
 ScreenUtil 屏幕适配更新。  
@@ -106,25 +135,6 @@ I/flutter ( 5922): [request   ]:   method: GET  baseUrl: http://www.wanandroid.c
 I/flutter ( 5922): [reqdata   ]:   null
 I/flutter ( 5922): [response  ]:   {data: {curPage: 1, datas: [], offset: 0, over: true, pageCount: 0, size: 20, total: 0}, errorCode: 0, errorMsg: }
 ```
-
-
-## 更新说明 
-### v0.1.3   (2019.01.09)
-① 新WebView 重构项目。
-
-### v0.1.2   (2018.12.20)
-① 网络框架DioUtil  
-② 合并[flutter_demos][flutter_demos_github]  
-
-### v0.1.1   (2018.11.19)
-① 新增启动页  
-② 新增引导页  
-③ 修复banner无法点击bug，一些优化  
-
-### v0.1.0   (2018.11.16)
-① 堪称完美的UI界面<sup>almost</sup>  
-② 支持国际化  
-③ 支持更换主题色 
 
 
  [flutter_demos_github]: https://github.com/Sky24n/flutter_demos
