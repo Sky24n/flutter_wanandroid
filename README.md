@@ -14,6 +14,11 @@ export PUB_HOSTED_URL=https://pub.flutter-io.cn
 export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn  
 flutter packages get
 ```
+### v0.1.7   (2019.03.04)
+1、App新Logo。   
+2、闪屏页优化。  
+3、升级WebView，新增loading，点击TitleBar返回可回退网页。  
+4、新增内置浏览器，修复oppo R15, R11st无法查看详情页，若其他手机无法查看详情页，请自行修改为内置浏览器。  
 
 ### v0.1.6
 1、主页新增Github Trending，新版本如未显示，请下拉刷新。  
@@ -21,7 +26,7 @@ flutter packages get
 3、重构HomePage。  
 <img src="https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/flutter_wanandroid/github_trending.png" width="240">  <img src="https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/flutter_wanandroid/juejin_hot.png" width="240">
 
-### APK:[点击下载 v0.1.6](https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppStore/flutter_wanandroid.apk)
+### APK:[点击下载 v0.1.7](https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppStore/flutter_wanandroid.apk)
 
 ### APK QR:
   ![flutter_wanandroid](https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/flutter_wanandroid/qrcode.png)
@@ -354,14 +359,17 @@ class SpHelper {
 11. 安卓webview增加滚动监听[webview_flutter](https://github.com/Sky24n/plugins/tree/master/packages/webview_flutter)  
 12. 城市列表[azlistview](https://github.com/flutterchina/azlistview)  
 
-## 关于作者，欢迎关注～
- [![jianshu][jianshuSvg]][jianshu]   [![juejin][juejinSvg]][juejin]  
-
 ### 项目问题汇总
 Q1：Flutter国际化系统切换iOS不生效问题？  
 A1：在Xcode项目Localizations下添加支持语言即可，[原文](https://stanzhai.site/blog/post/stanzhai/Flutter国际化设置在iOS设备上不生效的问题)。
 
-### 最后，如果您觉得本项目不错的话，来个star支持下作者吧！
+### 关于作者
+GitHub : [Sky24n](https://github.com/Sky24n)  
+简书 &nbsp;&nbsp;&nbsp;&nbsp;: [Sky24n](https://github.com/Sky24n)  
+掘金 &nbsp;&nbsp;&nbsp;&nbsp;: [Sky24n](https://github.com/Sky24n)  
+Pub &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: [Sky24n](https://pub.flutter-io.cn/packages?q=email%3A863764940%40qq.com)    
+Email &nbsp;&nbsp;: 863764940@qq.com  
+如果您觉得本项目不错的话，来个star支持下作者吧！ 
 
 [flutter_wanandroid_github]: https://github.com/Sky24n/flutter_wanandroid
 [flutter_wanandroid_apk]: https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppStore/flutter_wanandroid.apk
