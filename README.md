@@ -366,7 +366,7 @@ A1：在Xcode项目Localizations下添加支持语言即可，[原文](https://s
 ### 关于作者
 GitHub : [Sky24n](https://github.com/Sky24n)  
 简书 &nbsp;&nbsp;&nbsp;&nbsp;: [Sky24n](https://www.jianshu.com/u/cbf2ad25d33a)  
-掘金 &nbsp;&nbsp;&nbsp;&nbsp;: [Sky24n](https://juejin.im/user/5b9e8a92e51d453df0440422)  
+掘金 &nbsp;&nbsp;&nbsp;&nbsp;: [Sky24n](https://juejin.im/user/5b9e8a92e51d453df0440422/posts)  
 Pub &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: [Sky24n](https://pub.flutter-io.cn/packages?q=email%3A863764940%40qq.com)    
 Email &nbsp;&nbsp;: 863764940@qq.com  
 如果您觉得本项目不错的话，来个star支持下作者吧！ 
