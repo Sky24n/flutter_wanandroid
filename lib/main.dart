@@ -6,12 +6,10 @@ import 'package:flutter_wanandroid/data/net/dio_util.dart';
 import 'package:flutter_wanandroid/ui/pages/main_page.dart';
 import 'package:flutter_wanandroid/ui/pages/page_index.dart';
 
-Future<void> main() async {
-  return runApp(BlocProvider<ApplicationBloc>(
-    bloc: ApplicationBloc(),
-    child: BlocProvider(child: MyApp(), bloc: MainBloc()),
-  ));
-}
+void main() => runApp(BlocProvider<ApplicationBloc>(
+      bloc: ApplicationBloc(),
+      child: BlocProvider(child: MyApp(), bloc: MainBloc()),
+    ));
 
 class MyApp extends StatefulWidget {
   @override
