@@ -50,19 +50,6 @@ dependencies:
   # https://github.com/flutterchina/flukit.
   flukit: ^1.0.0
 
-#  flukit:
-#    git:
-#      url: git://github.com/flutterchina/flukit.git
-#      path: package_src/
-#  webview_flutter:
-#    git:
-#      url: git://github.com/Sky24n/plugins.git
-#      ref: newDev
-#      path: packages/webview_flutter/
-
-#  flustars:
-#    path: ../flustars/
-
 dev_dependencies:
   flutter_test:
     sdk: flutter
