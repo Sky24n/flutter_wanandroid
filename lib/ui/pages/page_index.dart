@@ -15,5 +15,4 @@ export 'other_page.dart';
 export 'splash_page.dart';
 export 'rec_hot_page.dart';
 
-export 'demos/main_demos.dart';
 export 'backdrop_demo.dart';

@@ -1,11 +1,9 @@
 # Flutter版 WanAndroid App.
 
-## 项目已全部开源。欢迎Star&Fork。
+## 项目已全部开源(V0.1.5)。欢迎Star&Fork。
 本项目包含启动页，引导页，主题色，国际化，Bloc，RxDart。拥有较好的项目结构，比较规范的代码。 App拥有精致的UI界面，统一的交互，侧滑退出，列表和Web界面均提供快速滚动至顶部功能。  
 
-[更新说明](./CHANGELOG.md)
-
-#### 有关项目最新动态，可以关注App内第一条Hot Item信息。
+有关项目最新动态，可以关注App内第一条Hot Item信息。
 
 ### 运行本项目注意！！！
 由于在国内访问Flutter有时可能会受到限制，clone项目后，请勿直接packages get，建议运行如下目录行：
@@ -14,11 +12,8 @@ export PUB_HOSTED_URL=https://pub.flutter-io.cn
 export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn  
 flutter packages get
 ```
-### v0.1.7   (2019.03.04)
-1、App新Logo。   
-2、闪屏页优化。  
-3、升级WebView，新增loading，点击TitleBar返回可回退网页。  
-4、新增内置浏览器，修复oppo R15, R11st无法查看详情页，若其他手机无法查看详情页，请自行修改为内置浏览器。  
+
+### [更新说明](./CHANGELOG.md)
 
 ### v0.1.6
 1、主页新增Github Trending，新版本如未显示，请下拉刷新。  
@@ -26,7 +21,7 @@ flutter packages get
 3、重构HomePage。  
 <img src="https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/flutter_wanandroid/github_trending.png" width="240">  <img src="https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/flutter_wanandroid/juejin_hot.png" width="240">
 
-### APK:[点击下载 v0.1.7](https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppStore/flutter_wanandroid.apk)
+### APK:[点击下载 v0.1.x](https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppStore/flutter_wanandroid.apk)
 
 ### APK QR:
   ![flutter_wanandroid](https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/flutter_wanandroid/qrcode.png)
@@ -39,17 +34,20 @@ flutter packages get
 >    - |-- common (常用类，例如常量Constant)
 >    - |-- data (网络数据层)
 >    - |-- db (数据库)
+>    - |-- demos (flutter demos)
 >    - |-- event (事件类)
 >    - |-- models (实体类)
 >    - |-- res (资源文件，string，colors，dimens，styles)
 >    - |-- ui (界面相关page，dialog，widgets)
 >    - |-- utils (工具类)
-## data网络数据层
+
+### data网络数据层
 >- |--data
 >    - |-- api (url字段)
 >    - |-- net (单例DioUtil)
 >    - |-- protocol (请求与返回实体类)
 >    - |-- repository (接口请求&解析)
+
 ### api
 ```
 class WanAndroidApi {
@@ -72,6 +70,33 @@ class WanAndroidApi {
   }
 }
 ```
+### 网络请求工具类 单例DioUtil
+```
+// 打开debug模式.
+DioUtil.openDebug();   
+  
+// 配置网络参数.
+Options options = DioUtil.getDefOptions();
+options.baseUrl = "http://www.wanandroid.com/";
+HttpConfig config = new HttpConfig(options: options);
+DioUtil().setConfig(config);
+  
+// 两种单例请求方式.
+DioUtil().request<List>(Method.get, "banner/json");
+DioUtil.getInstance().request(Method.get, "banner/json");
+  
+//示例
+LoginReq req = new LoginReq('username', 'password');
+DioUtil().request(Method.post, "user/login",data: req.toJson());
+  
+//示例
+FormData formData = new FormData.from({
+      "username": "username",
+      "password": "password",
+    });
+DioUtil().requestR(Method.post, "user/login",data: rformData);
+
+```  
 ### 请求与返回实体类 protocol
 ```
 class LoginReq {
@@ -262,51 +287,53 @@ ScreenUtil.getScaleH(context, size); //返回根据屏幕高适配后尺寸 （�
 ScreenUtil.getScaleSp(context, size) ;//返回根据屏幕宽适配后字体尺寸
 ```
 ### Flutter 数据存储  [SpUtil](https://github.com/Sky24n/flustars)
-SpUtil : 单例"同步" SharedPreferences 工具类。
-项目中为大家提供SpHelper，方便存取实体对象类。
+单例"同步" SharedPreferences 工具类。  
+支持get获取默认参数、支持存储实体对象、支持存储实体对象数组。
 ```
-// 存储SplashModel实体对象
-SplashModel model = new SplashModel();
-SpHelper.putObject(Constant.KEY_SPLASH_MODEL, model);  
+    // 等待Sp初始化完成。
+    await SpUtil.getInstance();
+    
+    SpUtil.getString('key', defValue: '');
+    SpUtil.getInt('key', defValue: 0);
   
-// 获取SplashModel实体对象
-SplashModel model = SpHelper.getSplashModel();  
- 
-class SpHelper {
- // 存储Obj，T 用于区分存储类型
-  static void putObject<T>(String key, Object value) {
-    switch (T) {
-      case int:
-        SpUtil.putInt(key, value);
-        break;
-      case double:
-        SpUtil.putDouble(key, value);
-        break;
-      case bool:
-        SpUtil.putBool(key, value);
-        break;
-      case String:
-        SpUtil.putString(key, value);
-        break;
-      case List:
-        SpUtil.putStringList(key, value);
-        break;
-      default:
-        SpUtil.putString(key, value == null ? "" : json.encode(value));
-        break;
-    }
-  }
+    /// save object example.
+    /// 存储实体对象示例。
+    City city = new City();
+    city.name = "成都市";
+    SpUtil.putObject("loc_city", city);
+  
+    Map dataStr = SpUtil.getObject("loc_city");
+    City hisCity = dataStr == null ? null : City.fromJson(dataStr);
+    print("thll Str: " + (hisCity == null ? "null" : hisCity.toString()));
+  
+    /// save object list example.
+    /// 存储实体对象List示例。
+    List<City> list = new List();
+    list.add(new City(name: "成都市"));
+    list.add(new City(name: "北京市"));
+    SpUtil.putObjectList("loc_city_list", list);
+  
+    List<Map> dataList = SpUtil.getObjectList("loc_city_list");
+    List<City> _cityList = dataList?.map((value) {
+      return City.fromJson(value);
+    })?.toList();
 
-  static SplashModel getSplashModel() {
-    String _splashModel = SpUtil.getString(Constant.KEY_SPLASH_MODEL);
-    if (ObjectUtil.isNotEmpty(_splashModel)) {
-      Map userMap = json.decode(_splashModel);
-      return SplashModel.fromJson(userMap);
-    }
-    return null;
-  }
-}
+    print("thll List: " + (_cityList == null ? "null" : _cityList.toString()));
 ```
+
+## Flutter Demos 
+>- |--demos
+>    - |-- city_select_page.dart 城市列表(索引&悬停)示例
+>    - |-- date_page.dart 日期格式化示例
+>    - |-- image_size_page.dart 获取图片尺寸示例
+>    - |-- money_page.dart 金额(元转分/分转元)示例
+>    - |-- pinyin_page.dart 汉字转拼音示例
+>    - |-- regex_page.dart 正则工具类示例
+>    - |-- round_portrait_page.dart 圆形圆角头像示例
+>    - |-- timeline_page.dart 时间轴示例
+>    - |-- timer_page.dart 倒计时/定时任务示例
+>    - |-- widget_page.dart 获取Widget尺寸/屏幕坐标示例
+
 
 ## Screenshot
 ### 主界面
@@ -340,16 +367,17 @@ class SpHelper {
 ① 感谢鸿洋大佬提供的[开源api](http://www.wanandroid.com/blog/show/2)  
 ② 界面参考[gitme](https://flutterchina.club/app/gm.html)  
 ③ [Github Trending Api](https://github.com/huchenme/github-trending-api)   
+④ [Streams-Block-Reactive-Programming-in-Flutter](https://github.com/boeledi/Streams-Block-Reactive-Programming-in-Flutter) 
 
 ### 开源库
-1. Dart常用工具类库[common_utils][common_utils_github]  
+1. Dart常用工具类库[common_utils][common_utils_github]（作者）  
    该库包含TimerUtil（倒计时，定时任务），TimelineUtil（时间轴），DateUtil（日期格式化），RegexUtil（正则验证手机号，身份证，邮箱等等），RegexUtil（正则验证手机号，身份证，邮箱等等），NumUtil（保留x位小数, 精确加、减、乘、除, 防止精度丢失），MoneyUtil（元转分，分转元），ObjectUtil（判空），LogUtil（简单封装打印日志）。  
    如果你有不错的纯dart工具类或对已有对工具类有更好的优化建议，欢迎PR，大家一起维护～  
-2. Flutter常用工具类库[flustars][flustars_github]  
+2. Flutter常用工具类库[flustars][flustars_github]（作者）  
    该库包含SpUtil（单例"同步" SharedPreferences 工具类），ScreenUtil（屏幕适配），WidgetUtil（Widget渲染监听，获取Widget宽高，在屏幕上的坐标）。  
    如果你有不错的Flutter工具类或对已有对工具类有更好的优化建议，欢迎PR，大家一起维护～   
-3. 汉字转拼音库[lpinyin](https://github.com/flutterchina/lpinyin)  
-4. 国际化/多语言库[fluintl](https://github.com/Sky24n/fluintl)  
+3. 汉字转拼音库[lpinyin](https://github.com/flutterchina/lpinyin)（作者）  
+4. 国际化/多语言库[fluintl](https://github.com/Sky24n/fluintl)（作者）  
 5. UI组件库[flukit](https://github.com/flutterchina/flukit)  
 6. 网络请求[dio](https://github.com/flutterchina/dio)  
 7. 图片加载[cached_network_image](https://github.com/renefloor/flutter_cached_network_image)  
@@ -357,7 +385,7 @@ class SpHelper {
 9. [url_launcher](https://github.com/flutter/plugins/tree/master/packages/url_launcher)  
 10. 点赞效果[LikeButton](https://github.com/yumi0629/LikeButton)  
 11. 安卓webview增加滚动监听[webview_flutter](https://github.com/Sky24n/plugins/tree/master/packages/webview_flutter)  
-12. 城市列表[azlistview](https://github.com/flutterchina/azlistview)  
+12. 城市列表[azlistview](https://github.com/flutterchina/azlistview)（作者）  
 
 ### 项目问题汇总
 Q1：Flutter国际化系统切换iOS不生效问题？  

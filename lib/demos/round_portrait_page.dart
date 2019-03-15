@@ -4,7 +4,7 @@ import 'package:flutter_wanandroid/utils/utils.dart';
 class RoundPortraitPage extends StatelessWidget {
   final String title;
 
-  const RoundPortraitPage({Key key, this.title}) : super(key: key);
+  const RoundPortraitPage(this.title, {Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

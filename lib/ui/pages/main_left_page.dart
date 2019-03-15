@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_wanandroid/common/component_index.dart';
+import 'package:flutter_wanandroid/demos/main_demos.dart';
 import 'package:flutter_wanandroid/ui/pages/page_index.dart';
 
 class MainLeftPage extends StatefulWidget {

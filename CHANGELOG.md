@@ -1,4 +1,15 @@
 ## 更新说明 
+### v0.1.9 (2019.03.16)   
+1.闪屏页支持视频。  
+2.支持App应用内升级。  
+3.玩安卓Api升级为https。  
+  
+温馨提醒：  
+   ① 为了方便大家体验应用内升级，服务端版本号为：v0.2.0，Apk版本始终为v0.1.9。  
+   ② 为了保护掘金作者原创文章，热门文章修改为从第二页开始获取。
+
+<img src="https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/flutter_wanandroid/upgrade_dialog.png" width="240">
+
 ### v0.1.7   (2019.03.04)
 1、App新Logo。   
 2、闪屏页优化。  

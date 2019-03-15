@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_wanandroid/ui/pages/demos/index.dart';
+import 'package:flutter_wanandroid/demos/index.dart';
 import 'package:flutter_wanandroid/utils/navigator_util.dart';
+import 'package:flutter_wanandroid/utils/util_index.dart';
 
 class ItemModel {
   String title;
@@ -22,19 +23,19 @@ class MainDemosPageState extends State<MainDemosPage> {
   @override
   void initState() {
     super.initState();
-    mItemList.add(new ItemModel("我的Flutter开源库集合", null));
+
+    mItemList.add(new ItemModel("Github【common_utils】", null));
     mItemList.add(new ItemModel("汉字转拼音", new PinyinPage("汉字转拼音")));
     mItemList.add(new ItemModel("城市列表", new CitySelectPage("City Select")));
     mItemList.add(new ItemModel("Date Util", new DatePage("Date Util")));
     mItemList.add(new ItemModel("Regex Util", new RegexUtilPage("Regex Util")));
-    mItemList.add(new ItemModel("Widget Util", new WidgetUtilPage("Widget Util")));
+    mItemList.add(new ItemModel("Widget Util", new WidgetPage("Widget Util")));
     mItemList.add(new ItemModel("Timer Util", new TimerPage("Timer Util")));
     mItemList.add(new ItemModel("Money Util", new MoneyPage("Money Util")));
     mItemList
         .add(new ItemModel("Timeline Util", new TimelinePage("Timeline Util")));
-    mItemList
-        .add(new ItemModel("圆形/圆角头像", new RoundPortraitPage(title: '圆形/圆角头像')));
-    mItemList.add(new ItemModel("SpUtil", new SpUtilPage('SpUtil')));
+    mItemList.add(new ItemModel("圆形/圆角头像", new RoundPortraitPage('圆形/圆角头像')));
+    mItemList.add(new ItemModel("获取图片尺寸", new ImageSizePage('获取图片尺寸')));
   }
 
   Widget buildItem(ItemModel model) {
@@ -42,8 +43,8 @@ class MainDemosPageState extends State<MainDemosPage> {
         onTap: () {
           if (model.page == null) {
             NavigatorUtil.pushWeb(context,
-                url: 'https://www.jianshu.com/p/9e5cc4ba3a8e',
-                title: '我的Flutter开源库集合');
+                url: 'https://github.com/Sky24n/common_utils/blob/master/README.md',
+                title: 'Github【common_utils】');
           } else {
             NavigatorUtil.pushPage(context, model.page, pageName: model.title);
           }
