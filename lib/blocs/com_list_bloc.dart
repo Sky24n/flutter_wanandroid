@@ -81,7 +81,7 @@ class ComListBloc implements BlocBase {
       _comListEventSink.add(new StatusEvent(labelId,
           ObjectUtil.isEmpty(list) ? RefreshStatus.noMore : RefreshStatus.idle,
           cid: cid));
-    }).catchError(() {
+    }).catchError((_) {
       _comListPage--;
       _comListEventSink.add(new StatusEvent(labelId, RefreshStatus.failed));
     });
@@ -98,7 +98,7 @@ class ComListBloc implements BlocBase {
       _comListEventSink.add(new StatusEvent(labelId,
           ObjectUtil.isEmpty(list) ? RefreshStatus.noMore : RefreshStatus.idle,
           cid: cid));
-    }).catchError(() {
+    }).catchError((_) {
       _comListPage--;
       _comListEventSink.add(new StatusEvent(labelId, RefreshStatus.failed));
     });
@@ -118,7 +118,7 @@ class ComListBloc implements BlocBase {
       _comListEventSink.add(new StatusEvent(labelId,
           ObjectUtil.isEmpty(list) ? RefreshStatus.noMore : RefreshStatus.idle,
           cid: cid));
-    }).catchError(() {
+    }).catchError((_) {
       _comListPage--;
       _comListEventSink.add(new StatusEvent(labelId, RefreshStatus.failed));
     });

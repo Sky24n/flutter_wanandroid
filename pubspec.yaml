@@ -7,10 +7,10 @@ description: Flutter Wanandroid App.
 # Both the version and the builder number may be overridden in flutter
 # build by specifying --build-name and --build-number, respectively.
 # Read more about versioning at semver.org.
-version: 0.1.5
+version: 0.1.5+1
 
 environment:
-  sdk: ">=1.19.0 <3.0.0"
+  sdk: ">=2.1.0 <3.0.0"
 
 dependencies:
   flutter:
@@ -24,9 +24,9 @@ dependencies:
   # 汉字转拼音库 https://github.com/flutterchina/lpinyin
   lpinyin: ^1.0.7
   # Dart 常用工具类库 https://github.com/Sky24n/common_utils
-  common_utils: ^1.0.9
+  common_utils: ^1.1.1
   # Flutter 常用工具类库 https://github.com/Sky24n/flustars
-  flustars: ^0.2.4
+  flustars: ^0.2.5
   # Flutter 国际化/多语言库 https://github.com/Sky24n/fluintl
   fluintl: ^0.1.2
   # Flutter 城市列表 https://github.com/flutterchina/azlistview
@@ -36,17 +36,17 @@ dependencies:
   # https://github.com/flutterchina/dio
   dio: ^1.0.13
   # rxdart https://github.com/ReactiveX/rxdart
-  rxdart: ^0.18.1
+  rxdart: ^0.21.0
   # https://github.com/renefloor/flutter_cached_network_image
-  cached_network_image: ^0.5.0
+  cached_network_image: ^0.7.0
   # https://github.com/flutter/plugins/tree/master/packages/url_launcher
-  url_launcher: ^4.0.1
+  url_launcher: ^5.0.2
   # https://github.com/peng8350/flutter_pulltorefresh
   pull_to_refresh: ^1.1.6
   # device_info
-  device_info: ^0.3.0
+  device_info: ^0.4.0+1
   # webview_flutter
-  webview_flutter: ^0.3.3+1
+  webview_flutter: ^0.3.4
   # https://github.com/flutterchina/flukit.
   flukit: ^1.0.0
 

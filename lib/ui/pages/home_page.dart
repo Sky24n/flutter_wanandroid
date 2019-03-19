@@ -30,8 +30,8 @@ class HomePage extends StatelessWidget {
             child: new CachedNetworkImage(
               fit: BoxFit.fill,
               imageUrl: model.imagePath,
-              placeholder: new ProgressView(),
-              errorWidget: new Icon(Icons.error),
+              placeholder: (context, url) => new ProgressView(),
+              errorWidget: (context, url, error) => new Icon(Icons.error),
             ),
           );
         }).toList(),

@@ -23,8 +23,8 @@ class RecHotPage extends StatelessWidget {
         height: 128,
         fit: BoxFit.fill,
         imageUrl: imgUrl,
-        placeholder: new ProgressView(),
-        errorWidget: new Icon(Icons.error),
+        placeholder: (context, url) => new ProgressView(),
+        errorWidget: (context, url, error) => new Icon(Icons.error),
       ),
     );
   }

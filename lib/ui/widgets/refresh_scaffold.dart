@@ -78,7 +78,7 @@ class RefreshScaffoldState extends State<RefreshScaffold>
   @override
   Widget build(BuildContext context) {
 //    LogUtil.e("RefreshScaffold build...... " + widget.labelId);
-
+    super.build(context);
     return new Scaffold(
         body: new Stack(
           children: <Widget>[

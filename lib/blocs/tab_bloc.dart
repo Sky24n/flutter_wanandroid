@@ -79,7 +79,7 @@ class TabBloc implements BlocBase {
 //          ObjectUtil.isEmpty(list)
 //              ? RefreshStatus.noMore
 //              : RefreshStatus.idle));
-    }).catchError(() {
+    }).catchError((_) {
 //      _homeEventSink.add(new StatusEvent(labelId, RefreshStatus.failed));
     });
   }
