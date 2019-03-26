@@ -68,7 +68,7 @@ flutter packages get
 >    - |-- repository (接口请求&解析)
 
 ### api
-```
+```dart
 class WanAndroidApi {
   /// 首页banner http://www.wanandroid.com/banner/json
   static const String BANNER = "banner";
@@ -90,7 +90,7 @@ class WanAndroidApi {
 }
 ```
 ### 网络请求工具类 单例DioUtil
-```
+```dart
 // 打开debug模式.
 DioUtil.openDebug();   
   
@@ -117,7 +117,7 @@ DioUtil().requestR(Method.post, "user/login",data: rformData);
 
 ```  
 ### 请求与返回实体类 protocol
-```
+```dart
 class LoginReq {
   String username;
   String password;
@@ -144,7 +144,7 @@ class LoginReq {
 }
 ```
 ### 接口请求&解析 repository
-```
+```dart
  class WanRepository {
   Future<List<BannerModel>> getBanner() async {
     BaseResp<List> baseResp = await DioUtil().request<List>(
@@ -171,7 +171,7 @@ class LoginReq {
 >    - |-- styles.dart
 
 ### colors.dart
-```
+```dart
 class Colours {
   static const Color app_main = Color(0xFF666666);  
   
@@ -181,7 +181,7 @@ class Colours {
 }
 ```
 ### dimens.dart
-```
+```dart
 class Dimens {
   static const double font_sp12 = 12;
   static const double font_sp14 = 14;
@@ -192,7 +192,7 @@ class Dimens {
 }
 ```
 ### strings.dart
-```
+```dart
 class Ids {
   static const String titleHome = 'title_home';
 }  
@@ -216,7 +216,7 @@ Map<String, Map<String, Map<String, String>>> localizedValues = {
 };
 ```
 ### styles.dart
-```
+```dart
 class TextStyles {
   static TextStyle listTitle = TextStyle(
     fontSize: Dimens.font_sp16,
@@ -244,7 +244,7 @@ class Gaps {
 ```
 ### Flutter 国际化相关
 [fluintl](https://github.com/Sky24n/fluintl) 是一个为应用提供国际化的库，可快速集成实现应用多语言。该库封装了一个国际化支持类，通过提供统一方法getString(id)获取字符串。
-```
+```dart
 // 在MyApp initState配置多语言资源
 setLocalizedValues(localizedValues); //配置多语言资源
 // 在MaterialApp指定localizationsDelegates和supportedLocales
@@ -264,12 +264,12 @@ CustomLocalizations.of(context).getString(StringIds.titleHome);
 
 ### Flutter 屏幕适配 [ScreenUtil](https://github.com/Sky24n/flustars) 
  方案一、不依赖context
-```
-步骤 1
-//如果设计稿尺寸默认配置一致，无需该设置。  配置设计稿尺寸 默认 360.0 / 640.0 / 3.0
+```dart
+// 步骤1
+// 如果设计稿尺寸默认配置一致，无需该设置。  配置设计稿尺寸 默认 360.0 / 640.0 / 3.0
 setDesignWHD(_designW,_designH,_designD);  
   
-步骤 2
+// 步骤2
 // 在MainPageState build 调用MediaQuery.of(context)
 class MainPageState extends State<MainPage> {
   @override
@@ -282,7 +282,7 @@ class MainPageState extends State<MainPage> {
   }
 }  
   
-步骤 3
+// 步骤3
 ScreenUtil.getInstance().screenWidth
 ScreenUtil.getInstance().screenHeight
 //屏幕适配相关  
@@ -294,7 +294,7 @@ ScreenUtil.getInstance().getSp(fontSize); //返回根据屏幕宽适配后字体
 
 ```
 方案二、依赖context
-```
+```dart
 //如果设计稿尺寸默认配置一致，无需该设置。  配置设计稿尺寸 默认 360.0 / 640.0 / 3.0
 setDesignWHD(_designW,_designH,_designD);  
 
@@ -308,7 +308,7 @@ ScreenUtil.getScaleSp(context, size) ;//返回根据屏幕宽适配后字体尺�
 ### Flutter 数据存储  [SpUtil](https://github.com/Sky24n/flustars)
 单例"同步" SharedPreferences 工具类。  
 支持get获取默认参数、支持存储实体对象、支持存储实体对象数组。
-```
+```dart
     // 等待Sp初始化完成。
     await SpUtil.getInstance();
     
