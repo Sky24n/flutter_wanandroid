@@ -268,9 +268,7 @@ IntlUtil.getString(context, Ids.titleHome);
 CustomLocalizations.of(context).getString(StringIds.titleHome);  
 
 // 支持复用。替换字符串格式要求：'%\${index}\$s' ，{index} 第几个参数，从0开始。
-
 Ids.click_times: '%\$0\$s点击了%\$1\$s次',   
-
 IntlUtil.getString(context, Ids.click_times, params: ['Tom', '$_counter'])  
 // print: Tom点击了0次
 ```
