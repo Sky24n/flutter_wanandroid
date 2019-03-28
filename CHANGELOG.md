@@ -1,4 +1,10 @@
 ## 更新说明 
+### v0.2.0 (2019.03.29)   
+1.新增分享～。  
+2.新增网络状态页。  
+
+<img src="https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/flutter_wanandroid/web_share.png" width="240">  <img src="https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/flutter_wanandroid/page_error.png" width="240">  <img src="https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/flutter_wanandroid/page_empty.png" width="240">
+
 ### v0.1.9 (2019.03.16)   
 1.闪屏页支持视频。  
 2.支持App应用内升级。  
