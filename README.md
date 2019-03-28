@@ -95,7 +95,7 @@ class WanAndroidApi {
   }
 }
 ```
-### 网络请求工具类 单例DioUtil
+### 网络请求工具类 单例[DioUtil](https://github.com/Sky24n/flutter_wanandroid/blob/master/lib/data/net/dio_util.dart)(基于v1.0.13，仅供参考～)
 ```dart
 // 打开debug模式.
 DioUtil.openDebug();   
@@ -248,8 +248,8 @@ class Gaps {
   static Widget vGap10 = new SizedBox(height: Dimens.gap_dp10);
 }
 ```
-### Flutter 国际化相关
-[fluintl](https://github.com/Sky24n/fluintl) 是一个为应用提供国际化的库，可快速集成实现应用多语言。该库封装了一个国际化支持类，通过提供统一方法getString(id)获取字符串。
+### Flutter 国际化相关 [fluintl](https://github.com/Sky24n/fluintl)
+fluintl是一个为应用提供国际化的库，可快速集成实现应用多语言。该库封装了一个国际化支持类，通过提供统一方法getString(id)获取字符串。
 ```dart
 // 在MyApp initState配置多语言资源
 setLocalizedValues(localizedValues); //配置多语言资源
@@ -265,7 +265,14 @@ MaterialApp(
 ); 
 // 字符串获取
 IntlUtil.getString(context, Ids.titleHome);
-CustomLocalizations.of(context).getString(StringIds.titleHome);
+CustomLocalizations.of(context).getString(StringIds.titleHome);  
+
+// 支持复用。替换字符串格式要求：'%\${index}\$s' ，{index} 第几个参数，从0开始。
+
+Ids.click_times: '%\$0\$s点击了%\$1\$s次',   
+
+IntlUtil.getString(context, Ids.click_times, params: ['Tom', '$_counter'])  
+// print: Tom点击了0次
 ```
 
 ### Flutter 屏幕适配 [ScreenUtil](https://github.com/Sky24n/flustars) 
