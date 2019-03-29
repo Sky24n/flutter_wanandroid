@@ -6,7 +6,7 @@
 有关项目最新动态，可以关注App内第一条Hot Item信息。
 
 ### 运行本项目注意！！！
-由于在国内访问Flutter有时可能会受到限制，clone项目后，请勿直接packages get，建议运行如下目录行：
+由于在国内访问Flutter有时可能会受到限制，clone项目后，请勿直接packages get，建议运行如下命令行：
 ```
 export PUB_HOSTED_URL=https://pub.flutter-io.cn  
 export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn  
