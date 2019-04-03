@@ -1,6 +1,5 @@
 # Flutter版 WanAndroid App.
 
-## 项目已全部开源(V0.1.5)。欢迎Star&Fork。
 本项目包含启动页，引导页，主题色，国际化，Bloc，RxDart。拥有较好的项目结构，比较规范的代码。 App拥有精致的UI界面，统一的交互，侧滑退出，列表和Web界面均提供快速滚动至顶部功能。  
 
 有关项目最新动态，可以关注App内第一条Hot Item信息。
@@ -323,6 +322,7 @@ ScreenUtil.getScaleSp(context, size) ;//返回根据屏幕宽适配后字体尺�
     // 等待Sp初始化完成。
     await SpUtil.getInstance();
     
+    SpUtil.getString('key');
     SpUtil.getString('key', defValue: '');
     SpUtil.getInt('key', defValue: 0);
   
@@ -429,13 +429,6 @@ Pub &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: [Sky24n](https://pub.flutter-io.cn/packages?
 Email &nbsp;&nbsp;: 863764940@qq.com  
 如果您觉得本项目不错的话，来个star支持下作者吧!  
 关于项目任何问题请提交[issues](https://github.com/Sky24n/flutter_wanandroid/issues)，私发QQ邮件将不再回复～
-
-### 绿色出行
-
-Flutter 仿滴滴出行 [GreenTravel](https://github.com/Sky24n/GreenTravel)  
-  
-<img src="https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/green_travel/home.gif" width="240">  <img src="https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/green_travel/home_map.gif" width="240">  
-
 
 
 [flutter_wanandroid_github]: https://github.com/Sky24n/flutter_wanandroid

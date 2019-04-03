@@ -25,34 +25,22 @@ class SpHelper {
         SpUtil.putStringList(key, value);
         break;
       default:
-        SpUtil.putString(key, value == null ? "" : json.encode(value));
+        SpUtil.putObject(key, value);
         break;
     }
   }
 
   static LanguageModel getLanguageModel() {
-    String _saveLanguage = SpUtil.getString(Constant.keyLanguage);
-    if (ObjectUtil.isNotEmpty(_saveLanguage)) {
-      Map userMap = json.decode(_saveLanguage);
-      return LanguageModel.fromJson(userMap);
-    }
-    return null;
+    Map map = SpUtil.getObject(Constant.keyLanguage);
+    return map == null ? null : LanguageModel.fromJson(map);
   }
 
   static String getThemeColor() {
-    String _colorKey = SpUtil.getString(Constant.KEY_THEME_COLOR);
-    if (ObjectUtil.isEmpty(_colorKey)) {
-      _colorKey = 'gray';
-    }
-    return _colorKey;
+    return SpUtil.getString(Constant.KEY_THEME_COLOR, defValue: 'gray');
   }
 
   static SplashModel getSplashModel() {
-    String _splashModel = SpUtil.getString(Constant.KEY_SPLASH_MODEL);
-    if (ObjectUtil.isNotEmpty(_splashModel)) {
-      Map userMap = json.decode(_splashModel);
-      return SplashModel.fromJson(userMap);
-    }
-    return null;
+    Map map = SpUtil.getObject(Constant.KEY_SPLASH_MODEL);
+    return map == null ? null : SplashModel.fromJson(map);
   }
 }
