@@ -42,7 +42,7 @@ dependencies:
   # https://github.com/flutter/plugins/tree/master/packages/url_launcher
   url_launcher: ^5.0.2
   # https://github.com/peng8350/flutter_pulltorefresh
-  pull_to_refresh: ^1.1.6
+  pull_to_refresh: ^1.2.0
   # device_info
   device_info: ^0.4.0+1
   # webview_flutter
