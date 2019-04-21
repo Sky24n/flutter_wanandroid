@@ -4,28 +4,28 @@ class Ids {
   static const String titleEvents = 'title_events';
   static const String titleSystem = 'title_system';
 
-  static String titleBookmarks = 'title_bookmarks';
-  static String titleCollection = 'title_collection';
-  static String titleSetting = 'title_setting';
-  static String titleAbout = 'title_about';
-  static String titleShare = 'title_share';
-  static String titleSignOut = 'title_signout';
-  static String titleLanguage = 'title_language';
-  static String titleTheme = 'title_theme';
-  static String titleAuthor = 'title_author';
-  static String titleOther = 'title_other';
+  static const String titleBookmarks = 'title_bookmarks';
+  static const String titleCollection = 'title_collection';
+  static const String titleSetting = 'title_setting';
+  static const String titleAbout = 'title_about';
+  static const String titleShare = 'title_share';
+  static const String titleSignOut = 'title_signout';
+  static const String titleLanguage = 'title_language';
+  static const String titleTheme = 'title_theme';
+  static const String titleAuthor = 'title_author';
+  static const String titleOther = 'title_other';
 
-  static String languageAuto = 'language_auto';
-  static String languageZH = 'language_zh';
-  static String languageTW = 'language_tw';
-  static String languageHK = 'language_hk';
-  static String languageEN = 'language_en';
+  static const String languageAuto = 'language_auto';
+  static const String languageZH = 'language_zh';
+  static const String languageTW = 'language_tw';
+  static const String languageHK = 'language_hk';
+  static const String languageEN = 'language_en';
 
-  static String save = 'save';
+  static const String save = 'save';
   static const String more = 'more';
 
-  static String recRepos = 'rec_repos';
-  static String recWxArticle = 'rec_wxarticle';
+  static const String recRepos = 'rec_repos';
+  static const String recWxArticle = 'rec_wxarticle';
 
   static const String titleReposTree = 'title_repos_tree';
   static const String titleWxArticleTree = 'title_wxarticle_tree';

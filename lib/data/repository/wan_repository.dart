@@ -8,7 +8,7 @@ class WanRepository {
     BaseResp<List> baseResp = await DioUtil().request<List>(
         Method.get, WanAndroidApi.getPath(path: WanAndroidApi.BANNER));
     List<BannerModel> bannerList;
-    if (baseResp.code != Constant.STATUS_SUCCESS) {
+    if (baseResp.code != Constant.status_success) {
       return new Future.error(baseResp.msg);
     }
     if (baseResp.data != null) {
@@ -26,7 +26,7 @@ class WanRepository {
             WanAndroidApi.getPath(
                 path: WanAndroidApi.ARTICLE_LISTPROJECT, page: page));
     List<ReposModel> list;
-    if (baseResp.code != Constant.STATUS_SUCCESS) {
+    if (baseResp.code != Constant.status_success) {
       return new Future.error(baseResp.msg);
     }
     if (baseResp.data != null) {
@@ -44,7 +44,7 @@ class WanRepository {
             WanAndroidApi.getPath(path: WanAndroidApi.ARTICLE_LIST, page: page),
             data: data);
     List<ReposModel> list;
-    if (baseResp.code != Constant.STATUS_SUCCESS) {
+    if (baseResp.code != Constant.status_success) {
       return new Future.error(baseResp.msg);
     }
     if (baseResp.data != null) {
@@ -60,7 +60,7 @@ class WanRepository {
     BaseResp<List> baseResp = await DioUtil().request<List>(
         Method.get, WanAndroidApi.getPath(path: WanAndroidApi.TREE));
     List<TreeModel> treeList;
-    if (baseResp.code != Constant.STATUS_SUCCESS) {
+    if (baseResp.code != Constant.status_success) {
       return new Future.error(baseResp.msg);
     }
     if (baseResp.data != null) {
@@ -77,7 +77,7 @@ class WanRepository {
             WanAndroidApi.getPath(path: WanAndroidApi.PROJECT_LIST, page: page),
             data: data);
     List<ReposModel> list;
-    if (baseResp.code != Constant.STATUS_SUCCESS) {
+    if (baseResp.code != Constant.status_success) {
       return new Future.error(baseResp.msg);
     }
     if (baseResp.data != null) {
@@ -97,7 +97,7 @@ class WanRepository {
                 path: WanAndroidApi.WXARTICLE_LIST + '/$id', page: page),
             data: data);
     List<ReposModel> list;
-    if (baseResp.code != Constant.STATUS_SUCCESS) {
+    if (baseResp.code != Constant.status_success) {
       return new Future.error(baseResp.msg);
     }
     if (baseResp.data != null) {
@@ -113,7 +113,7 @@ class WanRepository {
     BaseResp<List> baseResp = await DioUtil().request<List>(Method.get,
         WanAndroidApi.getPath(path: WanAndroidApi.WXARTICLE_CHAPTERS));
     List<TreeModel> treeList;
-    if (baseResp.code != Constant.STATUS_SUCCESS) {
+    if (baseResp.code != Constant.status_success) {
       return new Future.error(baseResp.msg);
     }
     if (baseResp.data != null) {
@@ -128,7 +128,7 @@ class WanRepository {
     BaseResp<List> baseResp = await DioUtil().request<List>(
         Method.get, WanAndroidApi.getPath(path: WanAndroidApi.PROJECT_TREE));
     List<TreeModel> treeList;
-    if (baseResp.code != Constant.STATUS_SUCCESS) {
+    if (baseResp.code != Constant.status_success) {
       return new Future.error(baseResp.msg);
     }
     if (baseResp.data != null) {

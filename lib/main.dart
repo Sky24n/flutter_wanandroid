@@ -34,7 +34,7 @@ class MyAppState extends State<MyApp> {
   void _init() {
 //    DioUtil.openDebug();
     Options options = DioUtil.getDefOptions();
-    options.baseUrl = Constant.SERVER_ADDRESS;
+    options.baseUrl = Constant.server_address;
     HttpConfig config = new HttpConfig(options: options);
     DioUtil().setConfig(config);
   }
@@ -54,7 +54,8 @@ class MyAppState extends State<MyApp> {
 
   void _loadLocale() {
     setState(() {
-      LanguageModel model = SpHelper.getLanguageModel();
+      LanguageModel model =
+          SpHelper.getObject<LanguageModel>(Constant.keyLanguage);
       if (model != null) {
         _locale = new Locale(model.languageCode, model.countryCode);
       } else {

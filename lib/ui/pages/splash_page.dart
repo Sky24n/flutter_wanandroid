@@ -35,10 +35,10 @@ class SplashPageState extends State<SplashPage> {
     await SpUtil.getInstance();
     _loadSplashData();
     Observable.just(1).delay(new Duration(milliseconds: 500)).listen((_) {
-//      SpUtil.putBool(Constant.KEY_GUIDE, false);
-      if (SpUtil.getBool(Constant.KEY_GUIDE) != true &&
+//      SpUtil.putBool(Constant.key_guide, false);
+      if (SpUtil.getBool(Constant.key_guide, defValue: true) &&
           ObjectUtil.isNotEmpty(_guideList)) {
-        SpUtil.putBool(Constant.KEY_GUIDE, true);
+        SpUtil.putBool(Constant.key_guide, false);
         _initBanner();
       } else {
         _initSplash();
@@ -47,7 +47,7 @@ class SplashPageState extends State<SplashPage> {
   }
 
   void _loadSplashData() {
-    _splashModel = SpHelper.getSplashModel();
+    _splashModel = SpHelper.getObject<SplashModel>(Constant.key_splash_model);
     if (_splashModel != null) {
       setState(() {});
     }
@@ -55,13 +55,13 @@ class SplashPageState extends State<SplashPage> {
     httpUtil.getSplash().then((model) {
       if (!ObjectUtil.isEmpty(model.imgUrl)) {
         if (_splashModel == null || (_splashModel.imgUrl != model.imgUrl)) {
-          SpHelper.putObject(Constant.KEY_SPLASH_MODEL, model);
+          SpHelper.putObject(Constant.key_splash_model, model);
           setState(() {
             _splashModel = model;
           });
         }
       } else {
-        SpHelper.putObject(Constant.KEY_SPLASH_MODEL, null);
+        SpHelper.putObject(Constant.key_splash_model, null);
       }
     });
   }

@@ -155,7 +155,7 @@ class LoginReq {
     BaseResp<List> baseResp = await DioUtil().request<List>(
         Method.get, WanAndroidApi.getPath(path: WanAndroidApi.BANNER));
     List<BannerModel> bannerList;
-    if (baseResp.code != Constant.STATUS_SUCCESS) {
+    if (baseResp.code != Constant.status_success) {
       return new Future.error(baseResp.msg);
     }
     if (baseResp.data != null) {

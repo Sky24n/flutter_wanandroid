@@ -7,6 +7,8 @@ class SettingPage extends StatelessWidget {
   Widget build(BuildContext context) {
     LogUtil.e("SettingPage build......");
     final ApplicationBloc bloc = BlocProvider.of<ApplicationBloc>(context);
+    LanguageModel languageModel =
+        SpHelper.getObject<LanguageModel>(Constant.keyLanguage);
     return new Scaffold(
       appBar: AppBar(
         title: Text(
@@ -37,8 +39,8 @@ class SettingPage extends StatelessWidget {
                   Color value = themeColorMap[key];
                   return new InkWell(
                     onTap: () {
-                      SpUtil.putString(Constant.KEY_THEME_COLOR, key);
-                      bloc.sendAppEvent(Constant.TYPE_SYS_UPDATE);
+                      SpUtil.putString(Constant.key_theme_color, key);
+                      bloc.sendAppEvent(Constant.type_sys_update);
                     },
                     child: new Container(
                       margin: EdgeInsets.all(5.0),
@@ -70,10 +72,9 @@ class SettingPage extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
                 Text(
-                    SpHelper.getLanguageModel() == null
+                    languageModel == null
                         ? IntlUtil.getString(context, Ids.languageAuto)
-                        : IntlUtil.getString(
-                            context, SpHelper.getLanguageModel().titleId,
+                        : IntlUtil.getString(context, languageModel.titleId,
                             languageCode: 'zh', countryCode: 'CH'),
                     style: TextStyle(
                       fontSize: 14.0,

@@ -23,7 +23,7 @@ class _LanguagePageState extends State<LanguagePage> {
     _list.add(LanguageModel(Ids.languageHK, 'zh', 'HK'));
     _list.add(LanguageModel(Ids.languageEN, 'en', 'US'));
 
-    _currentLanguage = SpHelper.getLanguageModel();
+    _currentLanguage = SpHelper.getObject<LanguageModel>(Constant.keyLanguage);
     if (ObjectUtil.isEmpty(_currentLanguage)) {
       _currentLanguage = _list[0];
     }
@@ -66,7 +66,7 @@ class _LanguagePageState extends State<LanguagePage> {
                       ObjectUtil.isEmpty(_currentLanguage.languageCode)
                           ? null
                           : _currentLanguage);
-                  bloc.sendAppEvent(Constant.TYPE_SYS_UPDATE);
+                  bloc.sendAppEvent(Constant.type_sys_update);
                   Navigator.pop(context);
                 },
               ),
