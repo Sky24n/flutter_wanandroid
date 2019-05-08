@@ -11,11 +11,16 @@
    ③ 快速滚动至顶部按钮展示逻辑优化。  
   
 
+<img src="https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/flutter_wanandroid/login.png" width="240">  <img src="https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/flutter_wanandroid/register.png" width="240">  <img src="https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/flutter_wanandroid/collect.png" width="240">
+
+
 ### v0.2.0 (2019.03.29)   
 1.新增分享～。  
 2.新增网络状态页。  
 
-### v0.1.9 (2019.03.16)
+<img src="https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/flutter_wanandroid/web_share.png" width="240">  <img src="https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/flutter_wanandroid/page_error.png" width="240">  <img src="https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/flutter_wanandroid/page_empty.png" width="240">
+
+### v0.1.9 (2019.03.16)   
 1.闪屏页支持视频。  
 2.支持App应用内升级。  
 3.玩安卓Api升级为https。   
@@ -25,6 +30,8 @@
    ① 为了方便大家体验应用内升级，服务端版本号为：v0.2.0，Apk版本始终为v0.1.9。  
    ② 由于Apk文件是放在Github上面的，可能下载速度会比较慢。  
    ③ 为了保护掘金作者原创文章，热门文章修改为从第二页开始获取。 
+
+<img src="https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/flutter_wanandroid/upgrade_dialog.png" width="240">  <img src="https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/flutter_wanandroid/splash_video.gif" width="240">  <img src="https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/flutter_wanandroid/upgrade_download.gif" width="240">   
 
 ### v0.1.7   (2019.03.04)
 1、App新Logo。   

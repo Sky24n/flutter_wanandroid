@@ -5,20 +5,35 @@
 有关项目最新动态，可以关注App内第一条Hot Item信息。
 
 ### 运行本项目注意！！！
-由于在国内访问Flutter有时可能会受到限制，clone项目后，请勿直接packages get，建议运行如下命令行：
+由于在国内访问Flutter有时可能会受到限制，clone项目后，请勿直接packages get，建议运行如下目录行：
 ```
 export PUB_HOSTED_URL=https://pub.flutter-io.cn  
 export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn  
 flutter packages get
+flutter run --release
 ```
 
-### [更新说明](./CHANGELOG.md)
+### [更新说明](./CHANGELOGS.md)
+
+### v0.2.1 (2019.05.08)
+1.新增登录/注册。  
+2.新增收藏功能。  
+3.一些优化~。  
+
+温馨提醒：  
+   ① 默认主题色修改为deepPurpleAccent，与登录/注册页面元素保持一致。  
+   ② 设置新增升级提示次数，可关闭升级提醒，但超过5个版本未升级需要下载最新版。  
+   ③ 快速滚动至顶部按钮展示逻辑优化。  
+  
+
+<img src="https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/flutter_wanandroid/login.png" width="240">  <img src="https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/flutter_wanandroid/register.png" width="240">  <img src="https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/flutter_wanandroid/collect.png" width="240">
+
 
 ### v0.2.0 (2019.03.29)   
 1.新增分享～。  
 2.新增网络状态页。
 
-<img src="https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/flutter_wanandroid/web_share.png" width="240">  <img src="https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/flutter_wanandroid/page_error.png" width="240">  <img src="https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/flutter_wanandroid/page_empty.png" width="240">
+<img src="https://gitee.com/uploads/images/2019/0506/004900_cff8f8c0_506864.png" width="240">  <img src="https://gitee.com/uploads/images/2019/0506/004900_d413711d_506864.png" width="240">  <img src="https://gitee.com/uploads/images/2019/0506/004901_f292f8b8_506864.png" width="240">
 
 ### v0.1.9 (2019.03.16)   
 1.闪屏页支持视频。  
@@ -31,24 +46,18 @@ flutter packages get
    ② 由于Apk文件是放在Github上面的，可能下载速度会比较慢。  
    ③ 为了保护掘金作者原创文章，热门文章修改为从第二页开始获取。  
   
-<img src="https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/flutter_wanandroid/upgrade_dialog.png" width="240">  <img src="https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/flutter_wanandroid/splash_video.gif" width="240">  <img src="https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/flutter_wanandroid/upgrade_download.gif" width="240">    
+<img src="https://gitee.com/uploads/images/2019/0506/004900_5e0bd537_506864.png" width="240">  <img src="https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/flutter_wanandroid/splash_video.gif" width="240">  <img src="https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/flutter_wanandroid/upgrade_download.gif" width="240">    
 
-### v0.1.7 (2019.03.04)
-1、App新Logo。   
-2、闪屏页优化。  
-3、升级WebView，新增loading，点击TitleBar返回可回退网页。  
-4、新增内置浏览器，修复oppo R15, R11st无法查看详情页，若其他手机无法查看详情页，请自行修改为内置浏览器。  
-
-### v0.1.6 (2019.01.18)
-1、主页新增Github Trending，新版本如未显示，请下拉刷新。  
-2、新增热门Tab，掘金热门文章！  
-3、重构HomePage。  
-<img src="https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/flutter_wanandroid/github_trending.png" width="240">  <img src="https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/flutter_wanandroid/juejin_hot.png" width="240">
-
-### APK:[点击下载 v0.1.x](https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppStore/flutter_wanandroid.apk)
-
-### APK QR:
-  ![flutter_wanandroid](https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/flutter_wanandroid/qrcode.png)
+### 安卓Apk
+如需体验版本升级功能，可以下载旧版apk。  
+  
+点击下载  [新版v0.2.1](https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppStore/flutter_wanandroid.apk)  ---  [旧版v0.2.0](https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppStore/flutter_wanandroid_old.apk)  
+   
+扫码下载 新版v0.2.1  
+![flutter_wanandroid](https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/flutter_wanandroid/qrcode.png)
+  
+扫码下载 旧版v0.2.0    
+![flutter_wanandroid](https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/flutter_wanandroid/qrcode1.png)
 
 ### iOS：请自行clone项目代码运行。
 
@@ -155,7 +164,7 @@ class LoginReq {
     BaseResp<List> baseResp = await DioUtil().request<List>(
         Method.get, WanAndroidApi.getPath(path: WanAndroidApi.BANNER));
     List<BannerModel> bannerList;
-    if (baseResp.code != Constant.status_success) {
+    if (baseResp.code != Constant.STATUS_SUCCESS) {
       return new Future.error(baseResp.msg);
     }
     if (baseResp.data != null) {
@@ -322,7 +331,6 @@ ScreenUtil.getScaleSp(context, size) ;//返回根据屏幕宽适配后字体尺�
     // 等待Sp初始化完成。
     await SpUtil.getInstance();
     
-    SpUtil.getString('key');
     SpUtil.getString('key', defValue: '');
     SpUtil.getInt('key', defValue: 0);
   
@@ -370,22 +378,22 @@ ScreenUtil.getScaleSp(context, size) ;//返回根据屏幕宽适配后字体尺�
 <img src="https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/flutter_wanandroid/home.gif" width="240">  
 
 ### 启动页
-<img src="https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/flutter_wanandroid/splash.gif" width="240"> 
+<img src="https://gitee.com/uploads/images/2019/0506/005059_fa3a5968_506864.gif" width="240"> 
 
 ### 侧滑Back
-<img src="https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/flutter_wanandroid/slide_back.gif" width="240"> 
+<img src="https://gitee.com/uploads/images/2019/0506/004903_44c9266f_506864.gif" width="240"> 
 
 ### 快速滚动到顶部
-<img src="https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/flutter_wanandroid/scroll_top.gif" width="240"> 
+<img src="https://gitee.com/uploads/images/2019/0506/004903_0837c169_506864.gif" width="240"> 
 
 ### 分类页面
 <img src="https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/flutter_wanandroid/tree.gif" width="240"> 
 
 ### 国际化 
-<img src="https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/flutter_wanandroid/intl.gif" width="240">  
+<img src="https://gitee.com/uploads/images/2019/0506/004906_f1f1147e_506864.gif" width="240">  
 
 ### 主题色 
-<img src="https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/flutter_wanandroid/theme_color.gif" width="240">  
+<img src="https://gitee.com/uploads/images/2019/0506/004907_498b0fb8_506864.gif" width="240">  
 
 ### 闪屏广告页 
 <img src="https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/flutter_wanandroid/2018-11-23_13_05_08.gif" width="240">  
@@ -427,9 +435,9 @@ GitHub : [Sky24n](https://github.com/Sky24n)
 掘金 &nbsp;&nbsp;&nbsp;&nbsp;: [Sky24n](https://juejin.im/user/5b9e8a92e51d453df0440422/posts)  
 Pub &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: [Sky24n](https://pub.flutter-io.cn/packages?q=email%3A863764940%40qq.com)    
 Email &nbsp;&nbsp;: 863764940@qq.com  
-如果您觉得本项目不错的话，来个star支持下作者吧!  
+⭐⭐⭐ 如果您觉得本项目不错的话，来个star支持下作者吧! ⭐⭐⭐  
 关于项目任何问题请提交[issues](https://github.com/Sky24n/flutter_wanandroid/issues)，私发QQ邮件将不再回复～
-  
+
 Flutter版玩安卓 [flutter_wanandroid](https://github.com/Sky24n/flutter_wanandroid)  
   
 [![GitHub stars](https://img.shields.io/github/stars/Sky24n/flutter_wanandroid.svg?style=social&label=Star)](https://github.com/Sky24n/flutter_wanandroid) [![GitHub forks](https://img.shields.io/github/forks/Sky24n/flutter_wanandroid.svg?style=social&label=Fork)](https://github.com/Sky24n/flutter_wanandroid) [![GitHub watchers](https://img.shields.io/github/watchers/Sky24n/flutter_wanandroid.svg?style=social&label=Watch)](https://github.com/Sky24n/flutter_wanandroid)  
@@ -458,6 +466,9 @@ Flutter国际化库 [fluintl](https://github.com/Sky24n/fluintl)
   
 [![GitHub stars](https://img.shields.io/github/stars/Sky24n/fluintl.svg?style=social&label=Star)](https://github.com/Sky24n/fluintl) [![GitHub forks](https://img.shields.io/github/forks/Sky24n/fluintl.svg?style=social&label=Fork)](https://github.com/Sky24n/fluintl) [![GitHub watchers](https://img.shields.io/github/watchers/Sky24n/fluintl.svg?style=social&label=Watch)](https://github.com/Sky24n/fluintl)  
 
+
+
+
 [flutter_wanandroid_github]: https://github.com/Sky24n/flutter_wanandroid
 [flutter_wanandroid_apk]: https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppStore/flutter_wanandroid.apk
 [flutter_wanandroid_qr]: https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/flutter_wanandroid/qrcode.png
@@ -475,4 +486,4 @@ Flutter国际化库 [fluintl](https://github.com/Sky24n/fluintl)
 
 [juejinSvg]: https://img.shields.io/badge/掘金-@Sky24n-536dfe.svg
 [juejin]: https://juejin.im/user/5b9e8a92e51d453df0440422
-
+  
