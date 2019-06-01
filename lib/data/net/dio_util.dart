@@ -158,6 +158,12 @@ class DioUtil {
     _isDebug = true;
   }
 
+  void setCookie(String cookie) {
+    Map<String, dynamic> _headers = new Map();
+    _headers["Cookie"] = cookie;
+    _dio.options.headers.addAll(_headers);
+  }
+
   /// set Config.
   void setConfig(HttpConfig config) {
     _statusKey = config.status ?? _statusKey;
