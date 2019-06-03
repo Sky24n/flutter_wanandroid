@@ -441,7 +441,7 @@ Email &nbsp;&nbsp;: 863764940@qq.com
 ⭐⭐⭐ 如果您觉得本项目不错的话，来个star支持下作者吧! ⭐⭐⭐  
 关于项目任何问题请提交[issues](https://github.com/Sky24n/flutter_wanandroid/issues)，私发QQ邮件将不再回复～
 
-Flutter全局屏幕适配 [AutoSize](https://github.com/flutterchina/auto_size)  
+Flutter全局屏幕适配 [auto_size](https://github.com/flutterchina/auto_size)  
   
 [![GitHub stars](https://img.shields.io/github/stars/flutterchina/auto_size.svg?style=social&label=Star)](https://github.com/flutterchina/auto_size) [![GitHub forks](https://img.shields.io/github/forks/flutterchina/auto_size.svg?style=social&label=Fork)](https://github.com/flutterchina/auto_size) [![GitHub watchers](https://img.shields.io/github/watchers/flutterchina/auto_size.svg?style=social&label=Watch)](https://github.com/flutterchina/auto_size)  
 
