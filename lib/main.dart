@@ -5,8 +5,9 @@ import 'package:flutter_wanandroid/common/component_index.dart';
 import 'package:flutter_wanandroid/data/net/dio_util.dart';
 import 'package:flutter_wanandroid/ui/pages/main_page.dart';
 import 'package:flutter_wanandroid/ui/pages/page_index.dart';
+import 'package:auto_size/auto_size.dart';
 
-void main() => runApp(BlocProvider<ApplicationBloc>(
+void main() => runAutoSizeApp(BlocProvider<ApplicationBloc>(
       bloc: ApplicationBloc(),
       child: BlocProvider(child: MyApp(), bloc: MainBloc()),
     ));
