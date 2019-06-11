@@ -2,8 +2,10 @@ export 'dart:convert';
 
 export 'package:flutter_wanandroid/blocs/bloc_index.dart';
 export 'package:flutter_wanandroid/ui/widgets/widget_index.dart';
-export 'package:flutter_wanandroid/res/res_index.dart';
+export 'package:flutter_wanandroid/res/index.dart';
 export 'package:flutter_wanandroid/utils/util_index.dart';
+
+export 'package:base_library/base_library.dart';
 
 export 'package:flutter_wanandroid/common/common.dart';
 export 'package:flutter_wanandroid/common/sp_helper.dart';

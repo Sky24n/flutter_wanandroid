@@ -4,8 +4,12 @@ import 'package:flutter_wanandroid/ui/pages/tab_page.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class NavigatorUtil {
-
-  static void pushPage(BuildContext context, Widget page, {String pageName}) {
+  static void pushPage(
+    BuildContext context,
+    Widget page, {
+    String pageName,
+    bool needLogin = false,
+  }) {
     if (context == null || page == null || ObjectUtil.isEmpty(pageName)) return;
     Navigator.push(
         context, new CupertinoPageRoute<void>(builder: (ctx) => page));

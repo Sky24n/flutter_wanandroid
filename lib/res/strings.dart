@@ -30,6 +30,17 @@ class Ids {
   static const String titleReposTree = 'title_repos_tree';
   static const String titleWxArticleTree = 'title_wxarticle_tree';
   static const String titleSystemTree = 'title_system_tree';
+
+  static const String user_name = 'user_name';
+  static const String user_pwd = 'user_pwd';
+  static const String user_re_pwd = 'user_re_pwd';
+  static const String user_login = 'user_login';
+  static const String user_register = 'user_register';
+  static const String user_forget_pwd = 'user_forget_pwd';
+  static const String user_new_user_hint = 'user_new_user_hint';
+
+  static const String confirm = 'confirm';
+  static const String cancel = 'cancel';
 }
 
 Map<String, Map<String, String>> localizedSimpleValues = {
@@ -83,6 +94,15 @@ Map<String, Map<String, Map<String, String>>> localizedValues = {
       Ids.titleReposTree: 'Repos Tree',
       Ids.titleWxArticleTree: 'Wx Article',
       Ids.titleTheme: 'Theme',
+      Ids.user_name: 'user name',
+      Ids.user_pwd: 'password',
+      Ids.user_re_pwd: 'confirm password',
+      Ids.user_login: 'Login',
+      Ids.user_register: 'Register',
+      Ids.user_forget_pwd: 'Forget the password?',
+      Ids.user_new_user_hint: 'New users? ',
+      Ids.confirm: 'Confirm',
+      Ids.cancel: 'Cancel',
     }
   },
   'zh': {
@@ -110,6 +130,15 @@ Map<String, Map<String, Map<String, String>>> localizedValues = {
       Ids.titleReposTree: '项目分类',
       Ids.titleWxArticleTree: '公众号',
       Ids.titleTheme: '主题',
+      Ids.user_name: '用户名',
+      Ids.user_pwd: '密码',
+      Ids.user_re_pwd: '确认密码',
+      Ids.user_login: '登录',
+      Ids.user_register: '注册',
+      Ids.user_forget_pwd: '忘记密码？',
+      Ids.user_new_user_hint: '新用户？',
+      Ids.confirm: '确认',
+      Ids.cancel: '取消',
     },
     'HK': {
       Ids.titleHome: '主頁',
@@ -131,6 +160,15 @@ Map<String, Map<String, Map<String, String>>> localizedValues = {
       Ids.titleReposTree: '项目分类',
       Ids.titleWxArticleTree: '公众号',
       Ids.titleTheme: '主題',
+      Ids.user_name: '用户名',
+      Ids.user_pwd: '密码',
+      Ids.user_re_pwd: '确认密码',
+      Ids.user_login: '登录',
+      Ids.user_register: '注册',
+      Ids.user_forget_pwd: '忘记密码？',
+      Ids.user_new_user_hint: '新用户？',
+      Ids.confirm: '确认',
+      Ids.cancel: '取消',
     },
     'TW': {
       Ids.titleHome: '主頁',
@@ -152,6 +190,15 @@ Map<String, Map<String, Map<String, String>>> localizedValues = {
       Ids.titleReposTree: '项目分类',
       Ids.titleWxArticleTree: '公众号',
       Ids.titleTheme: '主題',
+      Ids.user_name: '用户名',
+      Ids.user_pwd: '密码',
+      Ids.user_re_pwd: '确认密码',
+      Ids.user_login: '登录',
+      Ids.user_register: '注册',
+      Ids.user_forget_pwd: '忘记密码？',
+      Ids.user_new_user_hint: '新用户？',
+      Ids.confirm: '确认',
+      Ids.cancel: '取消',
     }
   }
 };

@@ -1,6 +1,6 @@
+import 'package:base_library/base_library.dart';
 import 'package:flutter_wanandroid/common/common.dart';
 import 'package:flutter_wanandroid/data/api/apis.dart';
-import 'package:flutter_wanandroid/data/net/dio_util.dart';
 import 'package:flutter_wanandroid/data/protocol/models.dart';
 
 class WanRepository {

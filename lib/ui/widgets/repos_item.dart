@@ -4,10 +4,11 @@ import 'package:flutter_wanandroid/common/component_index.dart';
 class ReposItem extends StatelessWidget {
   const ReposItem(
     this.model, {
+    this.labelId,
     Key key,
     this.isHome,
   }) : super(key: key);
-
+  final String labelId;
   final ReposModel model;
   final bool isHome;
 
@@ -20,7 +21,7 @@ class ReposItem extends StatelessWidget {
       },
       child: new Container(
           height: 160.0,
-          padding: EdgeInsets.all(16.0),
+          padding: EdgeInsets.only(left: 16, top: 16, right: 16, bottom: 10),
           child: new Row(
             children: <Widget>[
               new Expanded(
@@ -47,6 +48,12 @@ class ReposItem extends StatelessWidget {
                   Gaps.vGap5,
                   new Row(
                     children: <Widget>[
+                      new LikeBtn(
+                        labelId: labelId,
+                        id: model.originId ?? model.id,
+                        isLike: model.collect,
+                      ),
+                      Gaps.hGap10,
                       new Text(
                         model.author,
                         style: TextStyles.listExtra,
@@ -69,8 +76,13 @@ class ReposItem extends StatelessWidget {
                   height: 128,
                   fit: BoxFit.fill,
                   imageUrl: model.envelopePic,
-                  placeholder: (context, url) => new ProgressView(),
-                  errorWidget: (context, url, error) => new Icon(Icons.error),
+                  placeholder: (BuildContext context, String url) {
+                    return new ProgressView();
+                  },
+                  errorWidget:
+                      (BuildContext context, String url, Object error) {
+                    return new Icon(Icons.error);
+                  },
                 ),
               )
             ],
@@ -78,7 +90,8 @@ class ReposItem extends StatelessWidget {
           decoration: new BoxDecoration(
               color: Colors.white,
               border: new Border(
-                  bottom: new BorderSide(width: 0.33, color: Colours.divider)))),
+                  bottom:
+                      new BorderSide(width: 0.33, color: Colours.divider)))),
     );
   }
 }

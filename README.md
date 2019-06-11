@@ -16,6 +16,13 @@ ps：作者Futter版本
 [✓] Flutter (Channel beta, v1.6.3, locale zh-Hans-CN)
 ```
 
+### 关于开源！！！
+项目正在整理开源中！
+如无法运行，请自行回滚到该节点。
+```
+git reset --hard 777f6e7fc221b30abf480c94d686c955fe661b0e
+```
+
 ### [更新说明](./CHANGELOGS.md)
 
 ### v0.2.1 (2019.05.08)

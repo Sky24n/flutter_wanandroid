@@ -146,7 +146,7 @@ class SplashPageState extends State<SplashPage> {
   }
 
   void _goMain() {
-    Navigator.of(context).pushReplacementNamed('/MainPage');
+    RouteUtil.goMain(context);
   }
 
   Widget _buildSplashBg() {

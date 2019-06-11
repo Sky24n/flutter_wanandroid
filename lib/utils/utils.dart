@@ -1,7 +1,7 @@
 import 'package:common_utils/common_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_wanandroid/common/common.dart';
-import 'package:flutter_wanandroid/res/res_index.dart';
+import 'package:flutter_wanandroid/res/index.dart';
 import 'package:lpinyin/lpinyin.dart';
 
 class Utils {
@@ -73,5 +73,12 @@ class Utils {
     } else {
       return (remote - loc >= 2) ? -1 : 1;
     }
+  }
+
+  static bool isNeedLogin(String pageId) {
+    if (pageId == Ids.titleCollection) {
+      return true;
+    }
+    return false;
   }
 }

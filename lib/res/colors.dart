@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class Colours {
+class _Colours {
   static const Color app_main = Color(0xFF666666);
 
   static const Color transparent_80 = Color(0x80000000); //<!--204-->
@@ -58,7 +58,7 @@ Map<String, Color> circleAvatarMap = {
 };
 
 Map<String, Color> themeColorMap = {
-  'gray': Colours.gray_33,
+  'gray': _Colours.gray_33,
   'blue': Colors.blue,
   'blueAccent': Colors.blueAccent,
   'cyan': Colors.cyan,
