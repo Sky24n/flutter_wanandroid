@@ -16,13 +16,19 @@ ps：作者Futter版本
 [✓] Flutter (Channel beta, v1.6.3, locale zh-Hans-CN)
 ```
 
-### 关于开源！！！
-项目正在整理开源中！
-如无法运行，请自行回滚到该节点。
+### 压箱底开源！！！ [开源详情](https://github.com/Sky24n/flutter_wanandroid/issues/66)  
+一、Flutter常用工具类库全面升级 [flustars](https://github.com/Sky24n/flustars)
+1. SpUtil 全面支持读取对象，对象列表。无需通过SpHelper二次转换。
+2. ScreenUtil 兼容横/纵屏适配。  
+3. DirectoryUtil 新增文件目录工具类。   
+   
+二、Flutter全局屏幕适配库 [auto_size](https://github.com/flutterchina/auto_size)   
+
+三、关于本库相关  
+项目正在整理开源中！如无法运行，请自行回滚到该节点。
 ```
 git reset --hard 777f6e7fc221b30abf480c94d686c955fe661b0e
 ```
-
 ### [更新说明](./CHANGELOGS.md)
 
 ### v0.2.1 (2019.05.08)
