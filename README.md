@@ -16,7 +16,7 @@ ps：作者Futter版本
 [✓] Flutter (Channel beta, v1.6.3, locale zh-Hans-CN)
 ```
 
-### 压箱底开源！！！ [开源详情](https://github.com/Sky24n/flutter_wanandroid/issues/66)  
+### [压箱底开源！！！](https://github.com/Sky24n/flutter_wanandroid/issues/66)  
 一、Flutter常用工具类库全面升级 [flustars](https://github.com/Sky24n/flustars)
 1. SpUtil 全面支持读取对象，对象列表。无需通过SpHelper二次转换。
 2. ScreenUtil 兼容横/纵屏适配。  
