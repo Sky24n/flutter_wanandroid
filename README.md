@@ -24,7 +24,10 @@ ps：作者Futter版本
    
 二、Flutter全局屏幕适配库 [auto_size](https://github.com/flutterchina/auto_size)   
 
-三、关于本库相关  
+三、基础组件库[base_library](https://github.com/Sky24n/FlutterRepos)，方便多个项目共用。  
+另外附送[login_demo](https://github.com/Sky24n/FlutterRepos/tree/master/login_demo)示例！关于App启动时，未登录跳登录页，已登录进主页。
+
+四、关于本库相关  
 项目正在整理开源中！如无法运行，请自行回滚到该节点。
 ```
 git reset --hard 777f6e7fc221b30abf480c94d686c955fe661b0e
