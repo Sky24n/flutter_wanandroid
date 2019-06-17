@@ -5,6 +5,16 @@
 有关项目最新动态，可以关注App内第一条Hot Item信息。
 
 ### 运行本项目注意！！！
+本项目运行环境要求!
+```
+ps：作者Futter版本
+[✓] Flutter (Channel beta, v1.6.3, locale zh-Hans-CN)
+
+dart-sdk v2.1.0
+  
+ps：如不是以上版本，请自行升级！
+flutter upgrade
+```
 由于在国内访问Flutter有时可能会受到限制，clone项目后，请勿直接packages get，建议运行如下目录行：
 ```
 export PUB_HOSTED_URL=https://pub.flutter-io.cn  
@@ -12,8 +22,7 @@ export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
 flutter packages get
 flutter run --release
   
-ps：作者Futter版本
-[✓] Flutter (Channel beta, v1.6.3, locale zh-Hans-CN)
+
 ```
 
 ### [开源详情！！！](https://github.com/Sky24n/flutter_wanandroid/issues/66)  
