@@ -12,7 +12,7 @@ ps：作者Futter版本
 
 dart-sdk v2.1.0
   
-ps：如不是以上版本，请自行升级！
+ps：以上是最低支持版本，如不是，请自行升级！
 flutter upgrade
 ```
 由于在国内访问Flutter有时可能会受到限制，clone项目后，请勿直接packages get，建议运行如下目录行：
