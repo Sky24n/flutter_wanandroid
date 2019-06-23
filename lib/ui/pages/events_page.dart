@@ -33,10 +33,10 @@ class EventsPage extends StatelessWidget {
             (BuildContext context, AsyncSnapshot<List<ReposModel>> snapshot) {
           return new RefreshScaffold(
             labelId: labelId,
-            isLoading: snapshot.data == null,
+            loadStatus: Utils.getLoadStatus(snapshot.hasError, snapshot.data),
             controller: _controller,
-            onRefresh: () {
-              return bloc.onRefresh(labelId: labelId);
+            onRefresh: ({bool isReload}) {
+              return bloc.onRefresh(labelId: labelId, isReload: isReload);
             },
             onLoadMore: (up) {
               bloc.onLoadMore(labelId: labelId);

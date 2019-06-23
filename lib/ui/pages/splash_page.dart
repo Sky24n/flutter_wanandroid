@@ -224,7 +224,8 @@ class SplashPageState extends State<SplashPage> {
                 child: new Container(
                     padding: EdgeInsets.all(12.0),
                     child: new Text(
-                      '跳过 $_count',
+                      IntlUtil.getString(context, Ids.jump_count,
+                          params: ['$_count']),
                       style: new TextStyle(fontSize: 14.0, color: Colors.white),
                     ),
                     decoration: new BoxDecoration(

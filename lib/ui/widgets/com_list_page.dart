@@ -21,20 +21,16 @@ class ComListPage extends StatelessWidget {
         stream: bloc.comListStream,
         builder:
             (BuildContext context, AsyncSnapshot<List<ReposModel>> snapshot) {
-          if (bloc.comList == null) {
+          int loadStatus =
+          Utils.getLoadStatus(snapshot.hasError, snapshot.data);
+          if (loadStatus == LoadStatus.loading) {
             bloc.onRefresh(labelId: labelId, cid: cid);
-//            Observable.just(1)
-//                .delay(new Duration(milliseconds: 500))
-//                .listen((_) {
-//
-//            });
           }
-
           return new RefreshScaffold(
             labelId: cid.toString(),
-            isLoading: snapshot.data == null,
+            loadStatus: loadStatus,
             controller: _controller,
-            onRefresh: () {
+            onRefresh: ({bool isReload}) {
               return bloc.onRefresh(labelId: labelId, cid: cid);
             },
             onLoadMore: (up) {

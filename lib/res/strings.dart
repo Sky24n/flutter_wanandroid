@@ -41,6 +41,8 @@ class Ids {
 
   static const String confirm = 'confirm';
   static const String cancel = 'cancel';
+
+  static const String jump_count = 'jump_count';
 }
 
 Map<String, Map<String, String>> localizedSimpleValues = {
@@ -103,6 +105,7 @@ Map<String, Map<String, Map<String, String>>> localizedValues = {
       Ids.user_new_user_hint: 'New users? ',
       Ids.confirm: 'Confirm',
       Ids.cancel: 'Cancel',
+      Ids.jump_count: 'Jump %\$0\$s',
     }
   },
   'zh': {
@@ -139,6 +142,7 @@ Map<String, Map<String, Map<String, String>>> localizedValues = {
       Ids.user_new_user_hint: '新用户？',
       Ids.confirm: '确认',
       Ids.cancel: '取消',
+      Ids.jump_count: '跳过 %\$0\$s',
     },
     'HK': {
       Ids.titleHome: '主頁',
@@ -169,6 +173,7 @@ Map<String, Map<String, Map<String, String>>> localizedValues = {
       Ids.user_new_user_hint: '新用户？',
       Ids.confirm: '确认',
       Ids.cancel: '取消',
+      Ids.jump_count: '跳过 %\$0\$s',
     },
     'TW': {
       Ids.titleHome: '主頁',
@@ -199,6 +204,7 @@ Map<String, Map<String, Map<String, String>>> localizedValues = {
       Ids.user_new_user_hint: '新用户？',
       Ids.confirm: '确认',
       Ids.cancel: '取消',
+      Ids.jump_count: '跳过 %\$0\$s',
     }
   }
 };

@@ -33,11 +33,11 @@ class SystemPage extends StatelessWidget {
             (BuildContext context, AsyncSnapshot<List<TreeModel>> snapshot) {
           return new RefreshScaffold(
             labelId: labelId,
-            isLoading: snapshot.data == null,
+            loadStatus: Utils.getLoadStatus(snapshot.hasError, snapshot.data),
             controller: _controller,
             enablePullUp: false,
-            onRefresh: () {
-              return bloc.onRefresh(labelId: labelId);
+            onRefresh: ({bool isReload}) {
+              return bloc.onRefresh(labelId: labelId, isReload: isReload);
             },
             onLoadMore: (up) {},
             itemCount: snapshot.data == null ? 0 : snapshot.data.length,

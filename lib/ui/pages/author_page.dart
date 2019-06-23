@@ -13,6 +13,10 @@ class AuthorPage extends StatelessWidget {
         url: "https://www.jianshu.com/u/cbf2ad25d33a",
         extra: "+关注"));
     list.add(new ComModel(
+        title: "掘金",
+        url: "https://juejin.im/user/5b9e8a92e51d453df0440422",
+        extra: "+关注"));
+    list.add(new ComModel(
         title: "我的Flutter开源库集合",
         url: "https://www.jianshu.com/p/9e5cc4ba3a8e"));
     return new Scaffold(

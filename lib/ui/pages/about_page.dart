@@ -12,7 +12,7 @@ class AboutPage extends StatelessWidget {
         url: 'https://github.com/Sky24n/flutter_wanandroid',
         extra: 'Go Star');
     ComModel author = new ComModel(title: '作者', page: AuthorPage());
-    ComModel other = new ComModel(title: '其他', page: OtherPage());
+    ComModel other = new ComModel(title: 'Big Thanks', page: OtherPage());
 
     return new Scaffold(
       appBar: new AppBar(

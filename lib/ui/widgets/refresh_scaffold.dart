@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_wanandroid/common/component_index.dart';
 
 typedef void OnLoadMore(bool up);
+typedef OnRefreshCallback = Future<void> Function({bool isReload});
 
 class RefreshScaffold extends StatefulWidget {
   const RefreshScaffold(
       {Key key,
       this.labelId,
-      this.isLoading,
+      this.loadStatus,
       @required this.controller,
       this.enablePullUp: true,
       this.onRefresh,
@@ -18,10 +19,10 @@ class RefreshScaffold extends StatefulWidget {
       : super(key: key);
 
   final String labelId;
-  final bool isLoading;
+  final int loadStatus;
   final RefreshController controller;
   final bool enablePullUp;
-  final RefreshCallback onRefresh;
+  final OnRefreshCallback onRefresh;
   final OnLoadMore onLoadMore;
   final Widget child;
   final int itemCount;
@@ -95,14 +96,13 @@ class RefreshScaffoldState extends State<RefreshScaffold>
                           itemBuilder: widget.itemBuilder,
                         )),
                 onRefresh: widget.onRefresh),
-            new Offstage(
-              offstage: widget.isLoading != true,
-              child: new Container(
-                alignment: Alignment.center,
-                color: Colours.gray_f0,
-                child: new ProgressView(),
-              ),
-            )
+            new StatusViews(
+              widget.loadStatus,
+              onTap: () {
+                LogUtil.e("ProgressViews onRefresh......");
+                widget.onRefresh(isReload: true);
+              },
+            ),
           ],
         ),
         floatingActionButton: buildFloatingActionButton());

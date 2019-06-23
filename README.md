@@ -10,9 +10,9 @@
 ps：作者Futter版本
 [✓] Flutter (Channel beta, v1.6.3, locale zh-Hans-CN)
 
-dart-sdk v2.1.0
-  
 ps：以上是最低支持版本，如不是，请自行升级！
+  
+flutter channel beta
 flutter upgrade
 ```
 由于在国内访问Flutter有时可能会受到限制，clone项目后，请勿直接packages get，建议运行如下目录行：
@@ -21,8 +21,6 @@ export PUB_HOSTED_URL=https://pub.flutter-io.cn
 export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn  
 flutter packages get
 flutter run --release
-  
-
 ```
 
 ### [开源详情！！！](https://github.com/Sky24n/flutter_wanandroid/issues/66)  
@@ -36,11 +34,6 @@ flutter run --release
 三、基础组件库[base_library](https://github.com/Sky24n/FlutterRepos)，方便多个项目共用。  
 另外附送[login_demo](https://github.com/Sky24n/FlutterRepos/tree/master/login_demo)示例！关于App启动时，未登录跳登录页，已登录进主页。
 
-四、关于本库相关  
-项目正在整理开源中！如无法运行，请自行回滚到该节点。
-```
-git reset --hard 777f6e7fc221b30abf480c94d686c955fe661b0e
-```
 ### [更新说明](./CHANGELOGS.md)
 
 ### v0.2.1 (2019.05.08)
@@ -338,7 +331,8 @@ ScreenUtil.getInstance().getHeight(size); //返回根据屏幕高适配后尺寸
 ScreenUtil.getInstance().getWidthPx(sizePx); //sizePx 单位px
 ScreenUtil.getInstance().getHeightPx(sizePx); //sizePx 单位px
 ScreenUtil.getInstance().getSp(fontSize); //返回根据屏幕宽适配后字体尺寸
-
+  
+double adapterSize = ScreenUtil.getInstance().getAdapterSize(100);
 ```
 方案二、依赖context
 ```dart
@@ -351,6 +345,8 @@ ScreenUtil.getScreenH(context); //屏幕 高
 ScreenUtil.getScaleW(context, size); //返回根据屏幕宽适配后尺寸（单位 dp or pt）
 ScreenUtil.getScaleH(context, size); //返回根据屏幕高适配后尺寸 （单位 dp or pt）
 ScreenUtil.getScaleSp(context, size) ;//返回根据屏幕宽适配后字体尺寸
+  
+double adapterSize = ScreenUtil.getAdapterSizeCtx(context, 100)
 ```
 ### Flutter 数据存储  [SpUtil](https://github.com/Sky24n/flustars)
 单例"同步" SharedPreferences 工具类。  
@@ -368,8 +364,7 @@ ScreenUtil.getScaleSp(context, size) ;//返回根据屏幕宽适配后字体尺�
     city.name = "成都市";
     SpUtil.putObject("loc_city", city);
   
-    Map dataStr = SpUtil.getObject("loc_city");
-    City hisCity = dataStr == null ? null : City.fromJson(dataStr);
+    City hisCity = SpUtil.getObj("loc_city", (v) => City.fromJson(v)); 
     print("thll Str: " + (hisCity == null ? "null" : hisCity.toString()));
   
     /// save object list example.
@@ -379,11 +374,7 @@ ScreenUtil.getScaleSp(context, size) ;//返回根据屏幕宽适配后字体尺�
     list.add(new City(name: "北京市"));
     SpUtil.putObjectList("loc_city_list", list);
   
-    List<Map> dataList = SpUtil.getObjectList("loc_city_list");
-    List<City> _cityList = dataList?.map((value) {
-      return City.fromJson(value);
-    })?.toList();
-
+    List<City> _cityList = SpUtil.getObjList("loc_city_list", (v) => City.fromJson(v));
     print("thll List: " + (_cityList == null ? "null" : _cityList.toString()));
 ```
 

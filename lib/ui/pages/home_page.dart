@@ -120,10 +120,10 @@ class HomePage extends StatelessWidget {
             (BuildContext context, AsyncSnapshot<List<BannerModel>> snapshot) {
           return new RefreshScaffold(
             labelId: labelId,
-            isLoading: snapshot.data == null,
+            loadStatus: Utils.getLoadStatus(snapshot.hasError, snapshot.data),
             controller: _controller,
             enablePullUp: false,
-            onRefresh: () {
+            onRefresh: ({bool isReload}) {
               return bloc.onRefresh(labelId: labelId);
             },
             child: new ListView(

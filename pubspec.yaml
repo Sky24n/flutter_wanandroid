@@ -7,7 +7,7 @@ description: Flutter Wanandroid App.
 # Both the version and the builder number may be overridden in flutter
 # build by specifying --build-name and --build-number, respectively.
 # Read more about versioning at semver.org.
-version: 0.2.1
+version: 0.2.2
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
@@ -64,7 +64,9 @@ dependencies:
   # device_info
 #  device_info: ^0.4.0+1
   # webview_flutter
-  webview_flutter: ^0.3.9
+  webview_flutter: ^0.3.9+1
+  # share
+  share: ^0.6.1+1
   # https://github.com/flutterchina/flukit.
   flukit: ^1.0.0
 
@@ -101,6 +103,8 @@ flutter:
     - assets/images/splash_bg.png
 
     - packages/base_library/assets/ic_login_bg.png
+    - packages/base_library/assets/ic_network_error.png
+    - packages/base_library/assets/ic_data_empty.png
 
     - assets/data/china.json
 

@@ -5,7 +5,7 @@ class Constant {
 
   static const String server_address = wan_android;
 
-  static const String wan_android = "http://www.wanandroid.com/";
+  static const String wan_android = "https://www.wanandroid.com/";
 
   static const int type_sys_update = 1;
   static const int type_refresh_all = 5;
@@ -17,7 +17,7 @@ class Constant {
 
 class AppConfig {
   static const String appName = 'flutter_wanandroid';
-  static const String version = '0.1.5';
+  static const String version = '0.2.2';
   static const bool isDebug = true;
 }
 

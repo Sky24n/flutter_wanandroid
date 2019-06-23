@@ -2,6 +2,7 @@ import 'dart:collection';
 
 import 'package:azlistview/azlistview.dart';
 import 'package:flutter_wanandroid/common/component_index.dart';
+import 'package:flutter_wanandroid/data/repository/collect_repository.dart';
 import 'package:flutter_wanandroid/data/repository/wan_repository.dart';
 
 class MainBloc implements BlocBase {
@@ -84,7 +85,7 @@ class MainBloc implements BlocBase {
   ///****** ****** ****** ****** ****** ****** /
   BehaviorSubject<StatusEvent> _homeEvent = BehaviorSubject<StatusEvent>();
 
-  Sink<StatusEvent> get _homeEventSink => _homeEvent.sink;
+  Sink<StatusEvent> get homeEventSink => _homeEvent.sink;
 
   Stream<StatusEvent> get homeEventStream =>
       _homeEvent.stream.asBroadcastStream();
@@ -117,7 +118,7 @@ class MainBloc implements BlocBase {
   ///****** ****** ****** personal ****** ****** ****** /
 
   WanRepository wanRepository = new WanRepository();
-
+  CollectRepository _collectRepository = new CollectRepository();
   HttpUtils httpUtils = new HttpUtils();
 
   MainBloc() {
@@ -169,7 +170,7 @@ class MainBloc implements BlocBase {
   }
 
   @override
-  Future onRefresh({String labelId}) {
+  Future onRefresh({String labelId, bool isReload}) {
     switch (labelId) {
       case Ids.titleHome:
         getHotRecItem();
@@ -231,14 +232,17 @@ class MainBloc implements BlocBase {
       }
       _reposList.addAll(list);
       _reposSink.add(UnmodifiableListView<ReposModel>(_reposList));
-      _homeEventSink.add(new StatusEvent(
+      homeEventSink.add(new StatusEvent(
           labelId,
           ObjectUtil.isEmpty(list)
               ? RefreshStatus.noMore
               : RefreshStatus.idle));
     }).catchError((_) {
+      if (ObjectUtil.isEmpty(_reposList)) {
+        _repos.sink.addError("error");
+      }
       _reposPage--;
-      _homeEventSink.add(new StatusEvent(labelId, RefreshStatus.failed));
+      homeEventSink.add(new StatusEvent(labelId, RefreshStatus.failed));
     });
   }
 
@@ -252,14 +256,17 @@ class MainBloc implements BlocBase {
       }
       _eventsList.addAll(list);
       _eventsSink.add(UnmodifiableListView<ReposModel>(_eventsList));
-      _homeEventSink.add(new StatusEvent(
+      homeEventSink.add(new StatusEvent(
           labelId,
           ObjectUtil.isEmpty(list)
               ? RefreshStatus.noMore
               : RefreshStatus.idle));
     }).catchError((_) {
+      if (ObjectUtil.isEmpty(_eventsList)) {
+        _events.sink.addError("error");
+      }
       _eventsPage--;
-      _homeEventSink.add(new StatusEvent(labelId, RefreshStatus.failed));
+      homeEventSink.add(new StatusEvent(labelId, RefreshStatus.failed));
     });
   }
 
@@ -282,13 +289,16 @@ class MainBloc implements BlocBase {
       _treeList.clear();
       _treeList.addAll(list);
       _treeSink.add(UnmodifiableListView<TreeModel>(_treeList));
-      _homeEventSink.add(new StatusEvent(
+      homeEventSink.add(new StatusEvent(
           labelId,
           ObjectUtil.isEmpty(list)
               ? RefreshStatus.noMore
               : RefreshStatus.idle));
     }).catchError((_) {
-      _homeEventSink.add(new StatusEvent(labelId, RefreshStatus.failed));
+      if (ObjectUtil.isEmpty(_reposList)) {
+        _tree.sink.addError("error");
+      }
+      homeEventSink.add(new StatusEvent(labelId, RefreshStatus.failed));
     });
   }
 
@@ -310,14 +320,48 @@ class MainBloc implements BlocBase {
     httpUtils.getRecList().then((list) {
       hotRecList = list;
       _recListSink.add(UnmodifiableListView<ComModel>(list));
-      _homeEventSink.add(new StatusEvent(
+      homeEventSink.add(new StatusEvent(
           labelId,
           ObjectUtil.isEmpty(list)
               ? RefreshStatus.noMore
               : RefreshStatus.idle));
     }).catchError((_) {
-      _homeEventSink.add(new StatusEvent(labelId, RefreshStatus.failed));
+      homeEventSink.add(new StatusEvent(labelId, RefreshStatus.failed));
     });
+  }
+
+  void doCollection(String labelId, int id, bool isCollect) {
+    LogUtil.e("doCollection id: $id, isCollect: $isCollect");
+    if (isCollect) {
+      _collectRepository.collect(id).then((bool suc) {
+        onCollectRefresh(labelId, id, isCollect);
+      });
+    } else {
+      _collectRepository.unCollect(id).then((bool suc) {
+        onCollectRefresh(labelId, id, isCollect);
+      });
+    }
+  }
+
+  void onCollectRefresh(String labelId, int id, bool isCollect) {
+    if (ObjectUtil.isNotEmpty(_reposList)) {
+      _reposList?.forEach((model) {
+        if (id == model.id) {
+          model.collect = isCollect;
+        }
+        return model;
+      });
+      _reposSink.add(UnmodifiableListView<ReposModel>(_reposList));
+    }
+    if (ObjectUtil.isNotEmpty(_eventsList)) {
+      _eventsList?.forEach((model) {
+        if (id == model.id) {
+          model.collect = isCollect;
+        }
+        return model;
+      });
+      _eventsSink.add(UnmodifiableListView<ReposModel>(_eventsList));
+    }
   }
 
   void test() {

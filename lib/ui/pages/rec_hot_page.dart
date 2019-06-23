@@ -56,10 +56,10 @@ class RecHotPage extends StatelessWidget {
               (BuildContext context, AsyncSnapshot<List<ComModel>> snapshot) {
             return new RefreshScaffold(
               labelId: title ?? IntlUtil.getString(context, titleId),
-              isLoading: snapshot.data == null,
+              loadStatus: Utils.getLoadStatus(snapshot.hasError, snapshot.data),
               controller: _controller,
               enablePullUp: false,
-              onRefresh: () {
+              onRefresh: ({bool isReload}) {
                 return bloc.getHotRecList(labelId);
               },
               itemCount: snapshot.data == null ? 0 : snapshot.data.length,

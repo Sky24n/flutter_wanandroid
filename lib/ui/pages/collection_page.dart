@@ -17,6 +17,7 @@ class CollectionPage extends StatelessWidget {
         _controller.sendBack(false, event.status);
       }
     });
+    bloc.setHomeEventSink(mainBloc.homeEventSink);
     return new Scaffold(
       appBar: new AppBar(
         elevation: 0.0,
@@ -27,8 +28,14 @@ class CollectionPage extends StatelessWidget {
           stream: bloc.collectListStream,
           builder:
               (BuildContext context, AsyncSnapshot<List<ReposModel>> snapshot) {
+            int loadStatus =
+                Utils.getLoadStatus(snapshot.hasError, snapshot.data);
+            if (loadStatus == LoadStatus.loading) {
+              bloc.onRefresh(labelId: labelId);
+            }
             return new RefreshScaffold(
               labelId: labelId,
+              loadStatus: loadStatus,
               controller: _controller,
               onRefresh: ({bool isReload}) {
                 return bloc.onRefresh(labelId: labelId, isReload: isReload);

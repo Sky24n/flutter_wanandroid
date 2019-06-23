@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_wanandroid/common/component_index.dart';
 import 'package:webview_flutter/webview_flutter.dart';
+import 'package:share/share.dart';
 
 class WebScaffold extends StatefulWidget {
   const WebScaffold({
@@ -25,15 +26,16 @@ class WebScaffoldState extends State<WebScaffold> {
 //  bool _isShowFloatBtn = false;
 
   void _onPopSelected(String value) {
+    String _title = widget.title ?? IntlUtil.getString(context, widget.titleId);
     switch (value) {
       case "browser":
-        NavigatorUtil.launchInBrowser(widget.url,
-            title: widget.title ?? IntlUtil.getString(context, widget.titleId));
+        NavigatorUtil.launchInBrowser(widget.url, title: _title);
         break;
       case "collection":
         break;
-
       case "share":
+        String _url = widget.url;
+        Share.share('$_title : $_url');
         break;
       default:
         break;

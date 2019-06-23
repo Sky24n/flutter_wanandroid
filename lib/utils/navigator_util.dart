@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_wanandroid/common/component_index.dart';
 import 'package:flutter_wanandroid/ui/pages/tab_page.dart';
+import 'package:flutter_wanandroid/ui/pages/user/user_login_page.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class NavigatorUtil {
@@ -10,7 +11,11 @@ class NavigatorUtil {
     String pageName,
     bool needLogin = false,
   }) {
-    if (context == null || page == null || ObjectUtil.isEmpty(pageName)) return;
+    if (context == null || page == null) return;
+    if (needLogin && !Util.isLogin()) {
+      pushPage(context, UserLoginPage());
+      return;
+    }
     Navigator.push(
         context, new CupertinoPageRoute<void>(builder: (ctx) => page));
   }

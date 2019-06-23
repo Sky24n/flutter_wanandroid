@@ -69,6 +69,9 @@ class CollectBloc implements BlocBase {
 
   Sink<StatusEvent> _homeEventSink;
 
+  void setHomeEventSink(Sink<StatusEvent> eventSink) {
+    _homeEventSink = eventSink;
+  }
 
   @override
   void dispose() {

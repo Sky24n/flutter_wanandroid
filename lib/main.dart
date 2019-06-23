@@ -26,7 +26,6 @@ class MyAppState extends State<MyApp> {
   void initState() {
     super.initState();
     setLocalizedValues(localizedValues);
-    _init();
     _initAsync();
     _initListener();
   }
@@ -35,6 +34,12 @@ class MyAppState extends State<MyApp> {
 //    DioUtil.openDebug();
     Options options = DioUtil.getDefOptions();
     options.baseUrl = Constant.server_address;
+    String cookie = SpUtil.getString(BaseConstant.keyAppToken);
+    if (ObjectUtil.isNotEmpty(cookie)) {
+      Map<String, dynamic> _headers = new Map();
+      _headers["Cookie"] = cookie;
+      options.headers = _headers;
+    }
     HttpConfig config = new HttpConfig(options: options);
     DioUtil().setConfig(config);
   }
@@ -42,6 +47,7 @@ class MyAppState extends State<MyApp> {
   void _initAsync() async {
     await SpUtil.getInstance();
     if (!mounted) return;
+    _init();
     _loadLocale();
   }
 
