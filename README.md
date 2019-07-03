@@ -11,8 +11,7 @@ ps：作者Futter版本
 [✓] Flutter (Channel beta, v1.6.3, locale zh-Hans-CN)
 
 ps：以上是最低支持版本，如不是，请自行升级！
-  
-flutter channel beta
+
 flutter upgrade
 ```
 由于在国内访问Flutter有时可能会受到限制，clone项目后，请勿直接packages get，建议运行如下目录行：
@@ -35,6 +34,10 @@ flutter run --release
 另外附送[login_demo](https://github.com/Sky24n/FlutterRepos/tree/master/login_demo)示例！关于App启动时，未登录跳登录页，已登录进主页。
 
 ### [更新说明](./CHANGELOGS.md)
+### v0.2.2 (2019.07.02)
+1.基础库升级。  
+2.修复OPPO R15详情页问题。  
+3.一些优化~。
 
 ### v0.2.1 (2019.05.08)
 1.新增登录/注册。  
@@ -70,16 +73,11 @@ flutter run --release
 <img src="https://gitee.com/uploads/images/2019/0506/004900_5e0bd537_506864.png" width="240">  <img src="https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/flutter_wanandroid/splash_video.gif" width="240">  <img src="https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/flutter_wanandroid/upgrade_download.gif" width="240">    
 
 ### 安卓Apk
-如需体验版本升级功能，可以下载旧版apk。  
-  
-点击下载  [新版v0.2.1](https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppStore/flutter_wanandroid.apk)  ---  [旧版v0.2.0](https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppStore/flutter_wanandroid_old.apk)  
+点击下载  [新版v0.2.2](https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppStore/flutter_wanandroid.apk)   
    
-扫码下载 新版v0.2.1  
+扫码下载 新版v0.2.2  
 ![flutter_wanandroid](https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/flutter_wanandroid/qrcode.png)
   
-扫码下载 旧版v0.2.0    
-![flutter_wanandroid](https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/flutter_wanandroid/qrcode1.png)
-
 ### iOS：请自行clone项目代码运行。
 
 ## App目录结构
