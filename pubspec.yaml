@@ -71,9 +71,11 @@ dependencies:
   flukit: ^1.0.0
 
   # Flutter 全局屏幕适配。https://github.com/flutterchina/auto_size
-#  auto_size:
-#      git:
-#        url: git://github.com/flutterchina/auto_size.git
+  # 如果有问题请尝试修改如下链接
+  # url: https://github.com/flutterchina/auto_size.git
+  auto_size:
+    git:
+      url: git://github.com/flutterchina/auto_size.git
 
 dev_dependencies:
   flutter_test:
