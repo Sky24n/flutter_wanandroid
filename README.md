@@ -22,6 +22,18 @@ flutter packages get
 flutter run --release
 ```
 
+### 近期github无法预览图片和外链下载。
+1、App无法下载问题   
+
+这里提供最新下载方式。[App链接](https://github.com/Sky24n/Doc)
+  
+2、无法查看截图，大家可以去简书或掘金查看！  
+  
+[简书地址](https://www.jianshu.com/p/be0107298bc5)    
+
+[掘金地址](https://juejin.im/post/5c380b336fb9a049fd100eff)
+
+
 ### [开源详情！！！](https://github.com/Sky24n/flutter_wanandroid/issues/66)  
 一、Flutter常用工具类库全面升级 [flustars](https://github.com/Sky24n/flustars)
 1. SpUtil 全面支持读取对象，对象列表。无需通过SpHelper二次转换。
