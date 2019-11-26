@@ -8,7 +8,7 @@ class SettingPage extends StatelessWidget {
     LogUtil.e("SettingPage build......");
     final ApplicationBloc bloc = BlocProvider.of<ApplicationBloc>(context);
     LanguageModel languageModel =
-        SpHelper.getObject<LanguageModel>(Constant.keyLanguage);
+        SpUtil.getObj(Constant.keyLanguage, (v) => LanguageModel.fromJson(v));
     return new Scaffold(
       appBar: AppBar(
         title: Text(

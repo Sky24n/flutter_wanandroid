@@ -31,7 +31,7 @@ class LoginBody extends StatelessWidget {
     TextEditingController _controllerPwd = new TextEditingController();
     UserRepository userRepository = new UserRepository();
     UserModel userModel =
-        SpHelper.getObject<UserModel>(BaseConstant.keyUserModel);
+        SpUtil.getObj(BaseConstant.keyUserModel, (v) => UserModel.fromJson(v));
     _controllerName.text = userModel?.username ?? "";
 
     void _userLogin() {

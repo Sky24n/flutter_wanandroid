@@ -23,7 +23,9 @@ class _LanguagePageState extends State<LanguagePage> {
     _list.add(LanguageModel(Ids.languageHK, 'zh', 'HK'));
     _list.add(LanguageModel(Ids.languageEN, 'en', 'US'));
 
-    _currentLanguage = SpHelper.getObject<LanguageModel>(Constant.keyLanguage);
+    _currentLanguage =
+        SpUtil.getObj(Constant.keyLanguage, (v) => LanguageModel.fromJson(v));
+    ;
     if (ObjectUtil.isEmpty(_currentLanguage)) {
       _currentLanguage = _list[0];
     }
@@ -61,7 +63,7 @@ class _LanguagePageState extends State<LanguagePage> {
                   style: new TextStyle(fontSize: 12.0),
                 ),
                 onPressed: () {
-                  SpHelper.putObject(
+                  SpUtil.putObject(
                       Constant.keyLanguage,
                       ObjectUtil.isEmpty(_currentLanguage.languageCode)
                           ? null

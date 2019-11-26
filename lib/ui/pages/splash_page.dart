@@ -28,11 +28,10 @@ class SplashPageState extends State<SplashPage> {
   @override
   void initState() {
     super.initState();
-    _initAsync();
+    _init();
   }
 
-  void _initAsync() async {
-    await SpUtil.getInstance();
+  void _init() {
     _loadSplashData();
     Observable.just(1).delay(new Duration(milliseconds: 500)).listen((_) {
 //      SpUtil.putBool(Constant.key_guide, false);
@@ -47,7 +46,8 @@ class SplashPageState extends State<SplashPage> {
   }
 
   void _loadSplashData() {
-    _splashModel = SpHelper.getObject<SplashModel>(Constant.key_splash_model);
+    _splashModel = SpUtil.getObj(
+        Constant.key_splash_model, (v) => SplashModel.fromJson(v));
     if (_splashModel != null) {
       setState(() {});
     }
@@ -55,13 +55,13 @@ class SplashPageState extends State<SplashPage> {
     httpUtil.getSplash().then((model) {
       if (!ObjectUtil.isEmpty(model.imgUrl)) {
         if (_splashModel == null || (_splashModel.imgUrl != model.imgUrl)) {
-          SpHelper.putObject(Constant.key_splash_model, model);
+          SpUtil.putObject(Constant.key_splash_model, model);
           setState(() {
             _splashModel = model;
           });
         }
       } else {
-        SpHelper.putObject(Constant.key_splash_model, null);
+        SpUtil.putObject(Constant.key_splash_model, null);
       }
     });
   }
@@ -244,6 +244,6 @@ class SplashPageState extends State<SplashPage> {
   @override
   void dispose() {
     super.dispose();
-    if (_timerUtil != null) _timerUtil.cancel(); //记得中dispose里面把timer cancel。
+    if (_timerUtil != null) _timerUtil.cancel(); //记得在dispose里面把timer cancel。
   }
 }

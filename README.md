@@ -5,10 +5,10 @@
 有关项目最新动态，可以关注App内第一条Hot Item信息。
 
 ### 运行本项目注意！！！
-本项目运行环境要求!
+本项目运行环境要求! Flutter Version (beta v1.10.7)
 ```
 ps：作者Futter版本
-[✓] Flutter (Channel beta, v1.6.3, locale zh-Hans-CN)
+[✓] Flutter (Channel beta, v1.10.7, locale zh-Hans-CN)
 
 ps：以上是最低支持版本，如不是，请自行升级！
 
@@ -46,6 +46,10 @@ flutter run --release
 另外附送[login_demo](https://github.com/Sky24n/FlutterRepos/tree/master/login_demo)示例！关于App启动时，未登录跳登录页，已登录进主页。
 
 ### [更新说明](./CHANGELOGS.md)
+### v0.2.5 (2019.11.16)
+1.基础库升级。  
+2.一些优化~。
+
 ### v0.2.2 (2019.07.02)
 1.基础库升级。  
 2.修复OPPO R15详情页问题。  
@@ -85,9 +89,9 @@ flutter run --release
 <img src="https://gitee.com/uploads/images/2019/0506/004900_5e0bd537_506864.png" width="240">  <img src="https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/flutter_wanandroid/splash_video.gif" width="240">  <img src="https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/flutter_wanandroid/upgrade_download.gif" width="240">    
 
 ### 安卓Apk
-点击下载  [新版v0.2.2](https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppStore/flutter_wanandroid.apk)   
+点击下载  [新版v0.2.5](https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppStore/flutter_wanandroid.apk)   
    
-扫码下载 新版v0.2.2  
+扫码下载 新版v0.2.5  
 ![flutter_wanandroid](https://raw.githubusercontent.com/Sky24n/LDocuments/master/AppImgs/flutter_wanandroid/qrcode.png)
   
 ### iOS：请自行clone项目代码运行。
@@ -437,14 +441,14 @@ double adapterSize = ScreenUtil.getAdapterSizeCtx(context, 100)
 ④ [Streams-Block-Reactive-Programming-in-Flutter](https://github.com/boeledi/Streams-Block-Reactive-Programming-in-Flutter) 
 
 ### 开源库
-1. Dart常用工具类库[common_utils][common_utils_github]（作者）  
+1. Dart常用工具类库[common_utils][common_utils_github]  
    该库包含TimerUtil（倒计时，定时任务），TimelineUtil（时间轴），DateUtil（日期格式化），RegexUtil（正则验证手机号，身份证，邮箱等等），RegexUtil（正则验证手机号，身份证，邮箱等等），NumUtil（保留x位小数, 精确加、减、乘、除, 防止精度丢失），MoneyUtil（元转分，分转元），ObjectUtil（判空），LogUtil（简单封装打印日志）。  
    如果你有不错的纯dart工具类或对已有对工具类有更好的优化建议，欢迎PR，大家一起维护～  
-2. Flutter常用工具类库[flustars][flustars_github]（作者）  
+2. Flutter常用工具类库[flustars][flustars_github]  
    该库包含SpUtil（单例"同步" SharedPreferences 工具类），ScreenUtil（屏幕适配），WidgetUtil（Widget渲染监听，获取Widget宽高，在屏幕上的坐标）。  
    如果你有不错的Flutter工具类或对已有对工具类有更好的优化建议，欢迎PR，大家一起维护～   
-3. 汉字转拼音库[lpinyin](https://github.com/flutterchina/lpinyin)（作者）  
-4. 国际化/多语言库[fluintl](https://github.com/Sky24n/fluintl)（作者）  
+3. 汉字转拼音库[lpinyin](https://github.com/flutterchina/lpinyin)  
+4. 国际化/多语言库[fluintl](https://github.com/Sky24n/fluintl)  
 5. UI组件库[flukit](https://github.com/flutterchina/flukit)  
 6. 网络请求[dio](https://github.com/flutterchina/dio)  
 7. 图片加载[cached_network_image](https://github.com/renefloor/flutter_cached_network_image)  
@@ -452,7 +456,7 @@ double adapterSize = ScreenUtil.getAdapterSizeCtx(context, 100)
 9. [url_launcher](https://github.com/flutter/plugins/tree/master/packages/url_launcher)  
 10. 点赞效果[LikeButton](https://github.com/yumi0629/LikeButton)  
 11. 安卓webview增加滚动监听[webview_flutter](https://github.com/Sky24n/plugins/tree/master/packages/webview_flutter)  
-12. 城市列表[azlistview](https://github.com/flutterchina/azlistview)（作者）  
+12. 城市列表[azlistview](https://github.com/flutterchina/azlistview)    
 
 ### 项目问题汇总
 Q1：Flutter国际化系统切换iOS不生效问题？  
@@ -466,10 +470,6 @@ Pub &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: [Sky24n](https://pub.flutter-io.cn/packages?
 Email &nbsp;&nbsp;: 863764940@qq.com  
 ⭐⭐⭐ 如果您觉得本项目不错的话，来个star支持下作者吧! ⭐⭐⭐  
 关于项目任何问题请提交[issues](https://github.com/Sky24n/flutter_wanandroid/issues)，私发QQ邮件将不再回复～
-
-Flutter全局屏幕适配 [auto_size](https://github.com/flutterchina/auto_size)  
-  
-[![GitHub stars](https://img.shields.io/github/stars/flutterchina/auto_size.svg?style=social&label=Star)](https://github.com/flutterchina/auto_size) [![GitHub forks](https://img.shields.io/github/forks/flutterchina/auto_size.svg?style=social&label=Fork)](https://github.com/flutterchina/auto_size) [![GitHub watchers](https://img.shields.io/github/watchers/flutterchina/auto_size.svg?style=social&label=Watch)](https://github.com/flutterchina/auto_size)  
 
 Flutter版玩安卓 [flutter_wanandroid](https://github.com/Sky24n/flutter_wanandroid)  
   

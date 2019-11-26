@@ -80,8 +80,8 @@ class _MainLeftPageState extends State<MainLeftPage> {
     if (Util.isLogin()) {
       if (!_pageInfo.contains(loginOut)) {
         _pageInfo.add(loginOut);
-        UserModel userModel =
-            SpHelper.getObject<UserModel>(BaseConstant.keyUserModel);
+        UserModel userModel = SpUtil.getObj(
+            BaseConstant.keyUserModel, (v) => UserModel.fromJson(v));
         _userName = userModel?.username ?? "";
         LogUtil.e("_userName : $_userName");
       }

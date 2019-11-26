@@ -17,7 +17,7 @@ class SpHelper {
   ///
   /// SpHelper.putObject(key, UserModel);
   ///
-  static void putObject<T>(String key, Object value) {
+  static void _putObject<T>(String key, Object value) {
     switch (T) {
       case int:
         SpUtil.putInt(key, value);
@@ -40,30 +40,8 @@ class SpHelper {
     }
   }
 
-  static Object getObject<T>(String key) {
-    Map map = SpUtil.getObject(key);
-    if (map == null) return null;
-    Object obj;
-    switch (T) {
-      case SplashModel:
-        obj = SplashModel.fromJson(map);
-        break;
-      case LanguageModel:
-        obj = LanguageModel.fromJson(map);
-        break;
-      case VersionModel:
-        obj = VersionModel.fromJson(map);
-        break;
-      case UserModel:
-        obj = UserModel.fromJson(map);
-        break;
-      default:
-        break;
-    }
-    return obj;
-  }
-
   static String getThemeColor() {
-    return SpUtil.getString(Constant.key_theme_color, defValue: 'deepPurpleAccent');
+    return SpUtil.getString(Constant.key_theme_color,
+        defValue: 'deepPurpleAccent');
   }
 }
