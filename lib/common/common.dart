@@ -1,4 +1,4 @@
-import 'global.dart';
+import 'package:flutter/foundation.dart';
 
 class Constant {
   static const String keyLanguage = 'key_language';
@@ -20,7 +20,7 @@ class Constant {
 class AppConfig {
   static const String appName = 'flutter_wanandroid';
   static const String version = '0.2.5';
-  static const bool isDebug = Global.kReleaseMode;
+  static const bool isDebug = kDebugMode;
 }
 
 class LoadStatus {

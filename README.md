@@ -5,15 +5,9 @@
 有关项目最新动态，可以关注App内第一条Hot Item信息。
 
 ### 运行本项目注意！！！
-本项目运行环境要求! Flutter Version (beta v1.10.7)
-```
-ps：作者Futter版本
-[✓] Flutter (Channel beta, v1.10.7, locale zh-Hans-CN)
 
-ps：以上是最低支持版本，如不是，请自行升级！
+Support [√] Flutter (Channel stable, v1.17.0).  
 
-flutter upgrade
-```
 由于在国内访问Flutter有时可能会受到限制，clone项目后，请勿直接packages get，建议运行如下目录行：
 ```
 export PUB_HOSTED_URL=https://pub.flutter-io.cn  
@@ -46,6 +40,10 @@ flutter run --release
 另外附送[login_demo](https://github.com/Sky24n/FlutterRepos/tree/master/login_demo)示例！关于App启动时，未登录跳登录页，已登录进主页。
 
 ### [更新说明](./CHANGELOGS.md)
+
+### v0.2.6 (2020.05.08)
+Support [√] Flutter (Channel stable, v1.17.0). 
+
 ### v0.2.5 (2019.11.16)
 1.基础库升级。  
 2.一些优化~。

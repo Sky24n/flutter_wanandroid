@@ -6,9 +6,6 @@ import 'package:flutter/widgets.dart';
 import 'package:flustars/flustars.dart';
 
 class Global {
-  static const bool kReleaseMode =
-      bool.fromEnvironment('dart.vm.product', defaultValue: false);
-
   //初始化全局信息
   static Future init(VoidCallback callback) async {
     WidgetsFlutterBinding.ensureInitialized();
