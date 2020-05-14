@@ -30,6 +30,7 @@ class MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
+    setInitDir(initStorageDir: true);
     setLocalizedValues(localizedValues);
     init();
   }

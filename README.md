@@ -42,7 +42,8 @@ flutter run --release
 ### [更新说明](./CHANGELOGS.md)
 
 ### v0.2.6 (2020.05.08)
-Support [√] Flutter (Channel stable, v1.17.0). 
+Support [√] Flutter (Channel stable, v1.17.0).   
+版本升级功能(仅供参考)
 
 ### v0.2.5 (2019.11.16)
 1.基础库升级。  

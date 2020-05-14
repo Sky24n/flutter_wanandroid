@@ -18,6 +18,7 @@ class Constant {
 }
 
 class AppConfig {
+  static const String appId = 'com.thl.flutterwanandroid';
   static const String appName = 'flutter_wanandroid';
   static const String version = '0.2.5';
   static const bool isDebug = kDebugMode;
