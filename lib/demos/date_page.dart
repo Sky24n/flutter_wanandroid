@@ -13,29 +13,28 @@ class DatePage extends StatefulWidget {
 }
 
 class _DatePageState extends State<DatePage> {
-  DateFormat _dateFormat = DateFormat.NORMAL;
+  String _dateFormat = DateFormats.full;
 
   bool isZH = true;
 
   String _checkResult = "";
 
-  void inputCheck(DateFormat format) {
+  void inputCheck(String format) {
     setState(() {
       _checkResult = "Now:    " +
-          DateUtil.getDateStrByMs(
-              DateTime.now().millisecondsSinceEpoch,
+          DateUtil.formatDateMs(DateTime.now().millisecondsSinceEpoch,
               format: format) +
           "\n" +
-          DateUtil.getWeekDay(DateTime.now()) +
+          DateUtil.getWeekday(DateTime.now()) +
           "   " +
-          DateUtil.getZHWeekDay(DateTime.now());
+          DateUtil.getWeekday(DateTime.now(), languageCode: 'zh');
     });
   }
 
   @override
   void initState() {
     super.initState();
-    inputCheck(isZH ? DateFormat.ZH_NORMAL : DateFormat.NORMAL);
+    inputCheck(isZH ? DateFormats.zh_full : DateFormats.full);
   }
 
   @override
@@ -83,13 +82,13 @@ class _DatePageState extends State<DatePage> {
                               style: new TextStyle(
                                   fontSize: 12.0, color: Colors.grey[700])),
                           new Checkbox(
-                              value: (_dateFormat == DateFormat.DEFAULT),
+                              value: (_dateFormat == DateFormats.full),
                               onChanged: (value) {
                                 if (value) {
                                   setState(() {
-                                    _dateFormat = DateFormat.DEFAULT;
+                                    _dateFormat = DateFormats.full;
                                     inputCheck(isZH
-                                        ? DateFormat.ZH_DEFAULT
+                                        ? DateFormats.zh_full
                                         : _dateFormat);
                                   });
                                 }
@@ -106,14 +105,13 @@ class _DatePageState extends State<DatePage> {
                               style: new TextStyle(
                                   fontSize: 12.0, color: Colors.grey[700])),
                           new Checkbox(
-                              value: (_dateFormat == DateFormat.NORMAL),
+                              value: (_dateFormat == DateFormats.full),
                               onChanged: (value) {
                                 if (value) {
                                   setState(() {
-                                    _dateFormat = DateFormat.NORMAL;
-                                    inputCheck(isZH
-                                        ? DateFormat.ZH_NORMAL
-                                        : _dateFormat);
+                                    _dateFormat = DateFormats.full;
+                                    inputCheck(
+                                        isZH ? DateFormats.full : _dateFormat);
                                   });
                                 }
                               })
@@ -129,16 +127,13 @@ class _DatePageState extends State<DatePage> {
                               style: new TextStyle(
                                   fontSize: 12.0, color: Colors.grey[700])),
                           new Checkbox(
-                              value: (_dateFormat ==
-                                  DateFormat.YEAR_MONTH_DAY_HOUR_MINUTE),
+                              value: (_dateFormat == DateFormats.y_mo_d_h_m),
                               onChanged: (value) {
                                 if (value) {
                                   setState(() {
-                                    _dateFormat =
-                                        DateFormat.YEAR_MONTH_DAY_HOUR_MINUTE;
+                                    _dateFormat = DateFormats.y_mo_d_h_m;
                                     inputCheck(isZH
-                                        ? DateFormat
-                                            .ZH_YEAR_MONTH_DAY_HOUR_MINUTE
+                                        ? DateFormats.zh_y_mo_d_h_m
                                         : _dateFormat);
                                   });
                                 }
@@ -155,13 +150,13 @@ class _DatePageState extends State<DatePage> {
                               style: new TextStyle(
                                   fontSize: 12.0, color: Colors.grey[700])),
                           new Checkbox(
-                              value: (_dateFormat == DateFormat.YEAR_MONTH_DAY),
+                              value: (_dateFormat == DateFormats.y_mo_d),
                               onChanged: (value) {
                                 if (value) {
                                   setState(() {
-                                    _dateFormat = DateFormat.YEAR_MONTH_DAY;
+                                    _dateFormat = DateFormats.y_mo_d;
                                     inputCheck(isZH
-                                        ? DateFormat.ZH_YEAR_MONTH_DAY
+                                        ? DateFormats.zh_y_mo_d
                                         : _dateFormat);
                                   });
                                 }
@@ -183,13 +178,13 @@ class _DatePageState extends State<DatePage> {
                               style: new TextStyle(
                                   fontSize: 12.0, color: Colors.grey[700])),
                           new Checkbox(
-                              value: (_dateFormat == DateFormat.YEAR_MONTH),
+                              value: (_dateFormat == DateFormats.y_mo),
                               onChanged: (value) {
                                 if (value) {
                                   setState(() {
-                                    _dateFormat = DateFormat.YEAR_MONTH;
+                                    _dateFormat = DateFormats.y_mo;
                                     inputCheck(isZH
-                                        ? DateFormat.ZH_YEAR_MONTH
+                                        ? DateFormats.zh_y_mo
                                         : _dateFormat);
                                   });
                                 }
@@ -206,13 +201,13 @@ class _DatePageState extends State<DatePage> {
                               style: new TextStyle(
                                   fontSize: 12.0, color: Colors.grey[700])),
                           new Checkbox(
-                              value: (_dateFormat == DateFormat.MONTH_DAY),
+                              value: (_dateFormat == DateFormats.mo_d),
                               onChanged: (value) {
                                 if (value) {
                                   setState(() {
-                                    _dateFormat = DateFormat.MONTH_DAY;
+                                    _dateFormat = DateFormats.mo_d;
                                     inputCheck(isZH
-                                        ? DateFormat.ZH_MONTH_DAY
+                                        ? DateFormats.zh_mo_d
                                         : _dateFormat);
                                   });
                                 }
@@ -229,15 +224,13 @@ class _DatePageState extends State<DatePage> {
                               style: new TextStyle(
                                   fontSize: 12.0, color: Colors.grey[700])),
                           new Checkbox(
-                              value: (_dateFormat ==
-                                  DateFormat.MONTH_DAY_HOUR_MINUTE),
+                              value: (_dateFormat == DateFormats.mo_d_h_m),
                               onChanged: (value) {
                                 if (value) {
                                   setState(() {
-                                    _dateFormat =
-                                        DateFormat.MONTH_DAY_HOUR_MINUTE;
+                                    _dateFormat = DateFormats.mo_d_h_m;
                                     inputCheck(isZH
-                                        ? DateFormat.ZH_MONTH_DAY_HOUR_MINUTE
+                                        ? DateFormats.zh_mo_d_h_m
                                         : _dateFormat);
                                   });
                                 }
@@ -254,14 +247,13 @@ class _DatePageState extends State<DatePage> {
                               style: new TextStyle(
                                   fontSize: 12.0, color: Colors.grey[700])),
                           new Checkbox(
-                              value: (_dateFormat ==
-                                  DateFormat.HOUR_MINUTE_SECOND),
+                              value: (_dateFormat == DateFormats.h_m_s),
                               onChanged: (value) {
                                 if (value) {
                                   setState(() {
-                                    _dateFormat = DateFormat.HOUR_MINUTE_SECOND;
+                                    _dateFormat = DateFormats.h_m_s;
                                     inputCheck(isZH
-                                        ? DateFormat.ZH_HOUR_MINUTE_SECOND
+                                        ? DateFormats.zh_h_m_s
                                         : _dateFormat);
                                   });
                                 }
@@ -278,13 +270,13 @@ class _DatePageState extends State<DatePage> {
                               style: new TextStyle(
                                   fontSize: 12.0, color: Colors.grey[700])),
                           new Checkbox(
-                              value: (_dateFormat == DateFormat.HOUR_MINUTE),
+                              value: (_dateFormat == DateFormats.h_m),
                               onChanged: (value) {
                                 if (value) {
                                   setState(() {
-                                    _dateFormat = DateFormat.HOUR_MINUTE;
+                                    _dateFormat = DateFormats.h_m;
                                     inputCheck(isZH
-                                        ? DateFormat.ZH_HOUR_MINUTE
+                                        ? DateFormats.zh_h_m
                                         : _dateFormat);
                                   });
                                 }

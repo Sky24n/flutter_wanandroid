@@ -72,7 +72,15 @@ class AboutPage extends StatelessWidget {
                               barrierDismissible: false,
                               builder: (BuildContext context) => UpgradeDialog(
                                 versionModel: model,
-                                appId: AppConfig.appId,
+                                valueChanged: (value) {
+//                                  InstallPlugin.installApk(
+//                                          value, AppConfig.appId)
+//                                      .then((result) {
+//                                    LogUtil.e('install apk $result');
+//                                  }).catchError((error) {
+//                                    LogUtil.e('install apk error: $error');
+//                                  });
+                                },
                               ),
                             );
                           }

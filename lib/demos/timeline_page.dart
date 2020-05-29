@@ -17,7 +17,9 @@ class ZHAliPayTimelineInfo implements TimelineInfo {
 
   String suffixAfter() => '后';
 
-  String lessThanTenSecond() => '刚刚';
+  int maxJustNowSecond() => 30;
+
+  String lessThanOneMinute() => '刚刚';
 
   String customYesterday() => '昨天';
 
@@ -35,9 +37,10 @@ class ZHAliPayTimelineInfo implements TimelineInfo {
 
   String oneDay(int days) => '$days天';
 
+  String weeks(int week) => ''; //x week(星期x).
+
   String days(int days) => '$days天';
 
-  DayFormat dayFormat() => DayFormat.Full;
 }
 
 class ENAliPayTimelineInfo implements TimelineInfo {
@@ -45,7 +48,9 @@ class ENAliPayTimelineInfo implements TimelineInfo {
 
   String suffixAfter() => ' after';
 
-  String lessThanTenSecond() => 'just now';
+  int maxJustNowSecond() => 30;
+
+  String lessThanOneMinute() => 'just now';
 
   String customYesterday() => 'Yesterday';
 
@@ -63,9 +68,10 @@ class ENAliPayTimelineInfo implements TimelineInfo {
 
   String oneDay(int days) => 'a day';
 
+  String weeks(int week) => ''; //x week(星期x).
+
   String days(int days) => '$days days';
 
-  DayFormat dayFormat() => DayFormat.Full;
 }
 
 class _TimelinePageState extends State<TimelinePage> {
@@ -250,7 +256,7 @@ class _TimelinePageState extends State<TimelinePage> {
                   itemBuilder: (BuildContext context, int index) {
                     int timeMillis = dateTimeList[index];
                     String timeline = TimelineUtil.format(timeMillis,
-                        locTimeMillis: _locTime,
+                        locTimeMs: _locTime,
                         locale: _getLocale(),
                         dayFormat: _dayFormat);
                     return Container(
