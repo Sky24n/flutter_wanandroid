@@ -4,7 +4,6 @@
 
 有关项目最新动态，可以关注App内第一条Hot Item信息。
 
-
 ### 运行本项目注意！！！
 
 Support [√] Flutter (Channel stable, v1.17.0).  
@@ -16,6 +15,11 @@ export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
 flutter packages get
 flutter run --release
 ```
+
+### [更新说明](./CHANGELOGS.md)
+v0.2.6 (2020.05.08)  
+Support [√] Flutter (Channel stable, v1.17.0).  
+版本升级功能(仅供参考)
 
 ## App目录结构
 >- |--lib
@@ -364,7 +368,10 @@ Email &nbsp;&nbsp;: 863764940@qq.com
 ⭐⭐⭐ 如果您觉得本项目不错的话，来个star支持下作者吧! ⭐⭐⭐  
 关于项目任何问题请提交[issues](https://github.com/Sky24n/flutter_wanandroid/issues)，私发QQ邮件将不再回复～
 
-### [更新说明](./CHANGELOGS.md)
-v0.2.6 (2020.05.08)  
-Support [√] Flutter (Channel stable, v1.17.0).  
-版本升级功能(仅供参考)
+⭐⭐⭐ 最新开源 ⭐⭐⭐  
+[nine_grid_view](https://juejin.im/post/5ee825ab5188251f3f07af75)  
+Flutter仿微信/微博九宫格、拖拽排序，钉钉群组，微信群组头像。
+
+⭐⭐⭐ 个人作品 ⭐⭐⭐  
+[Fitness](https://juejin.im/post/5ebd74b5f265da7bbd2f9aa6)  
+Flutter开发的微博客户端，同时支持Android和iOS。与官方微博x9.99%相似度体验，离线模式，多语言支持，主题随心换，超乎想象的流畅度，各种惊喜的细节等待你一一发现。
