@@ -21,6 +21,11 @@ v0.2.6 (2020.05.08)
 Support [√] Flutter (Channel stable, v1.17.0).  
 版本升级功能(仅供参考)
 
+### [FlutterRepos](https://github.com/Sky24n/FlutterRepos)
+1. [base_library](https://github.com/Sky24n/FlutterRepos/tree/master/base_library) Flutter基础组件库，方便多个项目共用。
+2. [login_demo](https://github.com/Sky24n/FlutterRepos/tree/master/login_demo) 关于App启动时，未登录跳登录页，已登录进主页。
+3. [flutter_gallery](https://github.com/Sky24n/FlutterRepos/tree/master/flutter_gallery) 也许是Google官方最后一个版本的gallery(旧版)。
+
 ## App目录结构
 >- |--lib
 >    - |-- blocs (bloc相关)
@@ -375,3 +380,40 @@ Flutter仿微信/微博九宫格、拖拽排序，钉钉群组，微信群组头
 ⭐⭐⭐ 个人作品 ⭐⭐⭐  
 [Fitness](https://juejin.im/post/5ebd74b5f265da7bbd2f9aa6)  
 Flutter开发的微博客户端，同时支持Android和iOS。与官方微博x9.99%相似度体验，离线模式，多语言支持，主题随心换，超乎想象的流畅度，各种惊喜的细节等待你一一发现。
+
+
+Flutter仿微博客户端  [Flutter Weibo](https://github.com/Sky24n/Fitness)
+
+[![GitHub stars](https://img.shields.io/github/stars/Sky24n/Fitness.svg?style=social&label=Star)](https://github.com/Sky24n/Fitness)
+
+Flutter仿微信/微博九宫格 [NineGridView](https://github.com/flutterchina/nine_grid_view)
+
+[![GitHub stars](https://img.shields.io/github/stars/flutterchina/nine_grid_view.svg?style=social&label=Star)](https://github.com/flutterchina/nine_grid_view)
+
+Flutter版玩安卓 [flutter_wanandroid](https://github.com/Sky24n/flutter_wanandroid)
+
+[![GitHub stars](https://img.shields.io/github/stars/Sky24n/flutter_wanandroid.svg?style=social&label=Star)](https://github.com/Sky24n/flutter_wanandroid)
+
+Flutter仿滴滴出行 [GreenTravel](https://github.com/Sky24n/GreenTravel)
+
+[![GitHub stars](https://img.shields.io/github/stars/Sky24n/GreenTravel.svg?style=social&label=Star)](https://github.com/Sky24n/GreenTravel)
+
+Flutter常用工具类库 [flustars](https://github.com/Sky24n/flustars)
+
+[![GitHub stars](https://img.shields.io/github/stars/Sky24n/flustars.svg?style=social&label=Star)](https://github.com/Sky24n/flustars)
+
+Dart常用工具类库 [common_utils](https://github.com/Sky24n/common_utils)
+
+[![GitHub stars](https://img.shields.io/github/stars/Sky24n/common_utils.svg?style=social&label=Star)](https://github.com/Sky24n/common_utils)
+
+Flutter城市列表 [azlistview](https://github.com/flutterchina/azlistview)
+
+[![GitHub stars](https://img.shields.io/github/stars/flutterchina/azlistview.svg?style=social&label=Star)](https://github.com/flutterchina/azlistview)
+
+Flutter汉字转拼音库 [lpinyin](https://github.com/flutterchina/lpinyin)
+
+[![GitHub stars](https://img.shields.io/github/stars/flutterchina/lpinyin.svg?style=social&label=Star)](https://github.com/flutterchina/lpinyin)
+
+Flutter国际化库 [fluintl](https://github.com/Sky24n/fluintl)
+
+[![GitHub stars](https://img.shields.io/github/stars/Sky24n/fluintl.svg?style=social&label=Star)](https://github.com/Sky24n/fluintl)
