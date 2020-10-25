@@ -8,7 +8,7 @@
 
 Support [√] Flutter (Channel stable, v1.17.0).  
 
-由于在国内访问Flutter有时可能会受到限制，clone项目后，请勿直接packages get，建议运行如下目录行：
+由于在国内访问Flutter有时可能会受到限制，clone项目后，请勿直接packages get，建议运行如下命令([了解更多](https://flutter.cn/community/china))：
 ```
 export PUB_HOSTED_URL=https://pub.flutter-io.cn  
 export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn  
