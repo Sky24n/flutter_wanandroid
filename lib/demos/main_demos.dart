@@ -26,7 +26,7 @@ class MainDemosPageState extends State<MainDemosPage> {
 
     mItemList.add(new ItemModel("Github【common_utils】", null));
     mItemList.add(new ItemModel("汉字转拼音", new PinyinPage("汉字转拼音")));
-    mItemList.add(new ItemModel("城市列表", new CitySelectPage("City Select")));
+    mItemList.add(new ItemModel("城市列表", CityListPage()));
     mItemList.add(new ItemModel("Date Util", new DatePage("Date Util")));
     mItemList.add(new ItemModel("Regex Util", new RegexUtilPage("Regex Util")));
     mItemList.add(new ItemModel("Widget Util", new WidgetPage("Widget Util")));
@@ -43,7 +43,7 @@ class MainDemosPageState extends State<MainDemosPage> {
         onTap: () {
           if (model.page == null) {
             NavigatorUtil.pushWeb(context,
-                url: 'https://github.com/Sky24n/common_utils/blob/master/README.md',
+                url: 'https://github.com/Sky24n/common_utils',
                 title: 'Github【common_utils】');
           } else {
             NavigatorUtil.pushPage(context, model.page, pageName: model.title);
