@@ -40,7 +40,7 @@ class _MoneyPageState extends State<MoneyPage> {
       "   YUAN_INTEGER, //整元(6.00元 -> 6元)" +
       "\n" +
       "}"
-      "";
+          "";
 
   void inputCheck() {
     setState(() {
@@ -56,7 +56,7 @@ class _MoneyPageState extends State<MoneyPage> {
         title: new Text(widget.title),
         centerTitle: true,
       ),
-      resizeToAvoidBottomPadding: false,
+      resizeToAvoidBottomInset: false,
       body: new Column(
         children: <Widget>[
           new Card(

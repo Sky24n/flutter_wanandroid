@@ -91,6 +91,7 @@ class MyAppState extends State<MyApp> {
       },
       home: new SplashPage(),
       theme: ThemeData.light().copyWith(
+        brightness: Brightness.dark,
         primaryColor: _themeColor,
         accentColor: _themeColor,
         indicatorColor: Colors.white,
