@@ -4,7 +4,7 @@
 
 有关项目最新动态，可以关注App内第一条Hot Item信息。
 
-## [Moss](https://github.com/Sky24n/Moss)
+## [Moss App](https://github.com/Sky24n/Moss)
 A GitHub client app developed with Flutter, which supports Android iOS Web.  
 Web ：[Flutter Web](https://sky24n.github.io/Sky24n/moss/index.html).
 
